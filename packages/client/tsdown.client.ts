@@ -253,7 +253,9 @@ function clientConfig(id: string, entry: string): UserConfig {
           minify: true,
         })
         const classMap: Record<string, string> = {}
-        for (const [local, exp] of Object.entries(cssExports ?? {})) classMap[local] = exp.name
+        for (const [local, exp] of Object.entries(cssExports ?? {}).sort(([left], [right]) => left.localeCompare(right))) {
+          classMap[local] = exp.name
+        }
         // One <style data-plugin> per module file; idempotent under re-evaluation.
         return [
           `const css = ${JSON.stringify(code.toString())};`,

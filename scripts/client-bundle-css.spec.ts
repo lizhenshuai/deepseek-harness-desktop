@@ -76,4 +76,25 @@ describe('client bundle CSS Modules', () => {
       ])
     }
   })
+
+  it('serializes class exports in lexical order', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'dsh-client-css-exports-'))
+    try {
+      const stylesheet = join(root, 'Fixture.module.css')
+      await writeFile(stylesheet, '.zeta { color: red; }\n.alpha { color: blue; }\n')
+      const plugin = cssPlugin()
+      const virtualId = plugin.resolveId?.('./Fixture.module.css', join(root, 'index.ts'))
+      if (typeof virtualId !== 'string' || plugin.load === undefined) {
+        throw new Error('CSS Modules plugin hooks are incomplete')
+      }
+      const output = await plugin.load.call({ addWatchFile() {} }, virtualId)
+      if (output === null) throw new Error('CSS Modules plugin returned no output')
+      const serialized = output.match(/export default (\{.*\});/)?.[1]
+      if (serialized === undefined) throw new Error('CSS Modules plugin returned no class map')
+
+      expect(Object.keys(JSON.parse(serialized) as Record<string, string>)).toEqual(['alpha', 'zeta'])
+    } finally {
+      await rm(root, { recursive: true, force: true })
+    }
+  })
 })

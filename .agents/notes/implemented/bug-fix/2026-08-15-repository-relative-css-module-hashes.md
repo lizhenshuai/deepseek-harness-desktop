@@ -10,9 +10,9 @@ The client bundle plugin passed each stylesheet's absolute filesystem path to Li
 
 ## Decision
 
-`dsh-css-modules-inline` keeps two stylesheet identities. The absolute path remains the read target and watch dependency. Lightning CSS receives the repository-relative identity already encoded in the virtual module id; sources outside the repository use their basename. Equal source and stable identity therefore produce equal class maps regardless of checkout root or path separator.
+`dsh-css-modules-inline` keeps two stylesheet identities. The absolute path remains the read target and watch dependency. Lightning CSS receives the repository-relative identity already encoded in the virtual module id; sources outside the repository use their basename. The plugin sorts Lightning CSS's unordered export map before serialization. Equal source and stable identity therefore produce equal class maps regardless of checkout root, path separator, or transform map iteration order.
 
-The CSS text, exported class map, and style ownership tag retain their existing runtime behavior. A build test loads the same module name and contents from two physical roots and requires byte-identical virtual module output.
+The CSS text, exported class map, and style ownership tag retain their existing runtime behavior. Build tests load the same module name and contents from two physical roots, require byte-identical virtual module output, and verify lexical export ordering.
 
 ## Alternatives considered
 
@@ -24,6 +24,6 @@ The CSS text, exported class map, and style ownership tag retain their existing 
 
 ## Consequences
 
-- Client bundle bytes no longer depend on the checkout's absolute path.
+- Client bundle bytes no longer depend on the checkout's absolute path or the transform's export iteration order.
 - Renaming or moving a stylesheet inside the repository intentionally changes its CSS Module hash.
 - External test fixtures with the same basename share a stable identity; production stylesheets are repository-contained and use their full repository-relative path.
