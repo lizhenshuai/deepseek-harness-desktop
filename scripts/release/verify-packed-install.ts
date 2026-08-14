@@ -75,7 +75,7 @@ async function main(): Promise<void> {
     // Windows install keeps optional dependencies because Koffi uses its
     // platform package for the native implementations shipped in Web profiles;
     // npm excludes the Linux-only Landlock packages by their OS metadata.
-    installPackedTarballs(node, consumerRoot, environment, process.platform !== 'win32')
+    installPackedTarballs(node, consumerRoot, environment)
 
     const bin = join(consumerRoot, 'node_modules', ...entry.packageName.split('/'), entry.binPath)
     const version = capture(node, [bin, '--version'], { cwd: consumerRoot, env: environment })

@@ -81,7 +81,7 @@ async function main(): Promise<void> {
     })
     const environment = packedConsumerEnvironment(consumerRoot)
     console.log(`desktop stage-runtime: installing ${String(tarballs.length)} tarball(s)`)
-    installPackedTarballs(node, consumerRoot, environment, false)
+    installPackedTarballs(node, consumerRoot, environment)
 
     const packages = resolveProductionClosure(consumerRoot, ENTRY_PACKAGE)
     const npmVersion = capture(node, [npmCliForNode(node), '--version'], { env: environment })

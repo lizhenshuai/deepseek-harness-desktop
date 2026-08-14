@@ -84,15 +84,12 @@ export function npmCliForNode(node: string, platform: NodeJS.Platform = process.
  * @param node - Node executable that owns the npm CLI and native ABI.
  * @param consumerRoot - Directory containing the generated package manifest.
  * @param environment - Isolated installation environment.
- * @param omitOptional - Whether npm omits platform optional dependencies.
  */
 export function installPackedTarballs(
   node: string,
   consumerRoot: string,
   environment: NodeJS.ProcessEnv,
-  omitOptional: boolean,
 ): void {
   const args = [npmCliForNode(node), 'install', '--no-audit', '--no-fund', '--package-lock=false']
-  if (omitOptional) args.push('--omit=optional')
   capture(node, args, { cwd: consumerRoot, env: environment })
 }
