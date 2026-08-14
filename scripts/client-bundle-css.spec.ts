@@ -50,4 +50,30 @@ describe('client bundle CSS Modules', () => {
       await rm(root, { recursive: true, force: true })
     }
   })
+
+  it('derives class names from the stable module id rather than the physical root', async () => {
+    const firstRoot = await mkdtemp(join(tmpdir(), 'dsh-client-css-first-'))
+    const secondRoot = await mkdtemp(join(tmpdir(), 'dsh-client-css-second-'))
+    try {
+      const load = async (root: string): Promise<string> => {
+        const stylesheet = join(root, 'Fixture.module.css')
+        await writeFile(stylesheet, '.root { color: red; }\n')
+        const plugin = cssPlugin()
+        const virtualId = plugin.resolveId?.('./Fixture.module.css', join(root, 'index.ts'))
+        if (typeof virtualId !== 'string' || plugin.load === undefined) {
+          throw new Error('CSS Modules plugin hooks are incomplete')
+        }
+        const output = await plugin.load.call({ addWatchFile() {} }, virtualId)
+        if (output === null) throw new Error('CSS Modules plugin returned no output')
+        return output
+      }
+
+      expect(await load(firstRoot)).toBe(await load(secondRoot))
+    } finally {
+      await Promise.all([
+        rm(firstRoot, { recursive: true, force: true }),
+        rm(secondRoot, { recursive: true, force: true }),
+      ])
+    }
+  })
 })

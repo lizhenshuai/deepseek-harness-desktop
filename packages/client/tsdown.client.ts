@@ -168,7 +168,7 @@ function clientLibraryConfig(
 }
 
 function clientConfig(id: string, entry: string): UserConfig {
-  const cssSources = new Map<string, string>()
+  const cssSources = new Map<string, { fileId: string, stableId: string }>()
   return {
     name: `${id}/client`,
     entry: { client: entry },
@@ -235,18 +235,19 @@ function clientConfig(id: string, entry: string): UserConfig {
           ? fromRepository.split(sep).join('/')
           : basename(abs)
         const virtualId = CSS_VIRTUAL_PREFIX + stableId + CSS_VIRTUAL_SUFFIX
-        cssSources.set(virtualId, abs)
+        cssSources.set(virtualId, { fileId: abs, stableId })
         return virtualId
       },
       async load(virtualId: string) {
         if (!virtualId.startsWith(CSS_VIRTUAL_PREFIX)) return null
-        const fileId = cssSources.get(virtualId)
-        if (fileId === undefined) throw new Error(`CSS Modules virtual id was not resolved: ${virtualId}`)
+        const sourceRecord = cssSources.get(virtualId)
+        if (sourceRecord === undefined) throw new Error(`CSS Modules virtual id was not resolved: ${virtualId}`)
+        const { fileId, stableId } = sourceRecord
         // The virtual id otherwise hides the physical stylesheet from Rolldown's watch graph.
         this.addWatchFile(fileId)
         const source = await readFile(fileId)
         const { code, exports: cssExports } = transform({
-          filename: fileId,
+          filename: stableId,
           code: source,
           cssModules: { pattern: '[hash]_[local]' },
           minify: true,
