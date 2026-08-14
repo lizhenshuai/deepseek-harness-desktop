@@ -37,6 +37,7 @@ const SHIPPED_PRESET_ROOT = fileURLToPath(new URL('../config/agent-presets/', im
 import { DSH_LAUNCH_ENVIRONMENT_KEY, type LaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
 import { provideCmdline } from '@deepseek-ai/dsh-cmdline'
 import { createProcessShutdown, type ProcessShutdown } from './process-shutdown.ts'
+import { installSupervisedStdin } from './supervised-stdin.ts'
 
 const NAME = 'dsh'
 
@@ -180,6 +181,8 @@ export interface RunProfileOptions {
   patchFiles: readonly string[]
   /** The invocation's inner arguments, handed to the tree through `ctx.cmdlineArgs`. */
   args: readonly string[]
+  /** Stop through the bounded stdin supervisor command or parent-pipe EOF. */
+  supervisedStdin: boolean
 }
 
 /**
@@ -207,11 +210,22 @@ function suppressShutdownError(ctx: Context, signal: AbortSignal, error: unknown
 export async function runProfile(options: RunProfileOptions): Promise<{ ctx: Context; shutdown: ProcessShutdown }> {
   const composed = composeProfile(options.profile, options.patchFiles)
   const app: { current?: Context } = {}
-  const shutdown = createProcessShutdown(async () => { await app.current?.fiber.dispose() })
+  let disposeSupervisor: (() => void) | undefined
+  const shutdown = createProcessShutdown(async () => {
+    disposeSupervisor?.()
+    await app.current?.fiber.dispose()
+  })
   const signalShutdown = new AbortController()
   const interrupt = (code: number): void => {
     signalShutdown.abort()
     shutdown.interrupt(code)
+  }
+  if (options.supervisedStdin) {
+    disposeSupervisor = installSupervisedStdin(
+      process.stdin,
+      interrupt,
+      (message) => { process.stderr.write(`${message}\n`) },
+    )
   }
   // Signals own teardown throughout the startup window, not only after boot()
   // settles: an inserted provider can publish before sibling rows finish mounting.

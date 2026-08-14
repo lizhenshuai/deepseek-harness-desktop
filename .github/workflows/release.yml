@@ -1,6 +1,6 @@
 # Pack and publish the dsh release sequence: every package under packages/ plus
-# the apps/ entries, all on one version. The vendored framework and the native
-# packages are separate sequences with their own workflows and version lines.
+# the published CLI and Web apps, all on one version. The private desktop app
+# stays outside npm; vendored and native packages use their own release lines.
 #
 # Pack runs without credentials on every pull request and master push, so a
 # pull request proves the whole publish set still packs. Publication is a
@@ -15,6 +15,11 @@ on:
     inputs:
       publish:
         description: Publish the packed tarballs to npm. Must run from a dsh-v* tag.
+        required: true
+        type: boolean
+        default: false
+      desktop_sign:
+        description: Sign the desktop application and Squirrel installer for release acceptance.
         required: true
         type: boolean
         default: false
@@ -97,7 +102,7 @@ jobs:
           pnpm --dir native/landlock-run/packages/entry pack --pack-destination "$PWD/dist/npm-landlock"
 
       - name: Verify packed install
-        run: pnpm run release:verify-packed-install --family dsh --from dist/npm --from dist/npm-vendor --from dist/npm-landlock
+        run: pnpm run release:verify-packed-install --family dsh --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --web --report dist/packed-web-proof.json
 
       - uses: actions/upload-artifact@v4
         with:
@@ -106,10 +111,183 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dsh-packed-runtime-proof-inputs
+          path: |
+            dist/npm/*
+            dist/npm-vendor/*
+            dist/npm-landlock/*
+            dist/packed-web-proof.json
+          if-no-files-found: error
+          retention-days: 7
+
+  packed-web-windows:
+    name: Prove packed Web runtime (Windows x64)
+    needs: pack
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          dest: ${{ runner.temp }}/setup-pnpm
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.PRIMARY_NODE_VERSION }}
+
+      - name: Install release-script dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dsh-packed-runtime-proof-inputs
+          path: dist
+
+      - name: Prove packed Web runtime
+        run: pnpm run desktop:prove-runtime -- --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --report dist/packed-web-proof-windows-x64.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dsh-packed-web-proof-windows-x64
+          path: dist/packed-web-proof-windows-x64.json
+          if-no-files-found: error
+          retention-days: 7
+
+  stage-runtime-windows:
+    name: Stage desktop runtime (Windows x64)
+    needs: [pack, packed-web-windows]
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          dest: ${{ runner.temp }}/setup-pnpm
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.PRIMARY_NODE_VERSION }}
+
+      - name: Install staging dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dsh-packed-runtime-proof-inputs
+          path: dist
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dsh-packed-web-proof-windows-x64
+          path: dist
+
+      - name: Stage Windows runtime
+        run: pnpm run desktop:stage-runtime -- --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --proof dist/packed-web-proof-windows-x64.json --out dist/desktop-runtime/windows-x64 --download-node
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dsh-desktop-runtime-windows-x64
+          path: dist/desktop-runtime/windows-x64/**
+          if-no-files-found: error
+          retention-days: 7
+
+  verify-staged-runtime-windows:
+    name: Verify staged runtime without checkout
+    needs: stage-runtime-windows
+    runs-on: windows-2025
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dsh-desktop-runtime-windows-x64
+          path: staged
+
+      - name: Start staged Web runtime
+        run: .\staged\runtime\node\node.exe .\staged\verification\verify-staged-runtime.mjs .\staged\runtime .\staged\verification\expected-packed-web-proof.json .\staged\verification\checkout-free-proof.json
+
+  verify-desktop-shell-windows:
+    name: Verify Electron shell (Windows x64)
+    needs: stage-runtime-windows
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          dest: ${{ runner.temp }}/setup-pnpm
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.PRIMARY_NODE_VERSION }}
+
+      - name: Install (immutable)
+        run: pnpm install --frozen-lockfile
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dsh-desktop-runtime-windows-x64
+          path: dist/desktop-runtime/windows-x64
+
+      - name: Build and unit test desktop shell
+        run: |
+          pnpm run desktop:build
+          pnpm run desktop:test
+
+      - name: Exercise staged Web runtime in Electron
+        run: pnpm run desktop:test:electron -- "${{ github.workspace }}\dist\desktop-runtime\windows-x64\runtime"
+
+      - name: Make and inspect desktop installer
+        run: |
+          if ('${{ inputs.desktop_sign }}' -eq 'true') {
+            if (-not $env:DSH_WINDOWS_CERTIFICATE_PFX_BASE64) { throw 'signed desktop build requires DSH_WINDOWS_CERTIFICATE_PFX_BASE64' }
+            $certificate = Join-Path $env:RUNNER_TEMP 'desktop-signing.pfx'
+            [IO.File]::WriteAllBytes($certificate, [Convert]::FromBase64String($env:DSH_WINDOWS_CERTIFICATE_PFX_BASE64))
+            "DSH_WINDOWS_CERTIFICATE_FILE=$certificate" >> $env:GITHUB_ENV
+            $env:DSH_WINDOWS_CERTIFICATE_FILE = $certificate
+          }
+          pnpm run desktop:make
+          pnpm run desktop:verify-package
+          pnpm run desktop:verify-installer
+        shell: pwsh
+        env:
+          DSH_WINDOWS_CERTIFICATE_PFX_BASE64: ${{ inputs.desktop_sign && secrets.DSH_WINDOWS_CERTIFICATE_PFX_BASE64 || '' }}
+          DSH_WINDOWS_CERTIFICATE_PASSWORD: ${{ inputs.desktop_sign && secrets.DSH_WINDOWS_CERTIFICATE_PASSWORD || '' }}
+          DSH_WINDOWS_SIGN_REQUIRED: ${{ inputs.desktop_sign && '1' || '0' }}
+
+      - name: Exercise packaged application from spaces and non-ASCII
+        shell: pwsh
+        run: |
+          $target = Join-Path $env:RUNNER_TEMP '桌面 客户端'
+          Copy-Item -Recurse -LiteralPath 'apps/desktop/out/DeepSeek Harness-win32-x64' -Destination $target
+          pnpm run desktop:test:packaged -- (Join-Path $target 'DeepSeek Harness.exe')
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dsh-desktop-installer-windows-x64-${{ inputs.desktop_sign && 'signed' || 'unsigned' }}
+          path: |
+            apps/desktop/out/make/**/DeepSeek-Harness-Setup-x64.exe
+            apps/desktop/out/make/**/*-full.nupkg
+            apps/desktop/out/make/**/RELEASES
+            apps/desktop/out/make/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Remove signing material
+        if: always() && inputs.desktop_sign
+        shell: pwsh
+        run: Remove-Item -LiteralPath (Join-Path $env:RUNNER_TEMP 'desktop-signing.pfx') -Force -ErrorAction SilentlyContinue
+
   publish:
     name: Publish to npm
     if: inputs.publish
-    needs: pack
+    needs: [pack, packed-web-windows, verify-staged-runtime-windows, verify-desktop-shell-windows]
     runs-on: ubuntu-24.04
     # Required reviewers and the allowed tags live on the environment; this is
     # the only step in the sequence that can write to the registry.

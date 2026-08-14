@@ -200,6 +200,61 @@ describe('CI workflow', () => {
     expect(aggregate.needs).toContain('python-runtime')
   })
 
+  it('packages the Windows Electron shell over the staged desktop runtime', () => {
+    const workflow = loadWorkflow('.github/workflows/release.yml')
+    const shell = workflowJob(workflow, 'verify-desktop-shell-windows')
+    const publish = workflowJob(workflow, 'publish')
+    if (!Array.isArray(shell.steps) || !Array.isArray(publish.needs)) {
+      throw new TypeError('desktop shell verification and publish dependencies must be defined')
+    }
+
+    expect(shell).toMatchObject({
+      name: 'Verify Electron shell (Windows x64)',
+      needs: 'stage-runtime-windows',
+      'runs-on': 'windows-2025',
+    })
+    const commands = shell.steps
+      .filter((step): step is Record<string, unknown> & { run: string } => isRecord(step) && typeof step.run === 'string')
+      .map(step => step.run)
+      .join('\n')
+    expect(commands).toContain('pnpm run desktop:test:electron')
+    expect(commands).toContain('pnpm run desktop:make')
+    expect(commands).toContain('pnpm run desktop:verify-package')
+    expect(commands).toContain('DSH_WINDOWS_CERTIFICATE_PFX_BASE64')
+    expect(publish.needs).toContain('verify-desktop-shell-windows')
+  })
+
+  it('fails closed over the signed Windows 10/11 desktop acceptance matrix', () => {
+    const workflow = loadWorkflow('.github/workflows/desktop-acceptance.yml')
+    if (!isRecord(workflow.on) || !isRecord(workflow.on.workflow_dispatch) || !isRecord(workflow.jobs)) {
+      throw new TypeError('desktop acceptance must be a manual workflow with jobs')
+    }
+    const lifecycle = workflowJob(workflow, 'lifecycle')
+    const provider = workflowJob(workflow, 'provider')
+    const verify = workflowJob(workflow, 'verify')
+    if (!isRecord(lifecycle.strategy) || !isRecord(lifecycle.strategy.matrix) || !Array.isArray(lifecycle.strategy.matrix.include)) {
+      throw new TypeError('desktop lifecycle job must declare its image matrix')
+    }
+    expect(lifecycle.strategy.matrix.include).toEqual([
+      { os: 'windows-10', image: 'dsh-desktop-windows-10' },
+      { os: 'windows-11', image: 'dsh-desktop-windows-11' },
+    ])
+    expect(lifecycle.environment).toBe('desktop-release-acceptance')
+    expect(provider.environment).toBe('desktop-release-provider')
+    expect(verify).toMatchObject({ if: 'always()', needs: ['lifecycle', 'provider'] })
+    const commandSteps: Record<string, unknown>[] = []
+    for (const job of [lifecycle, provider, verify]) {
+      if (Array.isArray(job.steps)) for (const step of job.steps) if (isRecord(step)) commandSteps.push(step)
+    }
+    const commands = commandSteps
+      .filter((step): step is Record<string, unknown> & { run: string } => typeof step.run === 'string')
+      .map(step => step.run)
+      .join('\n')
+    expect(commands).toContain('run-clean-vm-acceptance.ps1')
+    expect(commands).toContain('desktop:verify-acceptance')
+    expect(commands).toContain('DSH_ACCEPTANCE_PROVIDER_EVIDENCE')
+  })
+
   it('keeps every Vitest project process-isolated on native Windows', () => {
     const config = readFileSync(resolve(root, 'vitest.config.ts'), 'utf8')
 

@@ -25,6 +25,8 @@ interface ProfileInvocation {
   patches: string[]
   /** Everything after the launcher's own flags, verbatim, for injected app plugins. */
   args: string[]
+  /** Whether stdin owns the process lifetime through the supervisor protocol. */
+  supervisedStdin: boolean
 }
 
 /** Print a composed profile tree and exit without booting. */
@@ -52,6 +54,7 @@ interface BootOptions {
   patch?: string[]
   dumpConfig?: boolean
   dumpDefaultConfig?: boolean
+  supervisedStdin?: boolean
 }
 
 /**
@@ -84,7 +87,7 @@ function resolveBoot(program: Command, profile: string, options: BootOptions, ar
   const patches = options.patch ?? []
   if (patches.includes('')) program.error('error: --patch needs a path')
   if (options.dumpConfig !== true && options.dumpDefaultConfig !== true) {
-    return { mode: 'profile', profile, patches, args }
+    return { mode: 'profile', profile, patches, args, supervisedStdin: options.supervisedStdin === true }
   }
   if (options.dumpConfig === true && options.dumpDefaultConfig === true) {
     program.error('error: --dump-config and --dump-default-config are mutually exclusive')
@@ -95,6 +98,7 @@ function resolveBoot(program: Command, profile: string, options: BootOptions, ar
   if (args.length > 0) {
     program.error(`error: config dumps take no app arguments, got ${args.map(argument => JSON.stringify(argument)).join(' ')}`)
   }
+  if (options.supervisedStdin === true) program.error('error: config dumps cannot use --supervised-stdin')
   const defaultOnly = options.dumpDefaultConfig === true
   if (defaultOnly && patches.length > 0) {
     program.error('error: --dump-default-config prints the bundle layers and takes no --patch')
@@ -132,6 +136,7 @@ export function parseDshArgs(argv: readonly string[], version: string): DshInvoc
     .option('--patch <path>', 'extra patch-list overlay applied after the profile layer (repeatable)', collect)
     .option('--dump-config', 'print the composed profile tree and exit')
     .option('--dump-default-config', 'print the profile tree without its user layer or --patch overlays and exit')
+    .option('--supervised-stdin', 'stop when stdin receives shutdown or closes')
     .action((args: string[], options: BootOptions & { profile?: string }) => {
       // With the app owning -h, the launcher's own help is what a bare
       // `dsh -h` (no profile to hand it to) must print.
@@ -148,8 +153,9 @@ export function parseDshArgs(argv: readonly string[], version: string): DshInvoc
   const rejectParentOptions = (command: string): void => {
     const parent = program.opts<BootOptions & { profile?: string }>()
     if (parent.profile !== undefined || parent.patch !== undefined
-      || parent.dumpConfig !== undefined || parent.dumpDefaultConfig !== undefined) {
-      program.error(`error: ${command} takes none of parent --profile, --patch, --dump-config, or --dump-default-config`)
+      || parent.dumpConfig !== undefined || parent.dumpDefaultConfig !== undefined
+      || parent.supervisedStdin !== undefined) {
+      program.error(`error: ${command} takes none of parent --profile, --patch, --dump-config, --dump-default-config, or --supervised-stdin`)
     }
   }
 
@@ -163,6 +169,7 @@ export function parseDshArgs(argv: readonly string[], version: string): DshInvoc
     .option('--patch <path>', 'extra patch-list overlay applied after the profile layer (repeatable)', collect)
     .option('--dump-config', 'print the composed web-profile tree (with the user layer and any --patch) and exit')
     .option('--dump-default-config', 'print the web profile\'s bundle layers (no user layer) and exit')
+    .option('--supervised-stdin', 'stop when stdin receives shutdown or closes')
     .action((args: string[], options: BootOptions) => {
       rejectParentOptions('web')
       resolved = resolveBoot(web, 'web', options, args)

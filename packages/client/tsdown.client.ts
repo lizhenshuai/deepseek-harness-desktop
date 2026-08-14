@@ -10,7 +10,7 @@
  */
 import { readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { basename, dirname, relative, resolve as resolvePath, sep } from 'node:path'
+import { basename, dirname, isAbsolute, relative, resolve as resolvePath, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { UserConfig } from 'tsdown'
 import { transform } from 'lightningcss'
@@ -168,6 +168,7 @@ function clientLibraryConfig(
 }
 
 function clientConfig(id: string, entry: string): UserConfig {
+  const cssSources = new Map<string, string>()
   return {
     name: `${id}/client`,
     entry: { client: entry },
@@ -228,11 +229,19 @@ function clientConfig(id: string, entry: string): UserConfig {
       resolveId(source: string, importer: string | undefined) {
         if (!source.endsWith('.module.css')) return null
         const abs = importer !== undefined ? sourceAssetPath(source, importer) : source
-        return CSS_VIRTUAL_PREFIX + abs + CSS_VIRTUAL_SUFFIX
+        const fromRepository = relative(REPOSITORY_ROOT, abs)
+        const stableId = fromRepository !== '' && !isAbsolute(fromRepository)
+          && !fromRepository.startsWith(`..${sep}`) && fromRepository !== '..'
+          ? fromRepository.split(sep).join('/')
+          : basename(abs)
+        const virtualId = CSS_VIRTUAL_PREFIX + stableId + CSS_VIRTUAL_SUFFIX
+        cssSources.set(virtualId, abs)
+        return virtualId
       },
       async load(virtualId: string) {
         if (!virtualId.startsWith(CSS_VIRTUAL_PREFIX)) return null
-        const fileId = virtualId.slice(CSS_VIRTUAL_PREFIX.length, -CSS_VIRTUAL_SUFFIX.length)
+        const fileId = cssSources.get(virtualId)
+        if (fileId === undefined) throw new Error(`CSS Modules virtual id was not resolved: ${virtualId}`)
         // The virtual id otherwise hides the physical stylesheet from Rolldown's watch graph.
         this.addWatchFile(fileId)
         const source = await readFile(fileId)

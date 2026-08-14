@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib/types",
+    "paths": {
+      "@deepseek-ai/dsh-subprocess": ["../../packages/subprocess/subprocess/lib/types/index.d.ts"],
+      "@deepseek-ai/dsh-subprocess-local/managed-process": ["../../packages/subprocess/subprocess-local/lib/types/managed-process.d.ts"]
+    }
+  },
+  "include": [
+    "src"
+  ]
+}

@@ -1,0 +1,192 @@
+name: Desktop release acceptance
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_run_id:
+        description: Release workflow run containing the candidate installer artifact.
+        required: true
+        type: string
+      candidate_artifact:
+        description: Exact candidate artifact name from the release workflow.
+        required: true
+        type: string
+        default: dsh-desktop-installer-windows-x64-signed
+      predecessor_run_id:
+        description: Accepted lower-version release workflow run used for upgrade coverage.
+        required: true
+        type: string
+      predecessor_artifact:
+        description: Exact predecessor installer artifact name.
+        required: true
+        type: string
+        default: dsh-desktop-installer-windows-x64-signed
+      setup_sha256:
+        description: Lowercase SHA-256 of the signed Setup.exe eligible for release.
+        required: true
+        type: string
+      publisher:
+        description: Required substring of the Authenticode publisher subject.
+        required: true
+        type: string
+      provider:
+        description: Run the protected real-provider lane on Windows 11.
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: desktop-release-acceptance
+  cancel-in-progress: false
+
+jobs:
+  lifecycle:
+    name: ${{ matrix.os }} install-to-uninstall
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - os: windows-10
+            image: dsh-desktop-windows-10
+          - os: windows-11
+            image: dsh-desktop-windows-11
+    runs-on: [self-hosted, windows, x64, dsh-desktop-acceptance, "${{ matrix.image }}"]
+    timeout-minutes: 60
+    environment: desktop-release-acceptance
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.candidate_run_id }}
+          name: ${{ inputs.candidate_artifact }}
+          path: acceptance-input/candidate
+
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.predecessor_run_id }}
+          name: ${{ inputs.predecessor_artifact }}
+          path: acceptance-input/predecessor
+
+      - name: Exercise the sealed clean image
+        shell: pwsh
+        run: >-
+          ./scripts/desktop/run-clean-vm-acceptance.ps1
+          -OsFamily '${{ matrix.os }}'
+          -ImageId '${{ matrix.image }}'
+          -Lane signed
+          -ArtifactDirectory '${{ github.workspace }}\acceptance-input\candidate'
+          -PredecessorArtifactDirectory '${{ github.workspace }}\acceptance-input\predecessor'
+          -ExpectedSetupSha256 '${{ inputs.setup_sha256 }}'
+          -ExpectedPublisher '${{ inputs.publisher }}'
+          -OutputDirectory '${{ github.workspace }}\acceptance-output\${{ matrix.os }}'
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: desktop-acceptance-${{ matrix.os }}
+          path: acceptance-output/${{ matrix.os }}/**
+          if-no-files-found: error
+          retention-days: 30
+
+  provider:
+    name: Windows 11 real provider and tools
+    if: inputs.provider
+    runs-on: [self-hosted, windows, x64, dsh-desktop-acceptance, dsh-desktop-windows-11]
+    timeout-minutes: 60
+    environment: desktop-release-provider
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.candidate_run_id }}
+          name: ${{ inputs.candidate_artifact }}
+          path: acceptance-input/candidate
+
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.predecessor_run_id }}
+          name: ${{ inputs.predecessor_artifact }}
+          path: acceptance-input/predecessor
+
+      - name: Require protected provider evidence
+        shell: pwsh
+        run: |
+          if (-not $env:DSH_ACCEPTANCE_PROVIDER_EVIDENCE) {
+            throw 'DSH_ACCEPTANCE_PROVIDER_EVIDENCE must name the protected real-UI evidence file on this controller'
+          }
+          if (-not (Test-Path -LiteralPath $env:DSH_ACCEPTANCE_PROVIDER_EVIDENCE -PathType Leaf)) {
+            throw "provider evidence is missing: $env:DSH_ACCEPTANCE_PROVIDER_EVIDENCE"
+          }
+
+      - name: Exercise the protected provider lane
+        shell: pwsh
+        run: >-
+          ./scripts/desktop/run-clean-vm-acceptance.ps1
+          -OsFamily windows-11
+          -ImageId dsh-desktop-windows-11-provider
+          -Lane provider
+          -ArtifactDirectory '${{ github.workspace }}\acceptance-input\candidate'
+          -PredecessorArtifactDirectory '${{ github.workspace }}\acceptance-input\predecessor'
+          -ExpectedSetupSha256 '${{ inputs.setup_sha256 }}'
+          -ExpectedPublisher '${{ inputs.publisher }}'
+          -ProviderEvidence $env:DSH_ACCEPTANCE_PROVIDER_EVIDENCE
+          -OutputDirectory '${{ github.workspace }}\acceptance-output\provider'
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: desktop-acceptance-provider-windows-11
+          path: acceptance-output/provider/**
+          if-no-files-found: error
+          retention-days: 30
+
+  verify:
+    name: Verify release acceptance evidence
+    if: always()
+    needs: [lifecycle, provider]
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v4
+        with:
+          dest: ${{ runner.temp }}/setup-pnpm
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install verifier dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: desktop-acceptance-*
+          path: acceptance-reports
+          merge-multiple: false
+
+      - name: Reject incomplete or inconsistent evidence
+        shell: pwsh
+        run: |
+          $reports = @(Get-ChildItem -LiteralPath acceptance-reports -Recurse -File -Filter desktop-acceptance-report.json)
+          $arguments = @('--setup-sha256', '${{ inputs.setup_sha256 }}', '--require-os', 'windows-10', '--require-os', 'windows-11', '--signed')
+          if ('${{ inputs.provider }}' -eq 'true') { $arguments += '--provider' }
+          foreach ($report in $reports) { $arguments += @('--report', $report.FullName) }
+          pnpm run desktop:verify-acceptance -- @arguments

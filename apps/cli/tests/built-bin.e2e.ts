@@ -493,6 +493,35 @@ describe.skipIf(!existsSync(dshBin))('dsh BUILT bin (node lib/bin.js, no tsx)', 
     }
   }, 30_000)
 
+  it.each([
+    ['shutdown frame', 'shutdown\n'],
+    ['parent-pipe EOF', ''],
+  ])('disposes a built supervised profile on %s', async (_label, input) => {
+    const fixture = createProfileLifecycleFixture()
+    const child = execa(process.execPath, [dshBin, '--profile', 'lifecycle', '--supervised-stdin'], {
+      cwd: fixture.home,
+      stdin: 'pipe',
+      reject: false,
+      env: {
+        DSH_HOME: fixture.home,
+        RAW_READY_FILE: fixture.ready,
+        RAW_SETTLED_FILE: fixture.settled,
+        RAW_DISPOSED_FILE: fixture.disposed,
+        RAW_INTERRUPT_FILE: fixture.interrupt,
+      },
+    })
+    try {
+      await waitForFile(fixture.ready)
+      child.stdin?.end(input)
+      const result = await child
+      expect(result.exitCode, `${result.stderr}\nstdout:\n${result.stdout}`).toBe(0)
+      expect(existsSync(fixture.disposed)).toBe(true)
+    } finally {
+      child.kill('SIGKILL')
+      rmSync(fixture.home, { recursive: true, force: true })
+    }
+  }, 30_000)
+
   it('fully settles a custom profile, hot-reloads its patch layer with removal reverting, and disposes on a signal', async () => {
     const fixture = createProfileLifecycleFixture()
     const child = startProfileLifecycle(fixture)

@@ -39,6 +39,7 @@ describe('client bundle CSS Modules', () => {
       if (typeof virtualId !== 'string' || plugin.load === undefined) {
         throw new Error('CSS Modules plugin hooks are incomplete')
       }
+      expect(virtualId).not.toContain(root)
       const watched: string[] = []
 
       const output = await plugin.load.call({ addWatchFile: id => watched.push(id) }, virtualId)

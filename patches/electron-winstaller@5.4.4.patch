@@ -1,0 +1,7 @@
+diff --git a/script/select-7z-arch.js b/script/select-7z-arch.js
+index 8e822c6..73a2754 100644
+--- a/script/select-7z-arch.js
++++ b/script/select-7z-arch.js
+@@ -8,1 +8,1 @@
+-const arch = os.arch;
++const arch = os.arch();

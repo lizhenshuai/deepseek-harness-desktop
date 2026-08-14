@@ -4,8 +4,8 @@
  * index transform taps, and the single fallback seat for everything no route
  * claims). Knows no harness concepts and serves no files; the composing
  * application's frontend plugin owns dist serving through the fallback hook.
- * Web shape only — Electron loads dist over file:// and carries fetch over an
- * IPC bridge. This package never prints: the URL line belongs to the shell.
+ * Web shape only — the desktop shell loads this server through its managed
+ * loopback origin. This package never prints: the URL line belongs to the shell.
  */
 
 import { createServer } from 'node:http'

@@ -22,27 +22,29 @@ afterEach(() => { vi.restoreAllMocks() })
 
 describe('parseDshArgs', () => {
   it('routes profile boots and the web alias, handing the rest to the app', () => {
-    expect(parse(['--profile', 'tui'])).toEqual({ mode: 'profile', profile: 'tui', patches: [], args: [] })
+    expect(parse(['--profile', 'tui'])).toEqual({ mode: 'profile', profile: 'tui', patches: [], args: [], supervisedStdin: false })
     expect(parse(['--profile', 'tui', '--patch', 'a.yml', '--patch', 'b.yml']))
-      .toEqual({ mode: 'profile', profile: 'tui', patches: ['a.yml', 'b.yml'], args: [] })
-    expect(parse(['web'])).toEqual({ mode: 'profile', profile: 'web', patches: [], args: [] })
+      .toEqual({ mode: 'profile', profile: 'tui', patches: ['a.yml', 'b.yml'], args: [], supervisedStdin: false })
+    expect(parse(['web'])).toEqual({ mode: 'profile', profile: 'web', patches: [], args: [], supervisedStdin: false })
     expect(parse(['web', '--patch', 'web.yml']))
-      .toEqual({ mode: 'profile', profile: 'web', patches: ['web.yml'], args: [] })
+      .toEqual({ mode: 'profile', profile: 'web', patches: ['web.yml'], args: [], supervisedStdin: false })
+    expect(parse(['web', '--supervised-stdin', '--host', '127.0.0.1']))
+      .toEqual({ mode: 'profile', profile: 'web', patches: [], args: ['--host', '127.0.0.1'], supervisedStdin: true })
   })
 
   it('ends the launcher flags at the first token it does not own', () => {
     // App flags, including its -h, and positionals reach the app verbatim.
     expect(parse(['--profile', 'tui', '--resume', 'abc']))
-      .toEqual({ mode: 'profile', profile: 'tui', patches: [], args: ['--resume', 'abc'] })
+      .toEqual({ mode: 'profile', profile: 'tui', patches: [], args: ['--resume', 'abc'], supervisedStdin: false })
     expect(parse(['--profile', 'web', '-h']))
-      .toEqual({ mode: 'profile', profile: 'web', patches: [], args: ['-h'] })
+      .toEqual({ mode: 'profile', profile: 'web', patches: [], args: ['-h'], supervisedStdin: false })
     expect(parse(['web', '--host', '127.0.0.1', '--port', '8080', '--dev']))
-      .toEqual({ mode: 'profile', profile: 'web', patches: [], args: ['--host', '127.0.0.1', '--port', '8080', '--dev'] })
+      .toEqual({ mode: 'profile', profile: 'web', patches: [], args: ['--host', '127.0.0.1', '--port', '8080', '--dev'], supervisedStdin: false })
     expect(parse(['--profile', 'headless', 'run', 'the', 'tests']))
-      .toEqual({ mode: 'profile', profile: 'headless', patches: [], args: ['run', 'the', 'tests'] })
+      .toEqual({ mode: 'profile', profile: 'headless', patches: [], args: ['run', 'the', 'tests'], supervisedStdin: false })
     // Launcher flags placed after that boundary belong to the app too.
     expect(parse(['--profile', 'tui', '--patch', 'a.yml', '--resume', 'b', '--patch', 'late.yml']))
-      .toEqual({ mode: 'profile', profile: 'tui', patches: ['a.yml'], args: ['--resume', 'b', '--patch', 'late.yml'] })
+      .toEqual({ mode: 'profile', profile: 'tui', patches: ['a.yml'], args: ['--resume', 'b', '--patch', 'late.yml'], supervisedStdin: false })
   })
 
   it('routes the plugin pnpm forwarder', () => {
@@ -91,6 +93,7 @@ describe('parseDshArgs', () => {
     // those flags would decide; printing a tree that differs from the same
     // invocation's boot would mislead.
     expect(exitCode(['web', '--dump-config', '--port', '8080'])).toBe(1)
+    expect(exitCode(['web', '--supervised-stdin', '--dump-config'])).toBe(1)
     expect(exitCode(['--profile', 'web', '--dump-config', '-h'])).toBe(1)
     expect(exitCode(['plugin', 'add', 'x'])).toBe(1) // --profile required
     expect(exitCode(['plugin', '--profile', 'tui'])).toBe(1) // nothing to forward

@@ -8,6 +8,7 @@
     "icacls",
     "musl-gcc",
     "python3",
+    "powershell.exe",
     "sandbox-exec",
     "tar",
     "taskkill",
@@ -738,6 +739,22 @@
       ],
       "ignoreDependencies": [
         "@deepseek-ai/.+"
+      ]
+    },
+    "apps/desktop": {
+      "entry": [
+        "forge.config.ts",
+        "src/main.ts",
+        "tests/**/*.mjs",
+        "tests/**/*.spec.ts"
+      ],
+      "project": [
+        "src/**/*.ts",
+        "tests/**/*.ts",
+        "tests/**/*.mjs"
+      ],
+      "ignoreDependencies": [
+        "@electron-forge/maker-squirrel"
       ]
     },
     "packages/client/modules": {
