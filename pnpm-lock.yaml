@@ -10,7 +10,7 @@ overrides:
   '@electron/rebuild@3>@electron/node-gyp': 10.2.0-electron.2
 
 patchedDependencies:
-  electron-winstaller@5.4.4: f1232f5ad50d94208c47c302524061b571fbb135295aeebca2664d6844be68d9
+  electron-winstaller@5.4.4: b732713c3fa7e21088bcb67a2b3353a8f83fbbcd6a10a4b6f39ac729cf0d46c4
   node-pty@1.1.0: 7a0c04f1f49d798a9ffe2f7f414c01064a44ca2489772d0c3e1235ab336755e6
 
 importers:
@@ -16521,7 +16521,7 @@ snapshots:
       '@electron-forge/shared-types': 7.11.2
       fs-extra: 10.1.0
     optionalDependencies:
-      electron-winstaller: 5.4.4(patch_hash=f1232f5ad50d94208c47c302524061b571fbb135295aeebca2664d6844be68d9)
+      electron-winstaller: 5.4.4(patch_hash=b732713c3fa7e21088bcb67a2b3353a8f83fbbcd6a10a4b6f39ac729cf0d46c4)
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -19551,7 +19551,7 @@ snapshots:
 
   electron-to-chromium@1.5.393: {}
 
-  electron-winstaller@5.4.4(patch_hash=f1232f5ad50d94208c47c302524061b571fbb135295aeebca2664d6844be68d9):
+  electron-winstaller@5.4.4(patch_hash=b732713c3fa7e21088bcb67a2b3353a8f83fbbcd6a10a4b6f39ac729cf0d46c4):
     dependencies:
       '@electron/asar': 3.4.1
       debug: 4.4.3
