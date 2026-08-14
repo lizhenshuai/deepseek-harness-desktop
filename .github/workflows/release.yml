@@ -148,7 +148,7 @@ jobs:
           path: dist
 
       - name: Prove packed Web runtime
-        run: pnpm run desktop:prove-runtime -- --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --report dist/packed-web-proof-windows-x64.json
+        run: pnpm run desktop:prove-runtime --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --report dist/packed-web-proof-windows-x64.json
 
       - uses: actions/upload-artifact@v4
         with:
@@ -188,7 +188,7 @@ jobs:
           path: dist
 
       - name: Stage Windows runtime
-        run: pnpm run desktop:stage-runtime -- --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --proof dist/packed-web-proof-windows-x64.json --out dist/desktop-runtime/windows-x64 --download-node
+        run: pnpm run desktop:stage-runtime --from dist/npm --from dist/npm-vendor --from dist/npm-landlock --proof dist/packed-web-proof-windows-x64.json --out dist/desktop-runtime/windows-x64 --download-node
 
       - uses: actions/upload-artifact@v4
         with:
