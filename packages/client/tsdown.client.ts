@@ -270,6 +270,14 @@ function clientConfig(id: string, entry: string): UserConfig {
           `export default ${JSON.stringify(classMap)};`,
         ].join('\n')
       },
+    }, {
+      name: 'dsh-client-stable-region-comments',
+      renderChunk(code: string) {
+        return code.replace(
+          /^(\s*\/\/#region .*node_modules\/\.pnpm\/)[^/]+(\/node_modules\/.*)$/gm,
+          '$1<virtual-store>$2',
+        )
+      },
     }],
     outputOptions: {
       entryFileNames: 'client.js',
