@@ -2,7 +2,7 @@
 
 import { createHash } from 'node:crypto'
 import { readFileSync, readdirSync } from 'node:fs'
-import { dirname, join, resolve } from 'node:path'
+import { join, posix, resolve, win32 } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { capture } from './process.ts'
 import { packedIdentity } from './tarball.ts'
@@ -68,10 +68,15 @@ export function readPackedTarballs(directories: readonly string[]): PackedTarbal
 /**
  * Locate the npm CLI shipped beside an explicit Node executable.
  * @param node - Node executable from an official distribution.
+ * @param platform - Node distribution platform; injectable for tests.
  * @returns npm's JavaScript entry path.
  */
-export function npmCliForNode(node: string): string {
-  return join(dirname(node), 'node_modules', 'npm', 'bin', 'npm-cli.js')
+export function npmCliForNode(node: string, platform: NodeJS.Platform = process.platform): string {
+  const paths = platform === 'win32' ? win32 : posix
+  const root = paths.dirname(node)
+  return platform === 'win32'
+    ? paths.join(root, 'node_modules', 'npm', 'bin', 'npm-cli.js')
+    : paths.join(root, '..', 'lib', 'node_modules', 'npm', 'bin', 'npm-cli.js')
 }
 
 /**

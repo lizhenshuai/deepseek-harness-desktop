@@ -1,6 +1,7 @@
 /** Shell-free release command resolution across POSIX and Windows hosts. */
 
 import { describe, expect, it } from 'vitest'
+import { npmCliForNode } from './packed-consumer.ts'
 import { commandInvocation } from './process.ts'
 
 describe('release process command resolution', () => {
@@ -26,5 +27,16 @@ describe('release process command resolution', () => {
       .toThrow(/pnpm JavaScript entry unavailable/)
     expect(() => commandInvocation('npm', [], 'win32', {}, 'C:\\node.exe', missing))
       .toThrow(/npm JavaScript entry unavailable/)
+  })
+})
+
+describe('npm CLI resolution for official Node distributions', () => {
+  it('uses the platform distribution layout', () => {
+    expect(npmCliForNode('C:\\node\\node.exe', 'win32'))
+      .toBe('C:\\node\\node_modules\\npm\\bin\\npm-cli.js')
+    expect(npmCliForNode('/opt/node/bin/node', 'linux'))
+      .toBe('/opt/node/lib/node_modules/npm/bin/npm-cli.js')
+    expect(npmCliForNode('/opt/node/bin/node', 'darwin'))
+      .toBe('/opt/node/lib/node_modules/npm/bin/npm-cli.js')
   })
 })
