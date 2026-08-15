@@ -14,6 +14,11 @@ interface CssModulePlugin {
   load?: (this: { addWatchFile: (id: string) => void }, id: string) => Promise<unknown>
 }
 
+interface RegionCommentPlugin {
+  name: string
+  renderChunk?: (code: string) => string | null
+}
+
 function clientConfigs(id = '@deepseek-ai/dsh-client-test') {
   return clientBundle(id, ['lib/types/index.js', 'lib/types/invariant.js'])(
     { env: { DSH_BUILD_FACE: 'client' } },
@@ -53,6 +58,14 @@ function cssModulePlugin(): CssModulePlugin {
   if (plugin?.resolveId === undefined || plugin.load === undefined) {
     throw new Error('CSS Modules plugin missing from client config')
   }
+  return plugin
+}
+
+function regionCommentPlugin(): RegionCommentPlugin {
+  const configs = clientConfigs()
+  const plugins = (configs[0] as { plugins: RegionCommentPlugin[] }).plugins
+  const plugin = plugins.find(candidate => candidate.name === 'dsh-client-stable-region-comments')
+  if (plugin?.renderChunk === undefined) throw new Error('stable region comment plugin missing from client config')
   return plugin
 }
 
@@ -149,6 +162,18 @@ describe('client bundle debug artifacts', () => {
     const dependencySource = '../../../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/index.js'
     expect(transform(dependencySource, sourceMapPath)).toBe(dependencySource)
   })
+
+  it('normalizes pnpm virtual-store identities in generated region comments', () => {
+    const render = regionCommentPlugin().renderChunk
+    if (render === undefined) throw new Error('stable region comment hook missing')
+    const prefix = '//#region ../../../node_modules/.pnpm/'
+    const suffix = '/node_modules/@tanstack/react-virtual/dist/esm/index.js'
+
+    expect(render(`${prefix}@tanstack+react-virtual@3.14.9_react@18.3.1${suffix}`))
+      .toBe(`${prefix}<virtual-store>${suffix}`)
+    expect(render(`${prefix}@tanstack+react-virtual@3.1_abcd1234${suffix}`))
+      .toBe(`${prefix}<virtual-store>${suffix}`)
+  })
 })
 
 describe('client bundle CSS Modules watch graph', () => {
@@ -164,6 +189,7 @@ describe('client bundle CSS Modules watch graph', () => {
     ))
     const virtualId = plugin.resolveId?.('./QueueDock.module.css', importer)
     if (virtualId === null || virtualId === undefined) throw new Error('CSS Modules import was not resolved')
+    expect(virtualId).toBe('\0dsh-css:packages/client/ui-conversation/src/client/queue/QueueDock.module.css.mjs')
     const addWatchFile = vi.fn()
 
     await plugin.load?.call({ addWatchFile }, virtualId)

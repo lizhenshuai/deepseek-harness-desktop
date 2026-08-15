@@ -253,6 +253,7 @@ class SingleExeBuild {
       'deploy',
       '--legacy',
       '--prod',
+      '--config.allow-unused-patches=true',
       '--config.node-linker=hoisted',
       '--config.auto-install-peers=false',
       '--config.link-workspace-packages=true',

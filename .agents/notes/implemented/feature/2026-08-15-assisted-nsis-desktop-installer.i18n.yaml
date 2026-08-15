@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-08-15-assisted-nsis-desktop-installer.md
+2026-08-15-assisted-nsis-desktop-installer.md: ee98d120508cc91ee2eb9bbf43dff189c9d6f161
+2026-08-15-assisted-nsis-desktop-installer.zh.md: 71c915cab4d4dbb0b686d74fb2cfb577bcece83d

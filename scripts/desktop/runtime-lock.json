@@ -1,0 +1,3703 @@
+{
+  "schemaVersion": 1,
+  "target": "windows-x64",
+  "npmVersion": "11.13.0",
+  "packages": [
+    {
+      "path": "node_modules/@aws-crypto/sha256-browser",
+      "name": "@aws-crypto/sha256-browser",
+      "version": "5.2.0",
+      "source": "registry",
+      "integrity": "sha512-AXfN/lGotSQwu6HNcEsIASo7kWXZ5HYWvfOmSNKDsEqC4OashTp8alTmaz+F7TC2L083SFv5RdB+qU3Vs1kZqw=="
+    },
+    {
+      "path": "node_modules/@aws-crypto/sha256-js",
+      "name": "@aws-crypto/sha256-js",
+      "version": "5.2.0",
+      "source": "registry",
+      "integrity": "sha512-FFQQyu7edu4ufvIZ+OadFpHHOt+eSTBaYaki44c+akjg7qZg9oOQeLlk77F6tSYqjDAFClrHJk9tMf0HdVyOvA=="
+    },
+    {
+      "path": "node_modules/@aws-crypto/supports-web-crypto",
+      "name": "@aws-crypto/supports-web-crypto",
+      "version": "5.2.0",
+      "source": "registry",
+      "integrity": "sha512-iAvUotm021kM33eCdNfwIN//F77/IADDSs58i+MDaOqFrVjZo9bAal0NK7HurRuWLLpF1iLX7gbWrjHjeo+YFg=="
+    },
+    {
+      "path": "node_modules/@aws-crypto/util",
+      "name": "@aws-crypto/util",
+      "version": "5.2.0",
+      "source": "registry",
+      "integrity": "sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/client-bedrock-runtime",
+      "name": "@aws-sdk/client-bedrock-runtime",
+      "version": "3.1048.0",
+      "source": "registry",
+      "integrity": "sha512-u+NT61JZEkRFtpL0CAw1N1dwxnaLgwVXQl/zjJxTGgLyS/jTIdg2SdoEoCTHxgDyCnqa1HEi9QOoE9/pYRNpOQ=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/core",
+      "name": "@aws-sdk/core",
+      "version": "3.977.8",
+      "source": "registry",
+      "integrity": "sha512-7+Kcrkvrk9lM/m7jRhHpT4jCdvzGHsuaSRbF8TdzzkY1mRzp/Ogwf9c7H29k4gGhey0BBWhCWr16+t0J61gwmg=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-env",
+      "name": "@aws-sdk/credential-provider-env",
+      "version": "3.972.69",
+      "source": "registry",
+      "integrity": "sha512-AreCFzcB4kH2HF9031Ot0jSJr3KXvRg6e8uDeub20JEVdZU3Bv0sTq1plc7VsT3KiqutlzH7l0j50UcCWHUioA=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-http",
+      "name": "@aws-sdk/credential-provider-http",
+      "version": "3.972.71",
+      "source": "registry",
+      "integrity": "sha512-A8ObcqVmDMnk4F9NozZ7JwmUu9Q4xyBJkmyq1C5U+wNM9ht9J7+EuuyabsLWXZnOoTqFaJuYBYTKf5CTipkEjA=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-http/node_modules/@smithy/node-http-handler",
+      "name": "@smithy/node-http-handler",
+      "version": "4.11.0",
+      "source": "registry",
+      "integrity": "sha512-ssHIZsadPUA3lGdnoByxfnjtb9xPYQLvdfJRLKIwxOoa6tO1suG4sLFSsgd7D/CsvYd8QbBIuKTImuJha5l6aQ=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-ini",
+      "name": "@aws-sdk/credential-provider-ini",
+      "version": "3.973.14",
+      "source": "registry",
+      "integrity": "sha512-7c+Wti2LsERNWMfm7ySz3/6RPopFW3Nmn7s63Xpcq6R/tRuY5hpvkHA2xVgi5ukJbvok9l0IDtVEvqTtg+X7dw=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-login",
+      "name": "@aws-sdk/credential-provider-login",
+      "version": "3.972.76",
+      "source": "registry",
+      "integrity": "sha512-LVixwOnEJfrrfKHeZjBA8pIMTZjNDq8ak8VpcoWUuCJDrSnBNU8POJksULMgvN089P0MXtQYH2Zs627/MK1K0g=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-node",
+      "name": "@aws-sdk/credential-provider-node",
+      "version": "3.972.80",
+      "source": "registry",
+      "integrity": "sha512-bE2qh8ww4iClO1jHsBXdOE8FUgzDbdxbyorNjSCoPSkQd51k3jODItuPZfuwcLHZqDXsH+bI4AMHhqtuyR7mSg=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-process",
+      "name": "@aws-sdk/credential-provider-process",
+      "version": "3.972.69",
+      "source": "registry",
+      "integrity": "sha512-9kpTNdZTrcqXTfhxM7fgl9Z68ek3Fu5oe3Yf+A/pJGibEqpgZxz2tSY7SinmyCIU2PJ+ygY4FPoBBnLpocMtrQ=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-sso",
+      "name": "@aws-sdk/credential-provider-sso",
+      "version": "3.973.13",
+      "source": "registry",
+      "integrity": "sha512-Oc81qauMPzUoTnAS2YKpNwY6sY/LUyQTEeaf6yP197WMxkEBQfcKLR1MFpD7+pNTubXnfkH6gwpji+Gc7iyD2Q=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-sso/node_modules/@aws-sdk/token-providers",
+      "name": "@aws-sdk/token-providers",
+      "version": "3.1111.0",
+      "source": "registry",
+      "integrity": "sha512-JfljgoVtl+s3Qy21n9a7Z48uCQaOXcN74KJ3TEQfPoB293GrXFSt6HSQJF1sTZ8c/5QedEvd3NjJQMO4u9qa5A=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/credential-provider-web-identity",
+      "name": "@aws-sdk/credential-provider-web-identity",
+      "version": "3.972.75",
+      "source": "registry",
+      "integrity": "sha512-YPN6uoGDgjjjeVFZrcOeCJqmB6zpXoeeNgIjqe+DexJaWqdjVfCCe+VAZwli9Z2h8KhFW8oxkO39emQ1tyz/Mw=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/eventstream-handler-node",
+      "name": "@aws-sdk/eventstream-handler-node",
+      "version": "3.972.33",
+      "source": "registry",
+      "integrity": "sha512-1Dd5WyEE2Kb3HvY44u7Ob16ST2W6iutOqsQ8Y2hUmsL2mAH/STlGS1dS9h3IOE6L7Ld3AR2HzKJ6XeCMOw8Peg=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/middleware-eventstream",
+      "name": "@aws-sdk/middleware-eventstream",
+      "version": "3.972.28",
+      "source": "registry",
+      "integrity": "sha512-Z1EDXnS01P7H5jVrUx+/dBqV0m7dta7bSxLclkOuDuS93pNNQm0IcT4YLUbuvWKPYNxbI8aTG0p5Br30GSKDgA=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/middleware-websocket",
+      "name": "@aws-sdk/middleware-websocket",
+      "version": "3.972.51",
+      "source": "registry",
+      "integrity": "sha512-jdgP3jR5Q96j1jjZ98GGwpGg1CBNFIO2YE+vXg8cg8PvNY4NvgQNYJsqDaRX2PYv5gSUX/+C0D58Fhspj9ELMQ=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/nested-clients",
+      "name": "@aws-sdk/nested-clients",
+      "version": "3.997.43",
+      "source": "registry",
+      "integrity": "sha512-bit+VpqWNyi3wHxFoTsTliNXimCSL2r2OeDTm7ZrG+YsTZ2D7ofDJ6r/t9PVBn80i6/v0X2h9Tgw6QP2MAKfPw=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/nested-clients/node_modules/@smithy/node-http-handler",
+      "name": "@smithy/node-http-handler",
+      "version": "4.11.0",
+      "source": "registry",
+      "integrity": "sha512-ssHIZsadPUA3lGdnoByxfnjtb9xPYQLvdfJRLKIwxOoa6tO1suG4sLFSsgd7D/CsvYd8QbBIuKTImuJha5l6aQ=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/signature-v4-multi-region",
+      "name": "@aws-sdk/signature-v4-multi-region",
+      "version": "3.996.45",
+      "source": "registry",
+      "integrity": "sha512-bBuyztukzXq6plzFGHAWiQt0QXo+HL8b8lX5cFTzkez/74PtS1c0qPFCIVuHkyoT+miH2qOjAcm1/yoro2ESPA=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/token-providers",
+      "name": "@aws-sdk/token-providers",
+      "version": "3.1048.0",
+      "source": "registry",
+      "integrity": "sha512-k0y/GcuesuSfWyUM0WamrGyeZmltRYaPbHO82UDA6mZ/doB+FOHKutikPAtSXMn/hDz970cF+iRuuiYO9VEbAA=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/types",
+      "name": "@aws-sdk/types",
+      "version": "3.974.4",
+      "source": "registry",
+      "integrity": "sha512-dSFDNG00MEz0/xl5gxL62giLd1iYyJsTxZ1I1DOj6lC+bbgLB4TRsYClJg3b62dhXT1uATzsTNXPnC+33EJV3A=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/util-locate-window",
+      "name": "@aws-sdk/util-locate-window",
+      "version": "3.965.10",
+      "source": "registry",
+      "integrity": "sha512-ycwH6Zd2GhuSqdXX9ihbCjeGTB6xOJs+O3+Jb8/zDG9978XU80qs75dfkPJRMNKe5MvBZPuNeFpd4JZKPoUF4g=="
+    },
+    {
+      "path": "node_modules/@aws-sdk/xml-builder",
+      "name": "@aws-sdk/xml-builder",
+      "version": "3.972.39",
+      "source": "registry",
+      "integrity": "sha512-FTti8DS5MMWXNUWiRwXAJeYS+0GHHiMy0+7XOhcwk63ILHmfS2UFy2z/HNpZCSOJJ3P3dnWY6hfYNW3DF0nXUA=="
+    },
+    {
+      "path": "node_modules/@aws/lambda-invoke-store",
+      "name": "@aws/lambda-invoke-store",
+      "version": "0.3.0",
+      "source": "registry",
+      "integrity": "sha512-sl4Bm6yiMNYrZKkqqDFWN0UfnWhlS8ivKxrYl+6t0gCLrqr8y3B2IqZZbFRkfaVVp7C/baApyh71P+LeE1A2sQ=="
+    },
+    {
+      "path": "node_modules/@babel/code-frame",
+      "name": "@babel/code-frame",
+      "version": "7.29.7",
+      "source": "registry",
+      "integrity": "sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw=="
+    },
+    {
+      "path": "node_modules/@babel/helper-validator-identifier",
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.29.7",
+      "source": "registry",
+      "integrity": "sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg=="
+    },
+    {
+      "path": "node_modules/@babel/runtime",
+      "name": "@babel/runtime",
+      "version": "7.29.7",
+      "source": "registry",
+      "integrity": "sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw=="
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cordis",
+      "name": "@deepseek-ai/cordis",
+      "version": "4.0.1",
+      "source": "packed",
+      "sha256": "7a9fd2379b8a708095dac54600749cca22d9817d312dcf47a669fe92603862cb"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cordis-plugin-group",
+      "name": "@deepseek-ai/cordis-plugin-group",
+      "version": "1.0.1",
+      "source": "packed",
+      "sha256": "6ad4416826db4d4af77ebf4ae26a25b1dfbeeb0f4f3a590a7880ae35bdab74a5"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cordis-plugin-hmr",
+      "name": "@deepseek-ai/cordis-plugin-hmr",
+      "version": "1.0.16",
+      "source": "packed",
+      "sha256": "b1a47253f129869ecc4544c9c7996fa2df086774e571b8352d865d8764b80459"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cordis-plugin-include",
+      "name": "@deepseek-ai/cordis-plugin-include",
+      "version": "1.0.6",
+      "source": "packed",
+      "sha256": "dfc8907c56ef02f3fe263baa764cb6e17603a27e663b6916a9949547bed9ec33"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cordis-plugin-loader",
+      "name": "@deepseek-ai/cordis-plugin-loader",
+      "version": "1.0.2",
+      "source": "packed",
+      "sha256": "d9be5c2976c61bdec4ec5dc403dc54184f199b74d10a8075dc87dd64206c286d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cordis-plugin-timer",
+      "name": "@deepseek-ai/cordis-plugin-timer",
+      "version": "1.1.3",
+      "source": "packed",
+      "sha256": "4e755e486de251acb30db252f9603ff395639632475db2852da715a3bb84cd68"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/cosmokit",
+      "name": "@deepseek-ai/cosmokit",
+      "version": "1.8.2",
+      "source": "packed",
+      "sha256": "68d42cf7a95b056b5c4b64fcf1bc7f44bc4b91982ea11727ce0e5cb020746249"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh",
+      "name": "@deepseek-ai/dsh",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "590981a1c7909a3d60e8d52fa0b470d5a22050e4a890c9a82d53f4b927e4fc93"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-agent",
+      "name": "@deepseek-ai/dsh-agent",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "8e604221c34c84503abd59b5fe07128ca5748b6e0e03198c1b6833a58f2ac006"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-agent-default-model",
+      "name": "@deepseek-ai/dsh-agent-default-model",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "951338dfa192141d0b6cb5eb2e3576c3fe4827f74d03b8cc7f90f938769ffb79"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-agent-instructions",
+      "name": "@deepseek-ai/dsh-agent-instructions",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "5ac124bf389ef4b50268876bcd93218f5d65ecc142482c1adb696edc48b4d57a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-agent-loop",
+      "name": "@deepseek-ai/dsh-agent-loop",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "72612982deb4eb91deef5ba50d8b8ea1f33d634a8564d852dd83c6645e0f40ff"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-agent-presets",
+      "name": "@deepseek-ai/dsh-agent-presets",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0f64a9f2b8f358edabc04d8052bbfa5d8829fbc975d6eccc9e6d3ad9c3a36e08"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-agent-tool-presentation",
+      "name": "@deepseek-ai/dsh-agent-tool-presentation",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "11bfcb399d46768892bc2d27d20e2f3c18287a053d5211b891462661b4bc31d5"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-anonymous-user-id",
+      "name": "@deepseek-ai/dsh-anonymous-user-id",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "80fc25819375f791383ccb16a21ec2e48dce0430cbd02627ca2c49acb2c518f9"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-api-gateway",
+      "name": "@deepseek-ai/dsh-api-gateway",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "878ba1be526dbb81120c5994ef83163ecdab7bea63ff86e56cca22c8fb93ad95"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-api-remotes",
+      "name": "@deepseek-ai/dsh-api-remotes",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0d54ad33fa0e0c528c9279a74023e730abd5729611a2582ca0be0ceebc6c70be"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-app-boot",
+      "name": "@deepseek-ai/dsh-app-boot",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "fe71a210123183e01578e77e23c08f011e4f4d5f4f71634e234c2febe98f295c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-atomic-write",
+      "name": "@deepseek-ai/dsh-atomic-write",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "5d5a65ae226d89c6e581e675d56d54b94cbdb8f9bbff4f65919b9b65a476624a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-attachment",
+      "name": "@deepseek-ai/dsh-attachment",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cf9fee5f3d25f399aa6b754630b565f2a16c9c83c83df6563dbf6e1175e1b287"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-attachment-local",
+      "name": "@deepseek-ai/dsh-attachment-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "43034b8c6cf137414882e7da270fc22bcc093d600f41c7e2fe629cf217b78c08"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-base",
+      "name": "@deepseek-ai/dsh-base",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f8a42d00f55900ae1aa0c38ee81e08fa2af5aefa579973230dabb05837ba0d4f"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-bash-local",
+      "name": "@deepseek-ai/dsh-bash-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d42df4e8cb25caf99145d1c42cfc20f1ebd66cc7097f3a878976073de1e4803a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-bash-sandbox",
+      "name": "@deepseek-ai/dsh-bash-sandbox",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f22d6f7b970790afdc69ee4ae75ee890af2c58b3ef36b5beecda816d9aed5cc0"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-brand",
+      "name": "@deepseek-ai/dsh-brand",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "88cd6635c1efe4ff9597c84ff3c3259ed04ab9cb8a03e1c422b3c264400187ce"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-connection",
+      "name": "@deepseek-ai/dsh-client-connection",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "dc0ab306681fc9c90e65d56227b4ba0177785a580fa90f438967d645d0a778db"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-hmr",
+      "name": "@deepseek-ai/dsh-client-hmr",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0e1526b5d0a3ce99e72e482474de0a98814e4ad8e93faec8fc11cdb79532d60d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-locale",
+      "name": "@deepseek-ai/dsh-client-locale",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "b0bbc4e12db1eef35b3eda5ee266d8f51d1687613addf96e94ba186d0b316da2"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-modules",
+      "name": "@deepseek-ai/dsh-client-modules",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "284c21dbf154644aa9b66e3b76aba1890eae6e2691e625160d57ea546040505d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-runtime",
+      "name": "@deepseek-ai/dsh-client-runtime",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0b5e2b8fe47de4422dfc8b348334c5f5b84ad1bf98cd87e9541fee18818ae938"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-schema-form",
+      "name": "@deepseek-ai/dsh-client-schema-form",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a7e24f337c82345609bc619324e3edf016d5bed03ead7eeb24d54335212a0c33"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-agent-preset",
+      "name": "@deepseek-ai/dsh-client-ui-agent-preset",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "019684b842a7f3317f26e9ccb660d05b6f8bac7f31905cebd2d8a034580f76bd"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-attachment",
+      "name": "@deepseek-ai/dsh-client-ui-attachment",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9c22e067314830fcc4649f7b244dc88e98278d8579f802b2b5da5e62c03ca378"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-commands",
+      "name": "@deepseek-ai/dsh-client-ui-commands",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d4bd0b740d832edaf3b768464f4f0969195c317dd57e4ba9b0ab9d0f558d7b6c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-conversation",
+      "name": "@deepseek-ai/dsh-client-ui-conversation",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "886100903b5bf838b4a95a434de1c36f028f2da49ebfb1fd62d0d91477e707ab"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-cordis",
+      "name": "@deepseek-ai/dsh-client-ui-cordis",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cdb18d20420b4e58e291e94d1fa78b643c822511a8e99db037b683b8c31394c9"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-deliverables",
+      "name": "@deepseek-ai/dsh-client-ui-deliverables",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d73e69b9e63cfc1ba38d10e6b8c009ca5f713f314d103d43ed227e2c2e41669c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-directory-picker-browse",
+      "name": "@deepseek-ai/dsh-client-ui-directory-picker-browse",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "38e5441dcc21d7c558bf7262175fc5b04dec06fdd9b4d5dc8a10a4ebcfb87b44"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-directory-picker-native",
+      "name": "@deepseek-ai/dsh-client-ui-directory-picker-native",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d2d5a9611238e223988b4d514b0031eca88b8e217485642a80b40565e3cfae5c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-goal",
+      "name": "@deepseek-ai/dsh-client-ui-goal",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7551fbe4457eee1c3bde104897695dc30b12ff22f9b97d39aaa547616fd9a371"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-input-trigger",
+      "name": "@deepseek-ai/dsh-client-ui-input-trigger",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "47e3912935648ef9af59d4b7f84e50ead339ca28b6f411eda2b78abe1cd77401"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-jobs",
+      "name": "@deepseek-ai/dsh-client-ui-jobs",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "2f6cc6fdf801e5980275148b3de476545f0320e1dc0957fa58ff08a64af84a73"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-layout",
+      "name": "@deepseek-ai/dsh-client-ui-layout",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ffcf069c4e203d5476fc19fbb488243ca276b248703075cf6b035abde8d049bf"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-message-feedback",
+      "name": "@deepseek-ai/dsh-client-ui-message-feedback",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "5acedc427adaef02563db79c935a50cc9b113c21a788518da6c9911c613f92e1"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-model-selection",
+      "name": "@deepseek-ai/dsh-client-ui-model-selection",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ce7cec21796a9c5bafa0c416c98d427de3bfddb90ff819bb89ce0264e7dc3dae"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-permission-presets",
+      "name": "@deepseek-ai/dsh-client-ui-permission-presets",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a9b4c86afe3ac5ffafaa74aafd2d3f0c68a730fd94629f748beea2f51f904103"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-plan",
+      "name": "@deepseek-ai/dsh-client-ui-plan",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a4406431d5669d88de25ad90a4949811c9794819bc267de3109d3a69ef1f5684"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-primitives",
+      "name": "@deepseek-ai/dsh-client-ui-primitives",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "c5768c46d047b69a62135213d8addde9aaa58bfbe667baf3b53a324f2d8cc4ce"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-settings",
+      "name": "@deepseek-ai/dsh-client-ui-settings",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "135cdf17645daf985c643caa329feabf94e24dab582d5fc1b361f51be455a2dc"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-settings-general",
+      "name": "@deepseek-ai/dsh-client-ui-settings-general",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9041c16bc2b36c391bef5ff22bf164490a9ec312407c72551295850f90e8b80e"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-settings-models",
+      "name": "@deepseek-ai/dsh-client-ui-settings-models",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "bca96028db0e246a58d47792679c478ebb0c0855c784b2e35af54649316b966a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-settings-plugin-inventory",
+      "name": "@deepseek-ai/dsh-client-ui-settings-plugin-inventory",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "10747e0c82159e1b0ad2c0f2375cecba253bc9737cab5efca8f8450afc8e6876"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-settings-plugins",
+      "name": "@deepseek-ai/dsh-client-ui-settings-plugins",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e3da3ec1f01c89a0c3fd71b5586ac902fb6c47db35f009a17abb043a46dd54a8"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-sidebar",
+      "name": "@deepseek-ai/dsh-client-ui-sidebar",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d1ff952d380731a2bdf7d90c82d32ea56a6764e9ec12fc5e8f290a5a667c8618"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-skill",
+      "name": "@deepseek-ai/dsh-client-ui-skill",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "4e7e8548c51f1a5a1b1f729f33cf0a74efc140f4fbb70a15df04bb9f7f52d247"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-slots",
+      "name": "@deepseek-ai/dsh-client-ui-slots",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "89be63a165c8adf477dbc81222d87790751a528fc1929725485fd9f347165329"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-subagent",
+      "name": "@deepseek-ai/dsh-client-ui-subagent",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e2913d6fcf6508be0ec4add9afbf77544735774aca1e91b8e612dcf0500abbd6"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-theme",
+      "name": "@deepseek-ai/dsh-client-ui-theme",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "789f491715d9bb508fd33a00a5263036cc350a02b0a95b113188a258700aa3b1"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-tool",
+      "name": "@deepseek-ai/dsh-client-ui-tool",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "8481d2f9d0a1b77105a19434bc22a3b47dd355082fc5c72dcd0e7c582ceeec82"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-trajectory",
+      "name": "@deepseek-ai/dsh-client-ui-trajectory",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7343ff92535637f8d5d8bf60c6fa908869948e48b06899ce0bfae76f9aa08d35"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-user-questions",
+      "name": "@deepseek-ai/dsh-client-ui-user-questions",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "4d72d42463a4b7d1110a1079995393aa6a4a26887dda1bc6446f887f02547811"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-workflow-run",
+      "name": "@deepseek-ai/dsh-client-ui-workflow-run",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "c09b6c2692b27ac7314dcf97061da8ffdcb344220764f91e3393aae12099c1e8"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-ui-workspace",
+      "name": "@deepseek-ai/dsh-client-ui-workspace",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e9ce0862c19bb309a034d35d7a9d6077c28c789de9446b7ee29384ba93d4ec53"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-web",
+      "name": "@deepseek-ai/dsh-client-web",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "739e4df4eef876d1f1acaaed450a97b8bd3633fa4ba2759f6e8b1aa1078de784"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-client-web-react",
+      "name": "@deepseek-ai/dsh-client-web-react",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "978ef24d11615f0b9f5db55732cb76683615a7203ef022353ce56607e504a6a9"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-cmdline",
+      "name": "@deepseek-ai/dsh-cmdline",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ba5666f0045364241f84706533f5dfde8a1b93cfed860b047ad75ac48b032565"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-code-runtime",
+      "name": "@deepseek-ai/dsh-code-runtime",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "c44867777b84ee14572927cbf88da132d0dc459308f6a94d405d31ffbb3ae107"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-code-runtime-worker-thread",
+      "name": "@deepseek-ai/dsh-code-runtime-worker-thread",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f942ea221ecde7eb116c78fa3a4a6419474652b75f4aa3bdc61326fe8f2cd005"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-command-compact",
+      "name": "@deepseek-ai/dsh-command-compact",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cbf99efd3bb6c749d0bb020224bcd9384cd4c63e0772d33a0e90d051f1b6a394"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-command-feedback",
+      "name": "@deepseek-ai/dsh-command-feedback",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "236fe069c9e9f5689fe8c7b3a4ee34b8c02e721e30e42a3e5d39559c00a3fca8"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-command-goal",
+      "name": "@deepseek-ai/dsh-command-goal",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "be2b02df47c961c0637a371785a90df119f966d65bb1a18f74aceabfa9d77795"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-commands",
+      "name": "@deepseek-ai/dsh-commands",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "2757b9df15438f510db7bc55fbd7b5030c63902874ac13ddbdbaef4f1e56ad03"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-compaction",
+      "name": "@deepseek-ai/dsh-compaction",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a723c0db93efa44bd27f1160d1ed64d5c5b82c3e2ba7d17b29b919cc0d84b039"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-compaction-basic",
+      "name": "@deepseek-ai/dsh-compaction-basic",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "2d4792a0ff7afb5c08171f1b915fa9cd11931f9d5265cac585ba2f62a7eee051"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-compaction-tool-result-pruner",
+      "name": "@deepseek-ai/dsh-compaction-tool-result-pruner",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7bccfed2279cda1d47a3fca77adfbefb536103077e3c1c71e473df229929ecb4"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-cordis-client-runner",
+      "name": "@deepseek-ai/dsh-cordis-client-runner",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f272f24e4bf5f8af1aab5e10b90dd56b825d39de1ab72a9e12cd658d08aad3cc"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-cordis-host-runner",
+      "name": "@deepseek-ai/dsh-cordis-host-runner",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cf2395fe0eee7219343a38b45802b45967d39c236066523a8c9c8ab87cdae378"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-credentials",
+      "name": "@deepseek-ai/dsh-credentials",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f6f3d47bd140835bf76ef8aeaf83d8b52d81ac1c02cbc17e96e220e1b96db964"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-credentials-local",
+      "name": "@deepseek-ai/dsh-credentials-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cf8c2499a07b65a2af0a4192a53d9743b20856f5b470b9c88b0b0ff102792763"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-fs",
+      "name": "@deepseek-ai/dsh-fs",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a2784f93e2ff0cc835325f2cb87c35e11c43461e33939f867408aadf8519f30b"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-fs-local",
+      "name": "@deepseek-ai/dsh-fs-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "534de7e30f15bfbcced35a6c7c9344a22236e0643cab8b98c02c03712ee2e9d4"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-fs-observation-policy",
+      "name": "@deepseek-ai/dsh-fs-observation-policy",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "4c62f7dc6b575e1b0bf9a9f8a68cefe0afb3e08a1c7edf39c2405efc7c94c40c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-fs-sandbox",
+      "name": "@deepseek-ai/dsh-fs-sandbox",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "991dc3c0bcbd4019098a1d930c9f1e4df41eff11bbc26101784ae167b1374f25"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-goal",
+      "name": "@deepseek-ai/dsh-goal",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "af37a8a891ba93d23024ed4453488c89a298da65a0b87b7517b2a735886968e7"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-goal-round-driver",
+      "name": "@deepseek-ai/dsh-goal-round-driver",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "54e94eb7f52467ca70c42806cae9c2a4a50515804ebeba0a305b4a7068e9edad"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-headless",
+      "name": "@deepseek-ai/dsh-headless",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d0c61fa39585991db14a2843429c51b096dbb1da35961cbdf40ffd5960883c71"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-home-paths",
+      "name": "@deepseek-ai/dsh-home-paths",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f83f35bcb4b536f0db4aeeeb3d39badbd2888b8915c5d23bb25ea527b4a78db0"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-apiproxy",
+      "name": "@deepseek-ai/dsh-host-apiproxy",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cdea5410b452f0d77e93f2d71abbc061c2eb624ade28469fe8cd9f0e48a6a09c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-directory-picker",
+      "name": "@deepseek-ai/dsh-host-directory-picker",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "52485865fbb78e6fa5311d16e5e13b711f1f60da64acf90deba52d1da1af8abd"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-directory-picker-auto",
+      "name": "@deepseek-ai/dsh-host-directory-picker-auto",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ccf908f116a5fbd577c1cb8ee68f1e8ba35233f4193db85cd5d2dc45a3a88a09"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-directory-picker-browse",
+      "name": "@deepseek-ai/dsh-host-directory-picker-browse",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9bf9418dd2e34825f637d7c456e02bc3e779587f4d83aa47ee5597ca0ddd1149"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-directory-picker-native",
+      "name": "@deepseek-ai/dsh-host-directory-picker-native",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "60581b9f28873ab7786eb408aa9972f1ebfe117d52cb1803ae808de38a99b81f"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-frontend-static",
+      "name": "@deepseek-ai/dsh-host-frontend-static",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0e549630d222d2dcee07fa5bc79ebccd81e721a4b5d8abfa2f32f90885bbd56d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-plugin-inventory",
+      "name": "@deepseek-ai/dsh-host-plugin-inventory",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e8065a0a792e4be403e9c0cf5a4bec6b19f31f5532e75880aaebe2e2e29f1f24"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-host-webserver",
+      "name": "@deepseek-ai/dsh-host-webserver",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d443c8fb7099dcdb79718132ec9614c93397e14b44adf06294a4568e320fd4c6"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-invariants",
+      "name": "@deepseek-ai/dsh-invariants",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f6caa8edf8492f7c6867ec08d126d54121334ef6e28977414856a89c42af8da8"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-jobs",
+      "name": "@deepseek-ai/dsh-jobs",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "58a332fa8c556f94c27cb35b66442a8da03b1b2ac548163baedcbcc737348d94"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-jobs-local",
+      "name": "@deepseek-ai/dsh-jobs-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ca358c5318f75ee7136a96e7a12072669b36957640550a6a92ba6ac7eb0e8f35"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-launch-environment",
+      "name": "@deepseek-ai/dsh-launch-environment",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "b0f975da98789729db7f7596ee44211f3415a30d93308ec394fff65f191474dd"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-llm",
+      "name": "@deepseek-ai/dsh-llm",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "feb665911bb9b5c7eb7b1e048340d194d6b323ec6534dc2927305d710ec7839c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-llm-deepseek",
+      "name": "@deepseek-ai/dsh-llm-deepseek",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e1e96397390073b2df6873c9da4fd598979ef0661439e3e054f3f0203cb28f16"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-llm-pi-ai",
+      "name": "@deepseek-ai/dsh-llm-pi-ai",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "57de1c83ca1fc1533e2d2eba9a67a7c9f64850ac11c114dd70b45e6365c70b68"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-llm-retry",
+      "name": "@deepseek-ai/dsh-llm-retry",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cbe742ccbb5cd28ed8b940a775c25a6c7f639cc294a84a8865068067d1259d6e"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-mcp-client",
+      "name": "@deepseek-ai/dsh-mcp-client",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "12a0661ba4758232c1b9e98fa14ddf57ca96836ad2c211ef033398435c33c957"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-message-feedback",
+      "name": "@deepseek-ai/dsh-message-feedback",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "2f7a07fe165be82b3430dbf7135e9644bf8f334a1235f9644fedf4aaf2c20b04"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-native-command",
+      "name": "@deepseek-ai/dsh-native-command",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d13b2e7789257e19d87228e5045237009350cfd5c603c44e33f00173412694a9"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-output-retention",
+      "name": "@deepseek-ai/dsh-output-retention",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0f7570c2662905048c3c1384f1441fe446e30f7eb6762a20e5984f0f7a426c9b"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-permission-presets",
+      "name": "@deepseek-ai/dsh-permission-presets",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "956e77ee663e5d739b04a3709efd98bd40d71433ffd22e606f661106b2dae3c8"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-persona",
+      "name": "@deepseek-ai/dsh-persona",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "6305c0e5ab505aa24873bf0443f594c00c3a15696323b270d2e7dee6bc8cbeba"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-plan-mode",
+      "name": "@deepseek-ai/dsh-plan-mode",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "235fa65f1541b6869edbc8b0e443c9492eb7836e154e4f3e7f7febb0822d2fb5"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-pwsh-local",
+      "name": "@deepseek-ai/dsh-pwsh-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "549d8a4b0a0ed6b3c4c9d08ee02d9146834fd8af0a2f1787240611d526dff227"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-pwsh-sandbox",
+      "name": "@deepseek-ai/dsh-pwsh-sandbox",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "72b030ed2b25c65b0fcf4ef81b75b52ac5e630c5cfb11fb12e3fc057e53772f8"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-repeat-tool-reminder",
+      "name": "@deepseek-ai/dsh-repeat-tool-reminder",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "6fbaf832a1999b160eb295c67c56af2308139b41a514ea212065219b81a3a7ee"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-sandbox",
+      "name": "@deepseek-ai/dsh-sandbox",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "da2c9da140c292166d3e247dbad3df1f7cc5fb25dca38d65d43a068bafd5445e"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-sandbox-local",
+      "name": "@deepseek-ai/dsh-sandbox-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7bc62a20a69f4bce5481f311b11fd2cacfb0a6aa12e8ebe1bcf15e2ce4a5a472"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-sandbox-policy",
+      "name": "@deepseek-ai/dsh-sandbox-policy",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7b4b88640f3a99e5b49371372a8172d25ebadcdd547c505296fc5a922f4ad05a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-sandbox-windows-acl",
+      "name": "@deepseek-ai/dsh-sandbox-windows-acl",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "66e5890bfc3f0e620e78399eb952db8613ab5ae17dfe961a0e629e7d0fcde3c4"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-schedule",
+      "name": "@deepseek-ai/dsh-schedule",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d4d008d0c1a7ac45457d91b2a0d429d1c7e17fe097a56e5e89b3caee241c713d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-scope",
+      "name": "@deepseek-ai/dsh-scope",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "b0389fd2a4ce355d5a280a8e100320a6188451ddfe56d15a84571e3fce47d54b"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session",
+      "name": "@deepseek-ai/dsh-session",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "4d19309c43ebc194cb8b5786bcfaee75d58b78e22cafc3ce702c63e604590bec"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-checkpoint-policy",
+      "name": "@deepseek-ai/dsh-session-checkpoint-policy",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "dde31818ce39e2b51faf7779fc74266489924a672eb9147c63d91cde9b4bb78a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-log-export",
+      "name": "@deepseek-ai/dsh-session-log-export",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "3790f0ede3168b6ee9175d1be87c979bc48cdaf6d22879a78d145120155a87f4"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-persistence",
+      "name": "@deepseek-ai/dsh-session-persistence",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9ea156e1028126d6beea7761dda0aa418f1cd71942c333792027a9238bcd9824"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-persistence-jsonl",
+      "name": "@deepseek-ai/dsh-session-persistence-jsonl",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "980270510645b0a397111d3c4b96c30a64cfd5d4c48133d454e85c9c9bff3e88"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-projection",
+      "name": "@deepseek-ai/dsh-session-projection",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "838889d84aafb2b783e64924f62696ff710b6428d9a39214a8544a39f4a091eb"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-projection-cache",
+      "name": "@deepseek-ai/dsh-session-projection-cache",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "09738faac867be0f5eb42bb2643a63f38178a4651d3ea4fe5229830fa7ba114c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-query",
+      "name": "@deepseek-ai/dsh-session-query",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "1742dabcd26e41651e48ff8b50272368fe413e790e43183410165d1b31275f4c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-query-sqlite",
+      "name": "@deepseek-ai/dsh-session-query-sqlite",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ae3c6d88a406928ef3ea147e80beee8c2ad5055925de75353d91c214a7661ab3"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-reference",
+      "name": "@deepseek-ai/dsh-session-reference",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "748d723295fcfdd757fcf7873d2b31de56c690e464e3fa3afe8ad4ba5a391928"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-stats",
+      "name": "@deepseek-ai/dsh-session-stats",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9650061c89a456651169d14fc733a3824c373844f6b638c2703c99ab1791bf1d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-telemetry",
+      "name": "@deepseek-ai/dsh-session-telemetry",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "dbd9f92d340ba217e55ae613096c9f1ab374ce57e0c062959982424a2ce9baad"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-telemetry-otel",
+      "name": "@deepseek-ai/dsh-session-telemetry-otel",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "5150922894252ee2e5da9186ebc06e81bb7e228a73cc8eb6947d48a2f9f18577"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-title",
+      "name": "@deepseek-ai/dsh-session-title",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "64306ca8a7b2cc3d4d3832e9d29930f3d8732953492633537e72adfeddc693f5"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-title-first-prompt-llm",
+      "name": "@deepseek-ai/dsh-session-title-first-prompt-llm",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a455d6a61a2c1b8663926cd0523310b160033daf8f1174401ba269501cf711e6"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-session-title-llm",
+      "name": "@deepseek-ai/dsh-session-title-llm",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "c31b5335bc88785e7b12f74183c43f432adfd6940fff30c99e44a720460025f5"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-settings",
+      "name": "@deepseek-ai/dsh-settings",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "8bc05a4f151441034b6543b4f7dc2c47a2c6bb246659e215c0aa275700fedc97"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-settings-file",
+      "name": "@deepseek-ai/dsh-settings-file",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "57895359aac45f593ec17db49458b2f7cda81975bb2691b57f76e7790ddfc59f"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-shell",
+      "name": "@deepseek-ai/dsh-shell",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a7c7d94cf5e039704beaee621524fe67800eee7dea65df83965b0bf40ba3dd0a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-shell-env",
+      "name": "@deepseek-ai/dsh-shell-env",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "bf5a2db7c3618a81989bb7eeb3a4f48b3d8f4cfcbb7f7556bfc1f8bfa494cd8d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-skill",
+      "name": "@deepseek-ai/dsh-skill",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "3712458de10dfd008ae6e727a90dbd18f05b474c697bbeda60a56683d91f187b"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-skill-badge",
+      "name": "@deepseek-ai/dsh-skill-badge",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "70df83d272822cee7b04c72d4e1f1ee2f694243a14f6a6c34e8569d26f0ebe9e"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-skill-filesystem",
+      "name": "@deepseek-ai/dsh-skill-filesystem",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cd4a32b43a8cb4965b40538ec266a3371811af9d2ad7ed8e9938a0780814c6ce"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-skill-filesystem/node_modules/chokidar",
+      "name": "chokidar",
+      "version": "5.0.0",
+      "source": "registry",
+      "integrity": "sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw=="
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-skill-filesystem/node_modules/readdirp",
+      "name": "readdirp",
+      "version": "5.1.1",
+      "source": "registry",
+      "integrity": "sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA=="
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-spill",
+      "name": "@deepseek-ai/dsh-spill",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9a0fb06883ad6e812a5f788297209b6445617798caf3fb6440fccda60c1c647a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-spill-local",
+      "name": "@deepseek-ai/dsh-spill-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0e201d6f2f753dbf5a1269fa01c037ae4b8b957468406813e1471c6d9f4ceaa7"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-spill-policy",
+      "name": "@deepseek-ai/dsh-spill-policy",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a7f868e79d7d6eeda52952a4924f633ffb5e9bd18c62a11f3ff2d6bdd42e9b48"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-storage",
+      "name": "@deepseek-ai/dsh-storage",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "51ddf61c45396162baa9877e85eb98989fb868c38f6f68019edfd5df7cc6c069"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-storage-domain",
+      "name": "@deepseek-ai/dsh-storage-domain",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "3c0e536cd93c5f1564a4fc8e782175b7781772ec764025f81c0b2c51219169f3"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-storage-json",
+      "name": "@deepseek-ai/dsh-storage-json",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "3db4bcf52f31f00f436c605ec911b239884b7f62129e040f3334b1b2c3b7c56b"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-subagent",
+      "name": "@deepseek-ai/dsh-subagent",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "04f965d79760a591dfa887a00d580e6083977e2aa4cdf0f7bbcbae84f249d433"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-subagent-fork-in-process",
+      "name": "@deepseek-ai/dsh-subagent-fork-in-process",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "0bd74486ea77b9f2dd45e20b7b8215c0d173d77f089a980affc69a231440f41d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-subagent-in-process-driver",
+      "name": "@deepseek-ai/dsh-subagent-in-process-driver",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "69d66ea1d956372a57d1021114e989ce7f3c1273fbc7ab9c79cf34beac5fb0ec"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-subagent-spawn-in-process",
+      "name": "@deepseek-ai/dsh-subagent-spawn-in-process",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "223bf7f49bba412198e80864d8b8fb97d463727770254ac33ec94deebe59d25f"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-subprocess",
+      "name": "@deepseek-ai/dsh-subprocess",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "152f8633440de4e1aa1fb3ab46db4061d0ae44c3a7959037e002e096c28f0e5d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-subprocess-local",
+      "name": "@deepseek-ai/dsh-subprocess-local",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "611817f46c111b2dcfbb7b6d1d10ad7faf3b718b34f46462da72aca7e229763c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-system-prompt",
+      "name": "@deepseek-ai/dsh-system-prompt",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ed8048715860fd7dbb914173f24f62d5235a721118e424d91940552340a5fb03"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-terminal",
+      "name": "@deepseek-ai/dsh-terminal",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "67804a741001dc8a548268f50f29417c13ad51251ec0e844741f837d8c2d5caf"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-terminal-bash",
+      "name": "@deepseek-ai/dsh-terminal-bash",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "5132ae341a5633a430768c4371691a39ace3d71d9202c2285402e26a2120af60"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-time-context",
+      "name": "@deepseek-ai/dsh-time-context",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e5638e5e71226712b84504d2f9eeea51a97330b517a30d8746dcaf697c4f2cbf"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-timeout",
+      "name": "@deepseek-ai/dsh-timeout",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "aa8b2d675ecd131beab96a7a284c6f17aee33d58cdf8686431b1bc7f60ddb0c4"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tmux-context",
+      "name": "@deepseek-ai/dsh-tmux-context",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "10875da7fe460d585d0924221d4f8c216281819bbc1e445d22b871d6e81fe605"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-token-meter",
+      "name": "@deepseek-ai/dsh-token-meter",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "e18c3cb447f98ae2a30db7fb0a7a07345e1477ecbb87db0d2c48eac223cb2142"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-ask-user",
+      "name": "@deepseek-ai/dsh-tool-ask-user",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "96db4bb3ac4d131a7baee9c0089a3ba8058bbaa1a032b400e39671dea395ae87"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-bash",
+      "name": "@deepseek-ai/dsh-tool-bash",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "aea532f4abc0a48b8cf8d0040a51890d1b0c1a1abc740432149236a9b9818dad"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-bash-persistent",
+      "name": "@deepseek-ai/dsh-tool-bash-persistent",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "97a34fef519890e25059dbf4c2efd0af5b3220e7dc97dd6daa55edac8be7b3b9"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-call-timeout-policy",
+      "name": "@deepseek-ai/dsh-tool-call-timeout-policy",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7332bd465a8d56b9748f8641173c59e148f0dcda3d0b83141b992289d976f00e"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-cordis",
+      "name": "@deepseek-ai/dsh-tool-cordis",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "74edb848e3753ca104a14f35741dbd45447c4be6ce33f8473c101c227c9afd14"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-fs",
+      "name": "@deepseek-ai/dsh-tool-fs",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d7c25fa614ace069067468c2ef78f65ea6308ead3ff0ed85b130358db9932e7c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-fs-search",
+      "name": "@deepseek-ai/dsh-tool-fs-search",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "8ebc454c4da36f176f7ac32d2a0b5207a5c8a95ef2481d9ba5d15e3974536aab"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-goal",
+      "name": "@deepseek-ai/dsh-tool-goal",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "35088fd0fcbc07f942b93c7a6bebf6bf3c927490a8890c6bbbf88d856ec1a08b"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-jobs",
+      "name": "@deepseek-ai/dsh-tool-jobs",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "9cd4e2d8124240af9c4c627c7372ca8f82f91459d0683a83a3a36d839399a305"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-pwsh",
+      "name": "@deepseek-ai/dsh-tool-pwsh",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "bc1ff800c842a366ed529e5360daf4c2b81cd3acb3f078d53c7b42f376fd1fb6"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-ralph",
+      "name": "@deepseek-ai/dsh-tool-ralph",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "833a11403a6287432c881ba7d3a37cd7b4f9390e4754bbe1ce7e260c0f03c240"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-skill",
+      "name": "@deepseek-ai/dsh-tool-skill",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a7aa597173516439af8c1b2216e640ac395b1c12dd69b2b74d402d6b4df3b704"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-str-replace-editor",
+      "name": "@deepseek-ai/dsh-tool-str-replace-editor",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7afae67b5467965df6af0fefd69a31e5edce74cad5151f6f5b79b5dba5b60fb0"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-subagent",
+      "name": "@deepseek-ai/dsh-tool-subagent",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "c1294a98707be518cdc180cf4f562241a7e0b8e73bb52c984e8a35f75cd75573"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-subagent-control",
+      "name": "@deepseek-ai/dsh-tool-subagent-control",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "71df41536035f1fe7147e1f6f4ca96216d4acf29c4bac94f08bf7b9322de9d88"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-subagent-report",
+      "name": "@deepseek-ai/dsh-tool-subagent-report",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "b6b13cbed4a9430873ef2c2472b90edf2e7202296f16d1a422c708b21d46694c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-todo",
+      "name": "@deepseek-ai/dsh-tool-todo",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "ef049dc2fef9d37a7826d33beeda419c73a26e44c6338e795279c0b423bc485a"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-web",
+      "name": "@deepseek-ai/dsh-tool-web",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "20485393a8a2ad5eb7ab45d28ab20bbfde1545734d81db2a79d628c8578ccfb7"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tool-workflow",
+      "name": "@deepseek-ai/dsh-tool-workflow",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "bcfe64b11adb8573732b35e3d40204e1995e9fa68e3fb6f46ac5825cfa2e1255"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-tools",
+      "name": "@deepseek-ai/dsh-tools",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "3d8d52ea0786fc1940096161e363808e404e7cbb5adcf632894917d64fc95e21"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-typert-loader",
+      "name": "@deepseek-ai/dsh-typert-loader",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "3ee4c8d028a1d68821dea630e30e10414c15deee1980379ff71eb69901f652f5"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-typert-protocol",
+      "name": "@deepseek-ai/dsh-typert-protocol",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "7ab6a1d2297010de940bd9425a9b3017ace53a13c198ac737129661f729a7504"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-typert-registry",
+      "name": "@deepseek-ai/dsh-typert-registry",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "f6f28e49b8bf51ca70cfd82e26fe957e247c1a356257cbf404533c94f54fb6a6"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-user-approval",
+      "name": "@deepseek-ai/dsh-user-approval",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "de7e4a25dc4160bae9f144395be9d42c4f5f9f4f2ed1b6a8f78fb63e15f0086d"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-user-questions",
+      "name": "@deepseek-ai/dsh-user-questions",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "522a23ce4a5bdc4701de31773bcf476cc95b80d0a61c878de8e4789598b12c64"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-web",
+      "name": "@deepseek-ai/dsh-web",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "19b0e59a0571da12c4e159f3529b5f139c343842e1d53a8056cee9966c90fabe"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-web-app",
+      "name": "@deepseek-ai/dsh-web-app",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a54e073fdc268d2280b94dd6e57c32ca71865d6324fd650f2e813f4550d4626e"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-web-frontend",
+      "name": "@deepseek-ai/dsh-web-frontend",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cf94c8df3163e3aa49589cea19b6bae9a59d65ec99673cdb50b950cd793db0ad"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-web-search-deepseek",
+      "name": "@deepseek-ai/dsh-web-search-deepseek",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "b0fbeac4a7ce8072af9133572c660cd402a70d3dbc10d4bdb522bc0a4c05cf1f"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-workflow",
+      "name": "@deepseek-ai/dsh-workflow",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "d2dd09bac9f8b4bc2ff9fa20c01946bafde50843e413c66b1d621643ad635c81"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-workflow-worker-thread",
+      "name": "@deepseek-ai/dsh-workflow-worker-thread",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "a79ceabd68a86f7b81aa3a2d1b8dc6e763a44cd552beaddf19a23770e2570497"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/dsh-workspace",
+      "name": "@deepseek-ai/dsh-workspace",
+      "version": "0.1.0-rc.5",
+      "source": "packed",
+      "sha256": "cee9f6aa5f4b5795ecc1e0e928ae91ecb3b6b1c4d51981d6c65b3a3935331808"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/node-addon-landlock-run",
+      "name": "@deepseek-ai/node-addon-landlock-run",
+      "version": "0.1.1",
+      "source": "packed",
+      "sha256": "177a40d34de83d35b4eb253f2da23a3ae921c1f742a7af4902c0121beafabc0c"
+    },
+    {
+      "path": "node_modules/@deepseek-ai/schemastery",
+      "name": "@deepseek-ai/schemastery",
+      "version": "3.18.1",
+      "source": "packed",
+      "sha256": "8d1e556e186f9aac2f414e164396e570dec9409ab2e8275bf9e03a010650ced4"
+    },
+    {
+      "path": "node_modules/@earendil-works/pi-ai",
+      "name": "@earendil-works/pi-ai",
+      "version": "0.82.1",
+      "source": "registry",
+      "integrity": "sha512-3WFYRhEp3lQB3444EhPMBcM7zSaEUE3eJgHOR7s4081NLqbw/FsWilIKWXSua0Gv3sRr7m9xMidR3pPDE7jI/A=="
+    },
+    {
+      "path": "node_modules/@earendil-works/pi-ai/node_modules/@anthropic-ai/sdk",
+      "name": "@anthropic-ai/sdk",
+      "version": "0.91.1",
+      "source": "registry",
+      "integrity": "sha512-LAmu761tSN9r66ixvmciswUj/ZC+1Q4iAfpedTfSVLeswRwnY3n2Nb6Tsk+cLPP28aLOPWeMgIuTuCcMC6W/iw=="
+    },
+    {
+      "path": "node_modules/@earendil-works/pi-ai/node_modules/@opentelemetry/api",
+      "name": "@opentelemetry/api",
+      "version": "1.9.0",
+      "source": "registry",
+      "integrity": "sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg=="
+    },
+    {
+      "path": "node_modules/@google/genai",
+      "name": "@google/genai",
+      "version": "1.52.0",
+      "source": "registry",
+      "integrity": "sha512-gwSvbpiN/17O9TbsqSsE/OzZcpv5Fo4RQjdngGgogtuB9RsyJ8ZHhX5KjHj1bp5N9snN2eK8LDGXSaWW2hof8Q=="
+    },
+    {
+      "path": "node_modules/@hono/node-server",
+      "name": "@hono/node-server",
+      "version": "2.1.1",
+      "source": "registry",
+      "integrity": "sha512-ELuehkj5VCBdgEw9zs+ivkKwyzzUCSQuE96YmiPvn1ECBoZCczbFXJLeEGMTYjphP6gydh4pHMqEYPVMYUVgQg=="
+    },
+    {
+      "path": "node_modules/@img/colour",
+      "name": "@img/colour",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="
+    },
+    {
+      "path": "node_modules/@img/sharp-win32-x64",
+      "name": "@img/sharp-win32-x64",
+      "version": "0.35.3",
+      "source": "registry",
+      "integrity": "sha512-D4y1vNeZrIIJCN+uHaWVtH86B+aCrdMYYjicy9pXHvbGZeGYLLSd3wdVuC37FxVXlU1ARsk84eKWfWMXGYEqvA=="
+    },
+    {
+      "path": "node_modules/@joplin/turndown-plugin-gfm",
+      "name": "@joplin/turndown-plugin-gfm",
+      "version": "1.0.67",
+      "source": "registry",
+      "integrity": "sha512-FZfW5EZfidhzd1IaY1uxHnIZPTVOxAdleMZ4/1U6Nt5b7+Qj5JThDnaIomuJtetnUBzuRNbe9FWMuqD4B3dlWA=="
+    },
+    {
+      "path": "node_modules/@koromix/koffi-win32-x64",
+      "name": "@koromix/koffi-win32-x64",
+      "version": "3.1.5",
+      "source": "registry",
+      "integrity": "sha512-Pyo1WEHEP6Ek2NEn2pquwJzSPLOdY4vymoPSz0an1DgvFWSkOyBYYkGVoxL1ajfj5I1pPdXysYqixtVTzAtOfQ=="
+    },
+    {
+      "path": "node_modules/@mistralai/mistralai",
+      "name": "@mistralai/mistralai",
+      "version": "2.2.6",
+      "source": "registry",
+      "integrity": "sha512-W8pX7zHxjJvMIpw8JMxeJEleapXX0Q9NPszdNzqkM3MIEoIGPObdodujj+WHteXEvGfaP/AMwlNyRfEzSY6dQQ=="
+    },
+    {
+      "path": "node_modules/@mixmark-io/domino",
+      "name": "@mixmark-io/domino",
+      "version": "2.2.0",
+      "source": "registry",
+      "integrity": "sha512-Y28PR25bHXUg88kCV7nivXrP2Nj2RueZ3/l/jdx6J9f8J4nsEGcgX0Qe6lt7Pa+J79+kPiJU3LguR6O/6zrLOw=="
+    },
+    {
+      "path": "node_modules/@modelcontextprotocol/sdk",
+      "name": "@modelcontextprotocol/sdk",
+      "version": "1.30.0",
+      "source": "registry",
+      "integrity": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/api",
+      "name": "@opentelemetry/api",
+      "version": "1.9.1",
+      "source": "registry",
+      "integrity": "sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/api-logs",
+      "name": "@opentelemetry/api-logs",
+      "version": "0.220.0",
+      "source": "registry",
+      "integrity": "sha512-CmVa4ImJ+ynfrPMNaAXHET6Bhb44SwzmfyVJFq9ni2jgXJR/l7C6gfVFddNmHP+ZOkP9cf4f9DBe68qVLTHc9w=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/core",
+      "name": "@opentelemetry/core",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-m2nckMT80NnmjTYSPjJQObBJ+8dgkoajEOUbznL8AHZ3T3yHRk2P7gI1PhEBc1+lOnrYE9UWrWHqJDsmqjmNbw=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/exporter-logs-otlp-http",
+      "name": "@opentelemetry/exporter-logs-otlp-http",
+      "version": "0.220.0",
+      "source": "registry",
+      "integrity": "sha512-8186thl+pTw64iz/qEEen5oJZoZ/gO73XruChdaGlYdWOdBIQ42r+vHLf6a7vIDqTD4b8ZOoMlyxptanECaI9A=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/otlp-exporter-base",
+      "name": "@opentelemetry/otlp-exporter-base",
+      "version": "0.220.0",
+      "source": "registry",
+      "integrity": "sha512-CXYo8UD5Mn9YbgebO2EL4wejtA+gxLmLiu6HCk2KH2BR7XhFN6/6p1UlCb23DYCjeYkndevLHuejCCN1yx4+OQ=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/otlp-transformer",
+      "name": "@opentelemetry/otlp-transformer",
+      "version": "0.220.0",
+      "source": "registry",
+      "integrity": "sha512-lXGrv7KXZ0gNH9SVNUaa6vv6phVYGvJxfXAlMbzbakiXru75f5MZl8Z7oqiMMQD77riVHJCFlQvbZs/VVN2/4A=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/otlp-transformer/node_modules/@opentelemetry/resources",
+      "name": "@opentelemetry/resources",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-jyA5MBLQ+Dkl3+JsZkUoUvL7yHvU64kLsvpXKarWm6347Sl1t1bXFTFykUePNpT5WH5pm9a2Qtt03iIYQhZ1Fg=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/resources",
+      "name": "@opentelemetry/resources",
+      "version": "2.10.0",
+      "source": "registry",
+      "integrity": "sha512-q6MMm2zhggzsHVNbabYwut+a6nbuQQe3URUoxaojM/8K1IBfwwPzvxIjNi2/lI1TFe+fMHMW9MWhrtDLEXEnkA=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/resources/node_modules/@opentelemetry/core",
+      "name": "@opentelemetry/core",
+      "version": "2.10.0",
+      "source": "registry",
+      "integrity": "sha512-/wNZ8twnEQQA4HoHu22+vcsdru6pWPWxW+7w+FlxT6Id7PE/WIbZmVKkte+PF72e0F2dnImFeHD2syyE1Mw6MQ=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/sdk-logs",
+      "name": "@opentelemetry/sdk-logs",
+      "version": "0.220.0",
+      "source": "registry",
+      "integrity": "sha512-WywcTkQtv2iNmt+6y5Kcd4rzvx9bLVsBa2Nwcmg01IUaBTkTow3W4d9KE5vNBpEDtb9tp21WcRBY/lANRrApYA=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/sdk-logs/node_modules/@opentelemetry/resources",
+      "name": "@opentelemetry/resources",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-jyA5MBLQ+Dkl3+JsZkUoUvL7yHvU64kLsvpXKarWm6347Sl1t1bXFTFykUePNpT5WH5pm9a2Qtt03iIYQhZ1Fg=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/sdk-metrics",
+      "name": "@opentelemetry/sdk-metrics",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-Xx8RGS4H5XEBl01WuCreMIpiah9cCXMbSkeuIePPdD2cUpq/vUzYmj8E/MK1OsbOc93FuAD4jfn2WOacKwLn7Q=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/sdk-metrics/node_modules/@opentelemetry/resources",
+      "name": "@opentelemetry/resources",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-jyA5MBLQ+Dkl3+JsZkUoUvL7yHvU64kLsvpXKarWm6347Sl1t1bXFTFykUePNpT5WH5pm9a2Qtt03iIYQhZ1Fg=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/sdk-trace",
+      "name": "@opentelemetry/sdk-trace",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-sGA19HvtrrSKYsseHphluH6j3p6Xa3fqc7c7y8f/7mYWejc1lyDFcpSdD1kYa50HCLUeEo4zA5bW0pniaPszuw=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/sdk-trace/node_modules/@opentelemetry/resources",
+      "name": "@opentelemetry/resources",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-jyA5MBLQ+Dkl3+JsZkUoUvL7yHvU64kLsvpXKarWm6347Sl1t1bXFTFykUePNpT5WH5pm9a2Qtt03iIYQhZ1Fg=="
+    },
+    {
+      "path": "node_modules/@opentelemetry/semantic-conventions",
+      "name": "@opentelemetry/semantic-conventions",
+      "version": "1.43.0",
+      "source": "registry",
+      "integrity": "sha512-eSYWTm620tTk45EKSedaUL8MFYI8hW164hIXsgIHyxu3VobUB3fFCu5t0hQby6OoWRPsG1KkKUG2M5UadiLiVg=="
+    },
+    {
+      "path": "node_modules/@protobufjs/aspromise",
+      "name": "@protobufjs/aspromise",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ=="
+    },
+    {
+      "path": "node_modules/@protobufjs/base64",
+      "name": "@protobufjs/base64",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-AZkcAA5vnN/v4PDqKyMR5lx7hZttPDgClv83E//FMNhR2TMcLUhfRUBHCmSl0oi9zMgDDqRUJkSxO3wm85+XLg=="
+    },
+    {
+      "path": "node_modules/@protobufjs/codegen",
+      "name": "@protobufjs/codegen",
+      "version": "2.0.5",
+      "source": "registry",
+      "integrity": "sha512-zgXFLzW3Ap33e6d0Wlj4MGIm6Ce8O89n/apUaGNB/jx+hw+ruWEp7EwGUshdLKVRCxZW12fp9r40E1mQrf/34g=="
+    },
+    {
+      "path": "node_modules/@protobufjs/eventemitter",
+      "name": "@protobufjs/eventemitter",
+      "version": "1.1.1",
+      "source": "registry",
+      "integrity": "sha512-vW1GmwMZNnL+gMRaovlh9yZX74kc+TTU3FObkkurpMaRtBfLP3ldjS9KQWlwZgraRE0+dheEEoAxdzcJQ8eXZg=="
+    },
+    {
+      "path": "node_modules/@protobufjs/fetch",
+      "name": "@protobufjs/fetch",
+      "version": "1.1.1",
+      "source": "registry",
+      "integrity": "sha512-GpptLrs57adMSuHi3VNj0mAF8dwh36LMaYF6XyJ6JMWlVsc+t42tm1HSEDmOs3A8fC9yyeisgLhsTVQokOZ0zw=="
+    },
+    {
+      "path": "node_modules/@protobufjs/float",
+      "name": "@protobufjs/float",
+      "version": "1.0.2",
+      "source": "registry",
+      "integrity": "sha512-Ddb+kVXlXst9d+R9PfTIxh1EdNkgoRe5tOX6t01f1lYWOvJnSPDBlG241QLzcyPdoNTsblLUdujGSE4RzrTZGQ=="
+    },
+    {
+      "path": "node_modules/@protobufjs/path",
+      "name": "@protobufjs/path",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-6JOcJ5Tm08dOHAbdR3GrvP+yUUfkjG5ePsHYczMFLq3ZmMkAD98cDgcT2iA1lJ9NVwFd4tH/iSSoe44YWkltEA=="
+    },
+    {
+      "path": "node_modules/@protobufjs/pool",
+      "name": "@protobufjs/pool",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-0kELaGSIDBKvcgS4zkjz1PeddatrjYcmMWOlAuAPwAeccUrPHdUqo/J6LiymHHEiJT5NrF1UVwxY14f+fy4WQw=="
+    },
+    {
+      "path": "node_modules/@protobufjs/utf8",
+      "name": "@protobufjs/utf8",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-b1UQwcEZ4yCnMCD8DAL1VlbvBJE9/IX4FTIp7BG1xYpf29SLazLSrqUkj4w7Y5y7cCVP6E5tcqqcI0xemPkHug=="
+    },
+    {
+      "path": "node_modules/@shikijs/core",
+      "name": "@shikijs/core",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-QCR4q2ZO/ILJEuwiBMel4wdcTDb1JGwfjKTxPDF6x8ixOaluPrVqIn06C99AcRPhmYlBR56d/Fb+GN58GzExpg=="
+    },
+    {
+      "path": "node_modules/@shikijs/engine-javascript",
+      "name": "@shikijs/engine-javascript",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-FbOjFJp9VLdo1Wevs10BBtVxiTWwNLqZh5Gkhjgda/ioL15YOgeSl9n+6XMa3qRlPQzfhFNe641SrynFHYG0nQ=="
+    },
+    {
+      "path": "node_modules/@shikijs/engine-oniguruma",
+      "name": "@shikijs/engine-oniguruma",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-EcOQkxdxGQrc1Row/cC2c96/v1dbZqGnEVu1qTuT/MJmp6+cXCvQussowVmCv5Tqr3KuY3c7IbM6HTW3LJ1k9w=="
+    },
+    {
+      "path": "node_modules/@shikijs/langs",
+      "name": "@shikijs/langs",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-ePic0yfAJGOF83D5wBHK/00EjK65oahBYxFk5epgq33WRv7X9UuxLEV8PtR0szC0z8dl7INIpIodB99JRFlR+A=="
+    },
+    {
+      "path": "node_modules/@shikijs/primitive",
+      "name": "@shikijs/primitive",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-m0wBeLDQDeIxRdUmrCPdQqfuUamDwRL5isCfYbguKD6NiaKpVbsv+3J81DyIKgNW5h4WAIIr8T4EkgQrBBxvaQ=="
+    },
+    {
+      "path": "node_modules/@shikijs/themes",
+      "name": "@shikijs/themes",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-w8UHjeUnIR965KMWJHUPXOc2mNJUnK3vpVLYLvw5IYU2mnTTJ89E24OrJDBNiJDQ0qzb0tc4l7mrIXx5cFeIyw=="
+    },
+    {
+      "path": "node_modules/@shikijs/types",
+      "name": "@shikijs/types",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-UEJxmRR++MAGR6hugn0vgVS2W/6lWAts84FFSrnlH9sP0LNol7E5+NQ792pH8liWUhyMyjhTgSUH3k7iD7tc5g=="
+    },
+    {
+      "path": "node_modules/@shikijs/vscode-textmate",
+      "name": "@shikijs/vscode-textmate",
+      "version": "10.0.2",
+      "source": "registry",
+      "integrity": "sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg=="
+    },
+    {
+      "path": "node_modules/@smithy/core",
+      "name": "@smithy/core",
+      "version": "3.33.0",
+      "source": "registry",
+      "integrity": "sha512-uKbkxgqLyepQDZoq8aRSdUqD1ID//rOqG96ixBhp++O7vBtmwYM6fwldGhr9HJP0iYrdc7GP/AlgzPWEZIrNRg=="
+    },
+    {
+      "path": "node_modules/@smithy/credential-provider-imds",
+      "name": "@smithy/credential-provider-imds",
+      "version": "4.5.0",
+      "source": "registry",
+      "integrity": "sha512-2jsPi+7Zv2hSzD9IXR9D7DTqSn7mv4XalzRm+bESh53jiaUS3NKEUbpQFTJP0HhQy9qzZvluxQ3yS24zdRrqsA=="
+    },
+    {
+      "path": "node_modules/@smithy/fetch-http-handler",
+      "name": "@smithy/fetch-http-handler",
+      "version": "5.7.0",
+      "source": "registry",
+      "integrity": "sha512-W/exA8T0LEzCQtJ02w4IzaEQPIspgarqZprb7W8FwnYiDowgCrjl2fTQ6FvuSSUnJORuepBF81abmBJwqh+0XQ=="
+    },
+    {
+      "path": "node_modules/@smithy/is-array-buffer",
+      "name": "@smithy/is-array-buffer",
+      "version": "2.2.0",
+      "source": "registry",
+      "integrity": "sha512-GGP3O9QFD24uGeAXYUjwSTXARoqpZykHadOmA8G5vfJPK0/DC67qa//0qvqrJzL1xc8WQWX7/yc7fwudjPHPhA=="
+    },
+    {
+      "path": "node_modules/@smithy/node-http-handler",
+      "name": "@smithy/node-http-handler",
+      "version": "4.7.3",
+      "source": "registry",
+      "integrity": "sha512-/jPhevcTFPMVl6KNjbaI47iOg1zxC7IsnX4PQDGVZKMFceOXtB8IEYaB7a9VvkP/3oC60WzTeKocvSI7vLT0vA=="
+    },
+    {
+      "path": "node_modules/@smithy/signature-v4",
+      "name": "@smithy/signature-v4",
+      "version": "5.7.0",
+      "source": "registry",
+      "integrity": "sha512-hCynhm22wMJ8wTF9crcwu8mxggtUrSLLJgDcGUvYFBqpofxycYJCGKOMYg4xtPPFtgNiDJSYmhsWLTrcU/g59Q=="
+    },
+    {
+      "path": "node_modules/@smithy/types",
+      "name": "@smithy/types",
+      "version": "4.17.0",
+      "source": "registry",
+      "integrity": "sha512-Aw4joiM0ZdErpo39lCj8phT2lxoiKZV+KZzBxnnQhWVtU2Is/WffQSL04uUWRcXUse9Ln8vXZK6V/FwqRVnQpg=="
+    },
+    {
+      "path": "node_modules/@smithy/util-buffer-from",
+      "name": "@smithy/util-buffer-from",
+      "version": "2.2.0",
+      "source": "registry",
+      "integrity": "sha512-IJdWBbTcMQ6DA0gdNhh/BwrLkDR+ADW5Kr1aZmd4k3DIF6ezMV4R2NIAmT08wQJ3yUK82thHWmC/TnK/wpMMIA=="
+    },
+    {
+      "path": "node_modules/@smithy/util-utf8",
+      "name": "@smithy/util-utf8",
+      "version": "2.3.0",
+      "source": "registry",
+      "integrity": "sha512-R8Rdn8Hy72KKcebgLiv8jQcQkXoLMOGGv5uI1/k0l+snqkOzQ1R0ChUBCxWMlBsFMekWjq0wRudIweFs7sKT5A=="
+    },
+    {
+      "path": "node_modules/@standard-schema/spec",
+      "name": "@standard-schema/spec",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="
+    },
+    {
+      "path": "node_modules/@tanstack/react-virtual",
+      "name": "@tanstack/react-virtual",
+      "version": "3.14.9",
+      "source": "registry",
+      "integrity": "sha512-qZyr0FZDP8rDC4WBhsryIZmAd9bveJvFGUJJtskWaew6/0dTRS6wZxnR6VQ5bY2KwL3LjerrHqQLk3a0GKcPXQ=="
+    },
+    {
+      "path": "node_modules/@tanstack/virtual-core",
+      "name": "@tanstack/virtual-core",
+      "version": "3.17.7",
+      "source": "registry",
+      "integrity": "sha512-bp+v10y65sp2H7WpWfIMyxTNfl8ZVfxFTLRjPIFRryi6FV/J33z4IS53WO4pTk36KlvJ4iLiQz+oaydDC1xbcA=="
+    },
+    {
+      "path": "node_modules/@types/debug",
+      "name": "@types/debug",
+      "version": "4.1.13",
+      "source": "registry",
+      "integrity": "sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw=="
+    },
+    {
+      "path": "node_modules/@types/hast",
+      "name": "@types/hast",
+      "version": "3.0.5",
+      "source": "registry",
+      "integrity": "sha512-rp/ezSWaD1m44dPKICGhiskI13nVr7qTloFwDa/IYkhhf5nzwP+zIQcIJh3WIFSBOy/H1PzB40jPjMDksN4F+g=="
+    },
+    {
+      "path": "node_modules/@types/katex",
+      "name": "@types/katex",
+      "version": "0.16.8",
+      "source": "registry",
+      "integrity": "sha512-trgaNyfU+Xh2Tc+ABIb44a5AYUpicB3uwirOioeOkNPPbmgRNtcWyDeeFRzjPZENO9Vq8gvVqfhaaXWLlevVwg=="
+    },
+    {
+      "path": "node_modules/@types/mdast",
+      "name": "@types/mdast",
+      "version": "4.0.4",
+      "source": "registry",
+      "integrity": "sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA=="
+    },
+    {
+      "path": "node_modules/@types/ms",
+      "name": "@types/ms",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA=="
+    },
+    {
+      "path": "node_modules/@types/node",
+      "name": "@types/node",
+      "version": "26.2.0",
+      "source": "registry",
+      "integrity": "sha512-5IviulTZeRNp2vAJ514cc/HUlY5nZ9fCbq9DMyC52BrhFZACo3nI0R7qBxhQmo/d27NFe96ur/b7Wwxklda+kg=="
+    },
+    {
+      "path": "node_modules/@types/retry",
+      "name": "@types/retry",
+      "version": "0.12.0",
+      "source": "registry",
+      "integrity": "sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA=="
+    },
+    {
+      "path": "node_modules/@types/unist",
+      "name": "@types/unist",
+      "version": "3.0.3",
+      "source": "registry",
+      "integrity": "sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q=="
+    },
+    {
+      "path": "node_modules/@ungap/structured-clone",
+      "name": "@ungap/structured-clone",
+      "version": "1.3.3",
+      "source": "registry",
+      "integrity": "sha512-60YRaenCQcVjYEKOcG824+DRGGIQ3VKErcBoAEDJZz5bKIs2ZG+X/H9Nk+Q6EVkwJk5QNApxbrc5QtBSwtrXAg=="
+    },
+    {
+      "path": "node_modules/@vscode/ripgrep",
+      "name": "@vscode/ripgrep",
+      "version": "1.18.0",
+      "source": "registry",
+      "integrity": "sha512-ns5lWe44tSfbTMbVUsyB+I1819PVSw4AdpgK0RNkzfWfwy6+3IUNSxwSrfTno1/oWaS/hERNz+XLWVyga2aJBQ=="
+    },
+    {
+      "path": "node_modules/@vscode/ripgrep-win32-x64",
+      "name": "@vscode/ripgrep-win32-x64",
+      "version": "1.18.0",
+      "source": "registry",
+      "integrity": "sha512-KNPvtElldqILHdnAetujPaowkNbpqJy3ssIGGN6F6Kve9Qi+nNLI2DN01O83JjCEVQbCzl8Ov3QZ9Eov3BR8Dg=="
+    },
+    {
+      "path": "node_modules/accepts",
+      "name": "accepts",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng=="
+    },
+    {
+      "path": "node_modules/agent-base",
+      "name": "agent-base",
+      "version": "7.1.4",
+      "source": "registry",
+      "integrity": "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ=="
+    },
+    {
+      "path": "node_modules/ajv",
+      "name": "ajv",
+      "version": "8.20.0",
+      "source": "registry",
+      "integrity": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA=="
+    },
+    {
+      "path": "node_modules/ajv-formats",
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "source": "registry",
+      "integrity": "sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ=="
+    },
+    {
+      "path": "node_modules/anser",
+      "name": "anser",
+      "version": "2.3.5",
+      "source": "registry",
+      "integrity": "sha512-vcZjxvvVoxTeR5XBNJB38oTu/7eDCZlwdz32N1eNgpyPF7j/Z7Idf+CUwQOkKKpJ7RJyjxgLHCM7vdIK0iCNMQ=="
+    },
+    {
+      "path": "node_modules/argparse",
+      "name": "argparse",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
+    },
+    {
+      "path": "node_modules/base64-js",
+      "name": "base64-js",
+      "version": "1.5.1",
+      "source": "registry",
+      "integrity": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA=="
+    },
+    {
+      "path": "node_modules/bignumber.js",
+      "name": "bignumber.js",
+      "version": "9.3.1",
+      "source": "registry",
+      "integrity": "sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ=="
+    },
+    {
+      "path": "node_modules/body-parser",
+      "name": "body-parser",
+      "version": "2.3.0",
+      "source": "registry",
+      "integrity": "sha512-2cGmJupaNgg+QUwVLAucDuWuoMZ6EX9iHDRswZ5lsNYEmwPaRknMPCLZz07yTzVq/83p4o/wzbDZbBrTvGGTIw=="
+    },
+    {
+      "path": "node_modules/body-parser/node_modules/content-type",
+      "name": "content-type",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-mj7UPXE0jaqaOsukNZRUEfEi2AcL7C/vwmwcHV0O97eO1E1pxBZuyjlZrx5seTaNBg1U6+o35wpa35Qfcc+7ag=="
+    },
+    {
+      "path": "node_modules/bowser",
+      "name": "bowser",
+      "version": "2.14.1",
+      "source": "registry",
+      "integrity": "sha512-tzPjzCxygAKWFOJP011oxFHs57HzIhOEracIgAePE4pqB3LikALKnSzUyU4MGs9/iCEUuHlAJTjTc5M+u7YEGg=="
+    },
+    {
+      "path": "node_modules/buffer-equal-constant-time",
+      "name": "buffer-equal-constant-time",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA=="
+    },
+    {
+      "path": "node_modules/bytes",
+      "name": "bytes",
+      "version": "3.1.2",
+      "source": "registry",
+      "integrity": "sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg=="
+    },
+    {
+      "path": "node_modules/call-bind-apply-helpers",
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2",
+      "source": "registry",
+      "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ=="
+    },
+    {
+      "path": "node_modules/call-bound",
+      "name": "call-bound",
+      "version": "1.0.4",
+      "source": "registry",
+      "integrity": "sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg=="
+    },
+    {
+      "path": "node_modules/ccount",
+      "name": "ccount",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg=="
+    },
+    {
+      "path": "node_modules/character-entities",
+      "name": "character-entities",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ=="
+    },
+    {
+      "path": "node_modules/character-entities-html4",
+      "name": "character-entities-html4",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-1v7fgQRj6hnSwFpq1Eu0ynr/CDEw0rXo2B61qXrLNdHZmPKgb7fqS1a2JwF0rISo9q77jDI8VMEHoApn8qDoZA=="
+    },
+    {
+      "path": "node_modules/character-entities-legacy",
+      "name": "character-entities-legacy",
+      "version": "3.0.0",
+      "source": "registry",
+      "integrity": "sha512-RpPp0asT/6ufRm//AJVwpViZbGM/MkjQFxJccQRHmISF/22NBtsHqAWmL+/pmkPWoIUJdWyeVleTl1wydHATVQ=="
+    },
+    {
+      "path": "node_modules/chokidar",
+      "name": "chokidar",
+      "version": "4.0.3",
+      "source": "registry",
+      "integrity": "sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA=="
+    },
+    {
+      "path": "node_modules/clsx",
+      "name": "clsx",
+      "version": "2.1.1",
+      "source": "registry",
+      "integrity": "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA=="
+    },
+    {
+      "path": "node_modules/comma-separated-tokens",
+      "name": "comma-separated-tokens",
+      "version": "2.0.3",
+      "source": "registry",
+      "integrity": "sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg=="
+    },
+    {
+      "path": "node_modules/commander",
+      "name": "commander",
+      "version": "15.0.0",
+      "source": "registry",
+      "integrity": "sha512-z67u4ZhzCL/Tydu1lJARtEZYWbWaN7oYLHbsuzocr6y4N6WZAagG3RQ4FW61V1/0+jImpj293XfrcYnd1qxtPg=="
+    },
+    {
+      "path": "node_modules/content-disposition",
+      "name": "content-disposition",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-5jRCH9Z/+DRP7rkvY83B+yGIGX96OYdJmzngqnw2SBSxqCFPd0w2km3s5iawpGX8krnwSGmF0FW5Nhr0Hfai3g=="
+    },
+    {
+      "path": "node_modules/content-type",
+      "name": "content-type",
+      "version": "1.0.5",
+      "source": "registry",
+      "integrity": "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA=="
+    },
+    {
+      "path": "node_modules/cookie",
+      "name": "cookie",
+      "version": "0.7.2",
+      "source": "registry",
+      "integrity": "sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w=="
+    },
+    {
+      "path": "node_modules/cookie-signature",
+      "name": "cookie-signature",
+      "version": "1.2.2",
+      "source": "registry",
+      "integrity": "sha512-D76uU73ulSXrD1UXF4KE2TMxVVwhsnCgfAyTg9k8P6KGZjlXKrOLe4dJQKI3Bxi5wjesZoFXJWElNWBjPZMbhg=="
+    },
+    {
+      "path": "node_modules/cors",
+      "name": "cors",
+      "version": "2.8.6",
+      "source": "registry",
+      "integrity": "sha512-tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw=="
+    },
+    {
+      "path": "node_modules/cross-spawn",
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "source": "registry",
+      "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="
+    },
+    {
+      "path": "node_modules/data-uri-to-buffer",
+      "name": "data-uri-to-buffer",
+      "version": "4.0.1",
+      "source": "registry",
+      "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A=="
+    },
+    {
+      "path": "node_modules/debug",
+      "name": "debug",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA=="
+    },
+    {
+      "path": "node_modules/decode-named-character-reference",
+      "name": "decode-named-character-reference",
+      "version": "1.3.0",
+      "source": "registry",
+      "integrity": "sha512-GtpQYB283KrPp6nRw50q3U9/VfOutZOe103qlN7BPP6Ad27xYnOIWv4lPzo8HCAL+mMZofJ9KEy30fq6MfaK6Q=="
+    },
+    {
+      "path": "node_modules/depd",
+      "name": "depd",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw=="
+    },
+    {
+      "path": "node_modules/dequal",
+      "name": "dequal",
+      "version": "2.0.3",
+      "source": "registry",
+      "integrity": "sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA=="
+    },
+    {
+      "path": "node_modules/detect-libc",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "source": "registry",
+      "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ=="
+    },
+    {
+      "path": "node_modules/devlop",
+      "name": "devlop",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA=="
+    },
+    {
+      "path": "node_modules/diff",
+      "name": "diff",
+      "version": "9.0.0",
+      "source": "registry",
+      "integrity": "sha512-svtcdpS8CgJyqAjEQIXdb3OjhFVVYjzGAPO8WGCmRbrml64SPw/jJD4GoE98aR7r25A0XcgrK3F02yw9R/vhQw=="
+    },
+    {
+      "path": "node_modules/dunder-proto",
+      "name": "dunder-proto",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A=="
+    },
+    {
+      "path": "node_modules/ecdsa-sig-formatter",
+      "name": "ecdsa-sig-formatter",
+      "version": "1.0.11",
+      "source": "registry",
+      "integrity": "sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ=="
+    },
+    {
+      "path": "node_modules/ee-first",
+      "name": "ee-first",
+      "version": "1.1.1",
+      "source": "registry",
+      "integrity": "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="
+    },
+    {
+      "path": "node_modules/encodeurl",
+      "name": "encodeurl",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg=="
+    },
+    {
+      "path": "node_modules/es-define-property",
+      "name": "es-define-property",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g=="
+    },
+    {
+      "path": "node_modules/es-errors",
+      "name": "es-errors",
+      "version": "1.3.0",
+      "source": "registry",
+      "integrity": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw=="
+    },
+    {
+      "path": "node_modules/es-object-atoms",
+      "name": "es-object-atoms",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-HWcBoN6NileqtSydK2FqHbS/LoDd2pqrnQHLyJzBj4kOp/ky2MWMN694xOfkK8/SnUsW2DH7EfyVlydKCsm1Zw=="
+    },
+    {
+      "path": "node_modules/escape-html",
+      "name": "escape-html",
+      "version": "1.0.3",
+      "source": "registry",
+      "integrity": "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow=="
+    },
+    {
+      "path": "node_modules/escape-string-regexp",
+      "name": "escape-string-regexp",
+      "version": "5.0.0",
+      "source": "registry",
+      "integrity": "sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw=="
+    },
+    {
+      "path": "node_modules/etag",
+      "name": "etag",
+      "version": "1.8.1",
+      "source": "registry",
+      "integrity": "sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg=="
+    },
+    {
+      "path": "node_modules/eventsource",
+      "name": "eventsource",
+      "version": "3.0.7",
+      "source": "registry",
+      "integrity": "sha512-CRT1WTyuQoD771GW56XEZFQ/ZoSfWid1alKGDYMmkt2yl8UXrVR4pspqWNEcqKvVIzg6PAltWjxcSSPrboA4iA=="
+    },
+    {
+      "path": "node_modules/eventsource-parser",
+      "name": "eventsource-parser",
+      "version": "3.1.1",
+      "source": "registry",
+      "integrity": "sha512-EKN1vKAMcZ8MlYMpaNuxN6R9yakzH6uajHcHVTqWJzvu5pWw9DyhbP35HH8MVBQ+dZjAfDxk+A8NiR9KWaXiyQ=="
+    },
+    {
+      "path": "node_modules/express",
+      "name": "express",
+      "version": "5.2.1",
+      "source": "registry",
+      "integrity": "sha512-hIS4idWWai69NezIdRt2xFVofaF4j+6INOpJlVOLDO8zXGpUVEVzIYk12UUi2JzjEzWL3IOAxcTubgz9Po0yXw=="
+    },
+    {
+      "path": "node_modules/express-rate-limit",
+      "name": "express-rate-limit",
+      "version": "8.6.2",
+      "source": "registry",
+      "integrity": "sha512-YH4ru+eOJxQABscKFfRCy9R7x9QFGdezclVMwwgFFndzS2Xnm0uo6B0ABZsLhcpeptGv2qvuJVWlQr9gQZoC3A=="
+    },
+    {
+      "path": "node_modules/extend",
+      "name": "extend",
+      "version": "3.0.2",
+      "source": "registry",
+      "integrity": "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g=="
+    },
+    {
+      "path": "node_modules/fast-deep-equal",
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "source": "registry",
+      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
+    },
+    {
+      "path": "node_modules/fast-uri",
+      "name": "fast-uri",
+      "version": "3.1.5",
+      "source": "registry",
+      "integrity": "sha512-gHwA1O9LDIcKunMKhObS/HimwtehO1nPUECKAu5TpKgaO19fcWEl4bliWe1jWxVFvIXztJjjQ4L8XQ1EU9f7Jw=="
+    },
+    {
+      "path": "node_modules/fetch-blob",
+      "name": "fetch-blob",
+      "version": "3.2.0",
+      "source": "registry",
+      "integrity": "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ=="
+    },
+    {
+      "path": "node_modules/fflate",
+      "name": "fflate",
+      "version": "0.8.3",
+      "source": "registry",
+      "integrity": "sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA=="
+    },
+    {
+      "path": "node_modules/finalhandler",
+      "name": "finalhandler",
+      "version": "2.1.1",
+      "source": "registry",
+      "integrity": "sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA=="
+    },
+    {
+      "path": "node_modules/formdata-polyfill",
+      "name": "formdata-polyfill",
+      "version": "4.0.10",
+      "source": "registry",
+      "integrity": "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g=="
+    },
+    {
+      "path": "node_modules/forwarded",
+      "name": "forwarded",
+      "version": "0.2.0",
+      "source": "registry",
+      "integrity": "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow=="
+    },
+    {
+      "path": "node_modules/fresh",
+      "name": "fresh",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-Rx/WycZ60HOaqLKAi6cHRKKI7zxWbJ31MhntmtwMoaTeF7XFH9hhBp8vITaMidfljRQ6eYWCKkaTK+ykVJHP2A=="
+    },
+    {
+      "path": "node_modules/function-bind",
+      "name": "function-bind",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA=="
+    },
+    {
+      "path": "node_modules/gaxios",
+      "name": "gaxios",
+      "version": "7.3.1",
+      "source": "registry",
+      "integrity": "sha512-kB3rzJV7d9juLZh8/56QTXCwQfxyhdOMdyYk1HdQKFtF8TJTDTZQJtixWIwXdE9Jji91mC41DUNpjleo4L4eAQ=="
+    },
+    {
+      "path": "node_modules/gcp-metadata",
+      "name": "gcp-metadata",
+      "version": "8.1.2",
+      "source": "registry",
+      "integrity": "sha512-zV/5HKTfCeKWnxG0Dmrw51hEWFGfcF2xiXqcA3+J90WDuP0SvoiSO5ORvcBsifmx/FoIjgQN3oNOGaQ5PhLFkg=="
+    },
+    {
+      "path": "node_modules/get-intrinsic",
+      "name": "get-intrinsic",
+      "version": "1.3.0",
+      "source": "registry",
+      "integrity": "sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ=="
+    },
+    {
+      "path": "node_modules/get-proto",
+      "name": "get-proto",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g=="
+    },
+    {
+      "path": "node_modules/google-auth-library",
+      "name": "google-auth-library",
+      "version": "10.9.1",
+      "source": "registry",
+      "integrity": "sha512-i1ydyHrqcIxXkWh/uBmVkzCvIuq5yiK2ATndIe5XxKholrG/MTYP9xGYka4sQhrbIAgGjL2B6NOE7rFaiF3fXw=="
+    },
+    {
+      "path": "node_modules/google-logging-utils",
+      "name": "google-logging-utils",
+      "version": "1.1.3",
+      "source": "registry",
+      "integrity": "sha512-eAmLkjDjAFCVXg7A1unxHsLf961m6y17QFqXqAXGj/gVkKFrEICfStRfwUlGNfeCEjNRa32JEWOUTlYXPyyKvA=="
+    },
+    {
+      "path": "node_modules/gopd",
+      "name": "gopd",
+      "version": "1.2.0",
+      "source": "registry",
+      "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg=="
+    },
+    {
+      "path": "node_modules/has-symbols",
+      "name": "has-symbols",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ=="
+    },
+    {
+      "path": "node_modules/hasown",
+      "name": "hasown",
+      "version": "2.0.4",
+      "source": "registry",
+      "integrity": "sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A=="
+    },
+    {
+      "path": "node_modules/hast-util-to-html",
+      "name": "hast-util-to-html",
+      "version": "9.0.5",
+      "source": "registry",
+      "integrity": "sha512-OguPdidb+fbHQSU4Q4ZiLKnzWo8Wwsf5bZfbvu7//a9oTYoqD/fWpe96NuHkoS9h0ccGOTe0C4NGXdtS0iObOw=="
+    },
+    {
+      "path": "node_modules/hast-util-whitespace",
+      "name": "hast-util-whitespace",
+      "version": "3.0.0",
+      "source": "registry",
+      "integrity": "sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw=="
+    },
+    {
+      "path": "node_modules/hono",
+      "name": "hono",
+      "version": "4.13.2",
+      "source": "registry",
+      "integrity": "sha512-JydRilDRkYBQMt9qR9U92mXxmbGqsqSn/IKOrh4e7/gEbn+0zSr8igTu0obwJoNGN4sez28DIql7FBHWydoJpA=="
+    },
+    {
+      "path": "node_modules/html-void-elements",
+      "name": "html-void-elements",
+      "version": "3.0.0",
+      "source": "registry",
+      "integrity": "sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg=="
+    },
+    {
+      "path": "node_modules/http-errors",
+      "name": "http-errors",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-4FbRdAX+bSdmo4AUFuS0WNiPz8NgFt+r8ThgNWmlrjQjt1Q7ZR9+zTlce2859x4KSXrwIsaeTqDoKQmtP8pLmQ=="
+    },
+    {
+      "path": "node_modules/http-proxy-agent",
+      "name": "http-proxy-agent",
+      "version": "7.0.2",
+      "source": "registry",
+      "integrity": "sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig=="
+    },
+    {
+      "path": "node_modules/https-proxy-agent",
+      "name": "https-proxy-agent",
+      "version": "7.0.6",
+      "source": "registry",
+      "integrity": "sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw=="
+    },
+    {
+      "path": "node_modules/iconv-lite",
+      "name": "iconv-lite",
+      "version": "0.7.3",
+      "source": "registry",
+      "integrity": "sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ=="
+    },
+    {
+      "path": "node_modules/immer",
+      "name": "immer",
+      "version": "10.2.0",
+      "source": "registry",
+      "integrity": "sha512-d/+XTN3zfODyjr89gM3mPq1WNX2B8pYsu7eORitdwyA2sBubnTl3laYlBk4sXY5FUa5qTZGBDPJICVbvqzjlbw=="
+    },
+    {
+      "path": "node_modules/inherits",
+      "name": "inherits",
+      "version": "2.0.4",
+      "source": "registry",
+      "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="
+    },
+    {
+      "path": "node_modules/ip-address",
+      "name": "ip-address",
+      "version": "10.5.0",
+      "source": "registry",
+      "integrity": "sha512-R5SnVLJmgYYvf2F2ZgwSBnelz5G4q5AxIC277GDfUaNbrZKNANcBC7RHqYYePlszf4kBolVkJauG0ZjHHFh55g=="
+    },
+    {
+      "path": "node_modules/ipaddr.js",
+      "name": "ipaddr.js",
+      "version": "1.9.1",
+      "source": "registry",
+      "integrity": "sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g=="
+    },
+    {
+      "path": "node_modules/is-promise",
+      "name": "is-promise",
+      "version": "4.0.0",
+      "source": "registry",
+      "integrity": "sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ=="
+    },
+    {
+      "path": "node_modules/isexe",
+      "name": "isexe",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
+    },
+    {
+      "path": "node_modules/jose",
+      "name": "jose",
+      "version": "6.2.8",
+      "source": "registry",
+      "integrity": "sha512-Bsdjwm3Qsd/P0jR+BHDe3LytDfY7WBq2HmCCLIwuVRHMuEC9ae7/R474GIUdF1NgCyZjzVo/A9DOiOBtXq8ZoQ=="
+    },
+    {
+      "path": "node_modules/js-tokens",
+      "name": "js-tokens",
+      "version": "4.0.0",
+      "source": "registry",
+      "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
+    },
+    {
+      "path": "node_modules/js-yaml",
+      "name": "js-yaml",
+      "version": "4.3.1",
+      "source": "registry",
+      "integrity": "sha512-CY6crGq313MX8GkwvB7tzgp99vjQxY1++5y10/BKN/GUfHqWaOGQMNZkBvqSzsZKWk/ijwHlWzzkLulsGHhjWQ=="
+    },
+    {
+      "path": "node_modules/json-bigint",
+      "name": "json-bigint",
+      "version": "1.0.0",
+      "source": "registry",
+      "integrity": "sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ=="
+    },
+    {
+      "path": "node_modules/json-schema-to-ts",
+      "name": "json-schema-to-ts",
+      "version": "3.1.1",
+      "source": "registry",
+      "integrity": "sha512-+DWg8jCJG2TEnpy7kOm/7/AxaYoaRbjVB4LFZLySZlWn8exGs3A4OLJR966cVvU26N7X9TWxl+Jsw7dzAqKT6g=="
+    },
+    {
+      "path": "node_modules/json-schema-traverse",
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "source": "registry",
+      "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug=="
+    },
+    {
+      "path": "node_modules/json-schema-typed",
+      "name": "json-schema-typed",
+      "version": "8.0.2",
+      "source": "registry",
+      "integrity": "sha512-fQhoXdcvc3V28x7C7BMs4P5+kNlgUURe2jmUT1T//oBRMDrqy1QPelJimwZGo7Hg9VPV3EQV5Bnq4hbFy2vetA=="
+    },
+    {
+      "path": "node_modules/jwa",
+      "name": "jwa",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg=="
+    },
+    {
+      "path": "node_modules/jws",
+      "name": "jws",
+      "version": "4.0.1",
+      "source": "registry",
+      "integrity": "sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA=="
+    },
+    {
+      "path": "node_modules/katex",
+      "name": "katex",
+      "version": "0.16.47",
+      "source": "registry",
+      "integrity": "sha512-Eeo8Ys1doU1z+x8AZsPpQu+p/QcZBI5PeOo7QGQdy2x2m0MU/hYagBbGOmXwr5KVbEfVuWv9LpnQWeehogurjg=="
+    },
+    {
+      "path": "node_modules/katex/node_modules/commander",
+      "name": "commander",
+      "version": "8.3.0",
+      "source": "registry",
+      "integrity": "sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww=="
+    },
+    {
+      "path": "node_modules/koffi",
+      "name": "koffi",
+      "version": "3.1.5",
+      "source": "registry",
+      "integrity": "sha512-XVwwrxg0Ca6IEUQF4YtGIU4XN0LSselFYpYvgfhh8wafCunhEEx5hPr7LZhp5QyeFA/LcRsKHTqncCdjWjWAlg=="
+    },
+    {
+      "path": "node_modules/long",
+      "name": "long",
+      "version": "5.3.2",
+      "source": "registry",
+      "integrity": "sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA=="
+    },
+    {
+      "path": "node_modules/longest-streak",
+      "name": "longest-streak",
+      "version": "3.1.0",
+      "source": "registry",
+      "integrity": "sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g=="
+    },
+    {
+      "path": "node_modules/loose-envify",
+      "name": "loose-envify",
+      "version": "1.4.0",
+      "source": "registry",
+      "integrity": "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q=="
+    },
+    {
+      "path": "node_modules/markdown-table",
+      "name": "markdown-table",
+      "version": "3.0.4",
+      "source": "registry",
+      "integrity": "sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw=="
+    },
+    {
+      "path": "node_modules/math-intrinsics",
+      "name": "math-intrinsics",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g=="
+    },
+    {
+      "path": "node_modules/mdast-util-find-and-replace",
+      "name": "mdast-util-find-and-replace",
+      "version": "3.0.2",
+      "source": "registry",
+      "integrity": "sha512-Tmd1Vg/m3Xz43afeNxDIhWRtFZgM2VLyaf4vSTYwudTyeuTneoL3qtWMA5jeLyz/O1vDJmmV4QuScFCA2tBPwg=="
+    },
+    {
+      "path": "node_modules/mdast-util-from-markdown",
+      "name": "mdast-util-from-markdown",
+      "version": "2.0.3",
+      "source": "registry",
+      "integrity": "sha512-W4mAWTvSlKvf8L6J+VN9yLSqQ9AOAAvHuoDAmPkz4dHf553m5gVj2ejadHJhoJmcmxEnOv6Pa8XJhpxE93kb8Q=="
+    },
+    {
+      "path": "node_modules/mdast-util-gfm",
+      "name": "mdast-util-gfm",
+      "version": "3.1.0",
+      "source": "registry",
+      "integrity": "sha512-0ulfdQOM3ysHhCJ1p06l0b0VKlhU0wuQs3thxZQagjcjPrlFRqY215uZGHHJan9GEAXd9MbfPjFJz+qMkVR6zQ=="
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-autolink-literal",
+      "name": "mdast-util-gfm-autolink-literal",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-5HVP2MKaP6L+G6YaxPNjuL0BPrq9orG3TsrZ9YXbA3vDw/ACI4MEsnoDpn6ZNm7GnZgtAcONJyPhOP8tNJQavQ=="
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-footnote",
+      "name": "mdast-util-gfm-footnote",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-sqpDWlsHn7Ac9GNZQMeUzPQSMzR6Wv0WKRNvQRg0KqHh02fpTz69Qc1QSseNX29bhz1ROIyNyxExfawVKTm1GQ=="
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-strikethrough",
+      "name": "mdast-util-gfm-strikethrough",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-mKKb915TF+OC5ptj5bJ7WFRPdYtuHv0yTRxK2tJvi+BDqbkiG7h7u/9SI89nRAYcmap2xHQL9D+QG/6wSrTtXg=="
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-table",
+      "name": "mdast-util-gfm-table",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-78UEvebzz/rJIxLvE7ZtDd/vIQ0RHv+3Mh5DR96p7cS7HsBhYIICDBCu8csTNWNO6tBWfqXPWekRuj2FNOGOZg=="
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-task-list-item",
+      "name": "mdast-util-gfm-task-list-item",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-IrtvNvjxC1o06taBAVJznEnkiHxLFTzgonUdy8hzFVeDun0uTjxxrRGVaNFqkU1wJR3RBPEfsxmU6jDWPofrTQ=="
+    },
+    {
+      "path": "node_modules/mdast-util-math",
+      "name": "mdast-util-math",
+      "version": "3.0.0",
+      "source": "registry",
+      "integrity": "sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w=="
+    },
+    {
+      "path": "node_modules/mdast-util-phrasing",
+      "name": "mdast-util-phrasing",
+      "version": "4.1.0",
+      "source": "registry",
+      "integrity": "sha512-TqICwyvJJpBwvGAMZjj4J2n0X8QWp21b9l0o7eXyVJ25YNWYbJDVIyD1bZXE6WtV6RmKJVYmQAKWa0zWOABz2w=="
+    },
+    {
+      "path": "node_modules/mdast-util-to-hast",
+      "name": "mdast-util-to-hast",
+      "version": "13.2.1",
+      "source": "registry",
+      "integrity": "sha512-cctsq2wp5vTsLIcaymblUriiTcZd0CwWtCbLvrOzYCDZoWyMNV8sZ7krj09FSnsiJi3WVsHLM4k6Dq/yaPyCXA=="
+    },
+    {
+      "path": "node_modules/mdast-util-to-markdown",
+      "name": "mdast-util-to-markdown",
+      "version": "2.1.2",
+      "source": "registry",
+      "integrity": "sha512-xj68wMTvGXVOKonmog6LwyJKrYXZPvlwabaryTjLh9LuvovB/KAH+kvi8Gjj+7rJjsFi23nkUxRQv1KqSroMqA=="
+    },
+    {
+      "path": "node_modules/mdast-util-to-string",
+      "name": "mdast-util-to-string",
+      "version": "4.0.0",
+      "source": "registry",
+      "integrity": "sha512-0H44vDimn51F0YwvxSJSm0eCDOJTRlmN0R1yBh4HLj9wiV1Dn0QoXGbvFAWj2hSItVTlCmBF1hqKlIyUBVFLPg=="
+    },
+    {
+      "path": "node_modules/media-typer",
+      "name": "media-typer",
+      "version": "1.1.1",
+      "source": "registry",
+      "integrity": "sha512-yz3xRaG20c6/BOzvYoDaGtPmGscs7YivItZEEqe6GbwNfHuxu9YNmvnEkMzKldAGY4/80pRcQRZSEnhquk9XuQ=="
+    },
+    {
+      "path": "node_modules/merge-descriptors",
+      "name": "merge-descriptors",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-Snk314V5ayFLhp3fkUREub6WtjBfPdCPY1Ln8/8munuLuiYhsABgBVWsozAG+MWMbVEvcdcpbi9R7ww22l9Q3g=="
+    },
+    {
+      "path": "node_modules/micromark",
+      "name": "micromark",
+      "version": "4.0.2",
+      "source": "registry",
+      "integrity": "sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA=="
+    },
+    {
+      "path": "node_modules/micromark-core-commonmark",
+      "name": "micromark-core-commonmark",
+      "version": "2.0.3",
+      "source": "registry",
+      "integrity": "sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm",
+      "name": "micromark-extension-gfm",
+      "version": "3.0.0",
+      "source": "registry",
+      "integrity": "sha512-vsKArQsicm7t0z2GugkCKtZehqUm31oeGBV/KVSorWSy8ZlNAv7ytjFhvaryUiCUJYqs+NoE6AFhpQvBTM6Q4w=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-autolink-literal",
+      "name": "micromark-extension-gfm-autolink-literal",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-oOg7knzhicgQ3t4QCjCWgTmfNhvQbDDnJeVu9v81r7NltNCVmhPy1fJRX27pISafdjL+SVc4d3l48Gb6pbRypw=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-footnote",
+      "name": "micromark-extension-gfm-footnote",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-/yPhxI1ntnDNsiHtzLKYnE3vf9JZ6cAisqVDauhp4CEHxlb4uoOTxOCJ+9s51bIB8U1N1FJ1RXOKTIlD5B/gqw=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-strikethrough",
+      "name": "micromark-extension-gfm-strikethrough",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-ADVjpOOkjz1hhkZLlBiYA9cR2Anf8F4HqZUO6e5eDcPQd0Txw5fxLzzxnEkSkfnD0wziSGiv7sYhk/ktvbf1uw=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-table",
+      "name": "micromark-extension-gfm-table",
+      "version": "2.1.1",
+      "source": "registry",
+      "integrity": "sha512-t2OU/dXXioARrC6yWfJ4hqB7rct14e8f7m0cbI5hUmDyyIlwv5vEtooptH8INkbLzOatzKuVbQmAYcbWoyz6Dg=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-tagfilter",
+      "name": "micromark-extension-gfm-tagfilter",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-xHlTOmuCSotIA8TW1mDIM6X2O1SiX5P9IuDtqGonFhEK0qgRI4yeC6vMxEV2dgyr2TiD+2PQ10o+cOhdVAcwfg=="
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-task-list-item",
+      "name": "micromark-extension-gfm-task-list-item",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-qIBZhqxqI6fjLDYFTBIa4eivDMnP+OZqsNwmQ3xNLE4Cxwc+zfQEfbs6tzAo2Hjq+bh6q5F+Z8/cksrLFYWQQw=="
+    },
+    {
+      "path": "node_modules/micromark-extension-math",
+      "name": "micromark-extension-math",
+      "version": "3.1.0",
+      "source": "registry",
+      "integrity": "sha512-lvEqd+fHjATVs+2v/8kg9i5Q0AP2k85H0WUOwpIVvUML8BapsMvh1XAogmQjOCsLpoKRCVQqEkQBB3NhVBcsOg=="
+    },
+    {
+      "path": "node_modules/micromark-factory-destination",
+      "name": "micromark-factory-destination",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-Xe6rDdJlkmbFRExpTOmRj9N3MaWmbAgdpSrBQvCFqhezUn4AHqJHbaEnfbVYYiexVSs//tqOdY/DxhjdCiJnIA=="
+    },
+    {
+      "path": "node_modules/micromark-factory-label",
+      "name": "micromark-factory-label",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-VFMekyQExqIW7xIChcXn4ok29YE3rnuyveW3wZQWWqF4Nv9Wk5rgJ99KzPvHjkmPXF93FXIbBp6YdW3t71/7Vg=="
+    },
+    {
+      "path": "node_modules/micromark-factory-space",
+      "name": "micromark-factory-space",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-zRkxjtBxxLd2Sc0d+fbnEunsTj46SWXgXciZmHq0kDYGnck/ZSGj9/wULTV95uoeYiK5hRXP2mJ98Uo4cq/LQg=="
+    },
+    {
+      "path": "node_modules/micromark-factory-title",
+      "name": "micromark-factory-title",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-5bZ+3CjhAd9eChYTHsjy6TGxpOFSKgKKJPJxr293jTbfry2KDoWkhBb6TcPVB4NmzaPhMs1Frm9AZH7OD4Cjzw=="
+    },
+    {
+      "path": "node_modules/micromark-factory-whitespace",
+      "name": "micromark-factory-whitespace",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-Ob0nuZ3PKt/n0hORHyvoD9uZhr+Za8sFoP+OnMcnWK5lngSzALgQYKMr9RJVOWLqQYuyn6ulqGWSXdwf6F80lQ=="
+    },
+    {
+      "path": "node_modules/micromark-util-character",
+      "name": "micromark-util-character",
+      "version": "2.1.1",
+      "source": "registry",
+      "integrity": "sha512-wv8tdUTJ3thSFFFJKtpYKOYiGP2+v96Hvk4Tu8KpCAsTMs6yi+nVmGh1syvSCsaxz45J6Jbw+9DD6g97+NV67Q=="
+    },
+    {
+      "path": "node_modules/micromark-util-chunked",
+      "name": "micromark-util-chunked",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-QUNFEOPELfmvv+4xiNg2sRYeS/P84pTW0TCgP5zc9FpXetHY0ab7SxKyAQCNCc1eK0459uoLI1y5oO5Vc1dbhA=="
+    },
+    {
+      "path": "node_modules/micromark-util-classify-character",
+      "name": "micromark-util-classify-character",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-K0kHzM6afW/MbeWYWLjoHQv1sgg2Q9EccHEDzSkxiP/EaagNzCm7T/WMKZ3rjMbvIpvBiZgwR3dKMygtA4mG1Q=="
+    },
+    {
+      "path": "node_modules/micromark-util-combine-extensions",
+      "name": "micromark-util-combine-extensions",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-OnAnH8Ujmy59JcyZw8JSbK9cGpdVY44NKgSM7E9Eh7DiLS2E9RNQf0dONaGDzEG9yjEl5hcqeIsj4hfRkLH/Bg=="
+    },
+    {
+      "path": "node_modules/micromark-util-decode-numeric-character-reference",
+      "name": "micromark-util-decode-numeric-character-reference",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-ccUbYk6CwVdkmCQMyr64dXz42EfHGkPQlBj5p7YVGzq8I7CtjXZJrubAYezf7Rp+bjPseiROqe7G6foFd+lEuw=="
+    },
+    {
+      "path": "node_modules/micromark-util-decode-string",
+      "name": "micromark-util-decode-string",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-nDV/77Fj6eH1ynwscYTOsbK7rR//Uj0bZXBwJZRfaLEJ1iGBR6kIfNmlNqaqJf649EP0F3NWNdeJi03elllNUQ=="
+    },
+    {
+      "path": "node_modules/micromark-util-encode",
+      "name": "micromark-util-encode",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-c3cVx2y4KqUnwopcO9b/SCdo2O67LwJJ/UyqGfbigahfegL9myoEFoDYZgkT7f36T0bLrM9hZTAaAyH+PCAXjw=="
+    },
+    {
+      "path": "node_modules/micromark-util-html-tag-name",
+      "name": "micromark-util-html-tag-name",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-2cNEiYDhCWKI+Gs9T0Tiysk136SnR13hhO8yW6BGNyhOC4qYFnwF1nKfD3HFAIXA5c45RrIG1ub11GiXeYd1xA=="
+    },
+    {
+      "path": "node_modules/micromark-util-normalize-identifier",
+      "name": "micromark-util-normalize-identifier",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-sxPqmo70LyARJs0w2UclACPUUEqltCkJ6PhKdMIDuJ3gSf/Q+/GIe3WKl0Ijb/GyH9lOpUkRAO2wp0GVkLvS9Q=="
+    },
+    {
+      "path": "node_modules/micromark-util-resolve-all",
+      "name": "micromark-util-resolve-all",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-VdQyxFWFT2/FGJgwQnJYbe1jjQoNTS4RjglmSjTUlpUMa95Htx9NHeYW4rGDJzbjvCsl9eLjMQwGeElsqmzcHg=="
+    },
+    {
+      "path": "node_modules/micromark-util-sanitize-uri",
+      "name": "micromark-util-sanitize-uri",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-9N9IomZ/YuGGZZmQec1MbgxtlgougxTodVwDzzEouPKo3qFWvymFHWcnDi2vzV1ff6kas9ucW+o3yzJK9YB1AQ=="
+    },
+    {
+      "path": "node_modules/micromark-util-subtokenize",
+      "name": "micromark-util-subtokenize",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-XQLu552iSctvnEcgXw6+Sx75GflAPNED1qx7eBJ+wydBb2KCbRZe+NwvIEEMM83uml1+2WSXpBAcp9IUCgCYWA=="
+    },
+    {
+      "path": "node_modules/micromark-util-symbol",
+      "name": "micromark-util-symbol",
+      "version": "2.0.1",
+      "source": "registry",
+      "integrity": "sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q=="
+    },
+    {
+      "path": "node_modules/micromark-util-types",
+      "name": "micromark-util-types",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-Yw0ECSpJoViF1qTU4DC6NwtC4aWGt1EkzaQB8KPPyCRR8z9TWeV0HbEFGTO+ZY1wB22zmxnJqhPyTpOVCpeHTA=="
+    },
+    {
+      "path": "node_modules/mime-db",
+      "name": "mime-db",
+      "version": "1.54.0",
+      "source": "registry",
+      "integrity": "sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ=="
+    },
+    {
+      "path": "node_modules/mime-types",
+      "name": "mime-types",
+      "version": "3.0.2",
+      "source": "registry",
+      "integrity": "sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A=="
+    },
+    {
+      "path": "node_modules/ms",
+      "name": "ms",
+      "version": "2.1.3",
+      "source": "registry",
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
+    },
+    {
+      "path": "node_modules/negotiator",
+      "name": "negotiator",
+      "version": "1.0.0",
+      "source": "registry",
+      "integrity": "sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg=="
+    },
+    {
+      "path": "node_modules/node-addon-api",
+      "name": "node-addon-api",
+      "version": "7.1.1",
+      "source": "registry",
+      "integrity": "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="
+    },
+    {
+      "path": "node_modules/node-addon-native-custom-loader",
+      "name": "node-addon-native-custom-loader",
+      "version": "0.1.5",
+      "source": "registry",
+      "integrity": "sha512-rL0XXRytayIChYf1xaG9/1NzGBRTyFkQTIpn+MDz/hpr0PZw1a9PZIoH9HlYfagNawhXU+jfN650EvoSIvR7Vw=="
+    },
+    {
+      "path": "node_modules/node-addon-require-builtin",
+      "name": "node-addon-require-builtin",
+      "version": "0.1.5",
+      "source": "registry",
+      "integrity": "sha512-isaquiStlp7qdFpaffy+2ssJPUR/kLPRE5gqfeWbb0Ahph9H7O3BOFwThqkVaTrxfpnjrQauxlOEgvzD+snhUg=="
+    },
+    {
+      "path": "node_modules/node-addon-require-builtin-win32-x64-msvc",
+      "name": "node-addon-require-builtin-win32-x64-msvc",
+      "version": "0.1.5",
+      "source": "registry",
+      "integrity": "sha512-pjuco/ESU3ChIp7WwacWfY2ENu2K5rGAgqjcXedoiFcTrjTf5Ln/miKSuNfE6IiuJ7tfMTJH6VH5hq+C1Y8JMQ=="
+    },
+    {
+      "path": "node_modules/node-domexception",
+      "name": "node-domexception",
+      "version": "1.0.0",
+      "source": "registry",
+      "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ=="
+    },
+    {
+      "path": "node_modules/node-fetch",
+      "name": "node-fetch",
+      "version": "3.3.2",
+      "source": "registry",
+      "integrity": "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA=="
+    },
+    {
+      "path": "node_modules/node-pty",
+      "name": "node-pty",
+      "version": "1.1.0",
+      "source": "registry",
+      "integrity": "sha512-20JqtutY6JPXTUnL0ij1uad7Qe1baT46lyolh2sSENDd4sTzKZ4nmAFkeAARDKwmlLjPx6XKRlwRUxwjOy+lUg=="
+    },
+    {
+      "path": "node_modules/object-assign",
+      "name": "object-assign",
+      "version": "4.1.1",
+      "source": "registry",
+      "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="
+    },
+    {
+      "path": "node_modules/object-inspect",
+      "name": "object-inspect",
+      "version": "1.13.4",
+      "source": "registry",
+      "integrity": "sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew=="
+    },
+    {
+      "path": "node_modules/on-finished",
+      "name": "on-finished",
+      "version": "2.4.1",
+      "source": "registry",
+      "integrity": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg=="
+    },
+    {
+      "path": "node_modules/once",
+      "name": "once",
+      "version": "1.4.0",
+      "source": "registry",
+      "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w=="
+    },
+    {
+      "path": "node_modules/oniguruma-parser",
+      "name": "oniguruma-parser",
+      "version": "0.12.2",
+      "source": "registry",
+      "integrity": "sha512-6HVa5oIrgMC6aA6WF6XyyqbhRPJrKR02L20+2+zpDtO5QAzGHAUGw5TKQvwi5vctNnRHkJYmjAhRVQF2EKdTQw=="
+    },
+    {
+      "path": "node_modules/oniguruma-to-es",
+      "name": "oniguruma-to-es",
+      "version": "4.3.6",
+      "source": "registry",
+      "integrity": "sha512-csuQ9x3Yr0cEIs/Zgx/OEt9iBw9vqIunAPQkx19R/fiMq2oGVTgcMqO/V3Ybqefr1TBvosI6jU539ksaBULJyA=="
+    },
+    {
+      "path": "node_modules/openai",
+      "name": "openai",
+      "version": "6.26.0",
+      "source": "registry",
+      "integrity": "sha512-zd23dbWTjiJ6sSAX6s0HrCZi41JwTA1bQVs0wLQPZ2/5o2gxOJA5wh7yOAUgwYybfhDXyhwlpeQf7Mlgx8EOCA=="
+    },
+    {
+      "path": "node_modules/p-retry",
+      "name": "p-retry",
+      "version": "4.6.2",
+      "source": "registry",
+      "integrity": "sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ=="
+    },
+    {
+      "path": "node_modules/parseurl",
+      "name": "parseurl",
+      "version": "1.3.3",
+      "source": "registry",
+      "integrity": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ=="
+    },
+    {
+      "path": "node_modules/partial-json",
+      "name": "partial-json",
+      "version": "0.1.7",
+      "source": "registry",
+      "integrity": "sha512-Njv/59hHaokb/hRUjce3Hdv12wd60MtM9Z5Olmn+nehe0QDAsRtRbJPvJ0Z91TusF0SuZRIvnM+S4l6EIP8leA=="
+    },
+    {
+      "path": "node_modules/path-key",
+      "name": "path-key",
+      "version": "3.1.1",
+      "source": "registry",
+      "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
+    },
+    {
+      "path": "node_modules/path-to-regexp",
+      "name": "path-to-regexp",
+      "version": "8.4.2",
+      "source": "registry",
+      "integrity": "sha512-qRcuIdP69NPm4qbACK+aDogI5CBDMi1jKe0ry5rSQJz8JVLsC7jV8XpiJjGRLLol3N+R5ihGYcrPLTno6pAdBA=="
+    },
+    {
+      "path": "node_modules/picocolors",
+      "name": "picocolors",
+      "version": "1.1.1",
+      "source": "registry",
+      "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="
+    },
+    {
+      "path": "node_modules/picomatch",
+      "name": "picomatch",
+      "version": "4.0.5",
+      "source": "registry",
+      "integrity": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A=="
+    },
+    {
+      "path": "node_modules/pkce-challenge",
+      "name": "pkce-challenge",
+      "version": "5.0.1",
+      "source": "registry",
+      "integrity": "sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ=="
+    },
+    {
+      "path": "node_modules/property-information",
+      "name": "property-information",
+      "version": "7.2.0",
+      "source": "registry",
+      "integrity": "sha512-IAtzIB6sUiWaJYrX9smp3V46pBGbBeLFRGdh25kg1334VcBlD8HzhPeNIWQH9zhGmo2itIe25EHt9dQP7G5hmg=="
+    },
+    {
+      "path": "node_modules/protobufjs",
+      "name": "protobufjs",
+      "version": "7.6.5",
+      "source": "registry",
+      "integrity": "sha512-/FPD0nUc9jH6rfFjji9IBqOz4pcSE3CsT1m7Ep6Mdb0LxSUMj8hgl6GomOvZzpNpAqqGaXA0P3VSrZLFzIhQrw=="
+    },
+    {
+      "path": "node_modules/proxy-addr",
+      "name": "proxy-addr",
+      "version": "2.0.7",
+      "source": "registry",
+      "integrity": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg=="
+    },
+    {
+      "path": "node_modules/qs",
+      "name": "qs",
+      "version": "6.15.3",
+      "source": "registry",
+      "integrity": "sha512-O9gl3zCl5h5blw1KGUzQKhA5oUXSl8rwUIM5o0S3nCXMliSvy5Dzx7/DJcI+SwgICv+IneSZwhBh1oSyEHA71A=="
+    },
+    {
+      "path": "node_modules/range-parser",
+      "name": "range-parser",
+      "version": "1.3.0",
+      "source": "registry",
+      "integrity": "sha512-hek2mFQpPuI4E1BBKrSto+BU3e3x4xuarsbiwr3+lf7p44juvFMV0XFWQAP3xUyqXA4RrXLIoaSUGbSt056ZMw=="
+    },
+    {
+      "path": "node_modules/raw-body",
+      "name": "raw-body",
+      "version": "3.0.2",
+      "source": "registry",
+      "integrity": "sha512-K5zQjDllxWkf7Z5xJdV0/B0WTNqx6vxG70zJE4N0kBs4LovmEYWJzQGxC9bS9RAKu3bgM40lrd5zoLJ12MQ5BA=="
+    },
+    {
+      "path": "node_modules/react",
+      "name": "react",
+      "version": "18.3.1",
+      "source": "registry",
+      "integrity": "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ=="
+    },
+    {
+      "path": "node_modules/react-dom",
+      "name": "react-dom",
+      "version": "18.3.1",
+      "source": "registry",
+      "integrity": "sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw=="
+    },
+    {
+      "path": "node_modules/readdirp",
+      "name": "readdirp",
+      "version": "4.1.2",
+      "source": "registry",
+      "integrity": "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg=="
+    },
+    {
+      "path": "node_modules/regex",
+      "name": "regex",
+      "version": "6.1.0",
+      "source": "registry",
+      "integrity": "sha512-6VwtthbV4o/7+OaAF9I5L5V3llLEsoPyq9P1JVXkedTP33c7MfCG0/5NOPcSJn0TzXcG9YUrR0gQSWioew3LDg=="
+    },
+    {
+      "path": "node_modules/regex-recursion",
+      "name": "regex-recursion",
+      "version": "6.0.2",
+      "source": "registry",
+      "integrity": "sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg=="
+    },
+    {
+      "path": "node_modules/regex-utilities",
+      "name": "regex-utilities",
+      "version": "2.3.0",
+      "source": "registry",
+      "integrity": "sha512-8VhliFJAWRaUiVvREIiW2NXXTmHs4vMNnSzuJVhscgmGav3g9VDxLrQndI3dZZVVdp0ZO/5v0xmX516/7M9cng=="
+    },
+    {
+      "path": "node_modules/require-from-string",
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="
+    },
+    {
+      "path": "node_modules/retry",
+      "name": "retry",
+      "version": "0.13.1",
+      "source": "registry",
+      "integrity": "sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg=="
+    },
+    {
+      "path": "node_modules/router",
+      "name": "router",
+      "version": "2.2.0",
+      "source": "registry",
+      "integrity": "sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ=="
+    },
+    {
+      "path": "node_modules/safe-buffer",
+      "name": "safe-buffer",
+      "version": "5.2.1",
+      "source": "registry",
+      "integrity": "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="
+    },
+    {
+      "path": "node_modules/safer-buffer",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "source": "registry",
+      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="
+    },
+    {
+      "path": "node_modules/scheduler",
+      "name": "scheduler",
+      "version": "0.23.2",
+      "source": "registry",
+      "integrity": "sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ=="
+    },
+    {
+      "path": "node_modules/semver",
+      "name": "semver",
+      "version": "7.8.5",
+      "source": "registry",
+      "integrity": "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA=="
+    },
+    {
+      "path": "node_modules/send",
+      "name": "send",
+      "version": "1.2.1",
+      "source": "registry",
+      "integrity": "sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ=="
+    },
+    {
+      "path": "node_modules/serve-static",
+      "name": "serve-static",
+      "version": "2.2.1",
+      "source": "registry",
+      "integrity": "sha512-xRXBn0pPqQTVQiC8wyQrKs2MOlX24zQ0POGaj0kultvoOCstBQM5yvOhAVSUwOMjQtTvsPWoNCHfPGwaaQJhTw=="
+    },
+    {
+      "path": "node_modules/setprototypeof",
+      "name": "setprototypeof",
+      "version": "1.2.0",
+      "source": "registry",
+      "integrity": "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw=="
+    },
+    {
+      "path": "node_modules/sharp",
+      "name": "sharp",
+      "version": "0.35.3",
+      "source": "registry",
+      "integrity": "sha512-ej0zVHuZGHCiABXcNxeYhpRnPNPAcvbG8RMdBAhDAxLKkCRVSpK3Iyu7qbqw3JMzoj0REeM6f3tJLtVwl0023Q=="
+    },
+    {
+      "path": "node_modules/shebang-command",
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="
+    },
+    {
+      "path": "node_modules/shebang-regex",
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "source": "registry",
+      "integrity": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="
+    },
+    {
+      "path": "node_modules/shiki",
+      "name": "shiki",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-Mb/GvXPHBAXdgGIcnfU5L3ldpn1XcxrGkPHwqgRx17/I2XRfqlFKk2vGkHWINn1kdXvzJZeuO3is6I9KLPFm0g=="
+    },
+    {
+      "path": "node_modules/side-channel",
+      "name": "side-channel",
+      "version": "1.1.1",
+      "source": "registry",
+      "integrity": "sha512-6x6dK6zJdpTzF4sQeNYxwtvBzf6Eg4GtlesS94HOvTudUeyK2WXAaIfmDgsyslYrRBeFIlsi54AYsFGUuhmvrQ=="
+    },
+    {
+      "path": "node_modules/side-channel-list",
+      "name": "side-channel-list",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w=="
+    },
+    {
+      "path": "node_modules/side-channel-map",
+      "name": "side-channel-map",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA=="
+    },
+    {
+      "path": "node_modules/side-channel-weakmap",
+      "name": "side-channel-weakmap",
+      "version": "1.0.2",
+      "source": "registry",
+      "integrity": "sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A=="
+    },
+    {
+      "path": "node_modules/space-separated-tokens",
+      "name": "space-separated-tokens",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q=="
+    },
+    {
+      "path": "node_modules/statuses",
+      "name": "statuses",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw=="
+    },
+    {
+      "path": "node_modules/stringify-entities",
+      "name": "stringify-entities",
+      "version": "4.0.4",
+      "source": "registry",
+      "integrity": "sha512-IwfBptatlO+QCJUo19AqvrPNqlVMpW9YEL2LIVY+Rpv2qsjCGxaDLNRgeGsQWJhfItebuJhsGSLjaBbNSQ+ieg=="
+    },
+    {
+      "path": "node_modules/toidentifier",
+      "name": "toidentifier",
+      "version": "1.0.1",
+      "source": "registry",
+      "integrity": "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA=="
+    },
+    {
+      "path": "node_modules/trim-lines",
+      "name": "trim-lines",
+      "version": "3.0.1",
+      "source": "registry",
+      "integrity": "sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg=="
+    },
+    {
+      "path": "node_modules/ts-algebra",
+      "name": "ts-algebra",
+      "version": "2.0.0",
+      "source": "registry",
+      "integrity": "sha512-FPAhNPFMrkwz76P7cdjdmiShwMynZYN6SgOujD1urY4oNm80Ou9oMdmbR45LotcKOXoy7wSmHkRFE6Mxbrhefw=="
+    },
+    {
+      "path": "node_modules/tslib",
+      "name": "tslib",
+      "version": "2.8.1",
+      "source": "registry",
+      "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="
+    },
+    {
+      "path": "node_modules/turndown",
+      "name": "turndown",
+      "version": "7.2.4",
+      "source": "registry",
+      "integrity": "sha512-I8yFsfRzmzK0WV1pNNOA4A7y4RDfFxPRxb3t+e3ui14qSGOxGtiSP6GjeX+Y6CHb7HYaFj7ECUD7VE5kQMZWGQ=="
+    },
+    {
+      "path": "node_modules/type-is",
+      "name": "type-is",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-faYHw0anBbc/kWF3zFTEnxSFOAGUX9GFbOBthvDdLsIlEoWOFOtS0zgCiQYwIskL9iGXZL3kAXD8OoZ4GmMATA=="
+    },
+    {
+      "path": "node_modules/type-is/node_modules/content-type",
+      "name": "content-type",
+      "version": "2.1.0",
+      "source": "registry",
+      "integrity": "sha512-mj7UPXE0jaqaOsukNZRUEfEi2AcL7C/vwmwcHV0O97eO1E1pxBZuyjlZrx5seTaNBg1U6+o35wpa35Qfcc+7ag=="
+    },
+    {
+      "path": "node_modules/typebox",
+      "name": "typebox",
+      "version": "1.1.38",
+      "source": "registry",
+      "integrity": "sha512-pZ0aQPmMmXoUvSbeuWf/Hzsc+avNw/Zd6VeE8CFgkVGWyuHPJvqeJJDeJqLve+K70LvjYIoleGcoJHPT17cWoA=="
+    },
+    {
+      "path": "node_modules/undici-types",
+      "name": "undici-types",
+      "version": "8.3.0",
+      "source": "registry",
+      "integrity": "sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ=="
+    },
+    {
+      "path": "node_modules/unist-util-is",
+      "name": "unist-util-is",
+      "version": "6.0.1",
+      "source": "registry",
+      "integrity": "sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g=="
+    },
+    {
+      "path": "node_modules/unist-util-position",
+      "name": "unist-util-position",
+      "version": "5.0.0",
+      "source": "registry",
+      "integrity": "sha512-fucsC7HjXvkB5R3kTCO7kUjRdrS0BJt3M/FPxmHMBOm8JQi2BsHAHFsy27E0EolP8rp0NzXsJ+jNPyDWvOJZPA=="
+    },
+    {
+      "path": "node_modules/unist-util-remove-position",
+      "name": "unist-util-remove-position",
+      "version": "5.0.0",
+      "source": "registry",
+      "integrity": "sha512-Hp5Kh3wLxv0PHj9m2yZhhLt58KzPtEYKQQ4yxfYFEO7EvHwzyDYnduhHnY1mDxoqr7VUwVuHXk9RXKIiYS1N8Q=="
+    },
+    {
+      "path": "node_modules/unist-util-stringify-position",
+      "name": "unist-util-stringify-position",
+      "version": "4.0.0",
+      "source": "registry",
+      "integrity": "sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ=="
+    },
+    {
+      "path": "node_modules/unist-util-visit",
+      "name": "unist-util-visit",
+      "version": "5.1.0",
+      "source": "registry",
+      "integrity": "sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg=="
+    },
+    {
+      "path": "node_modules/unist-util-visit-parents",
+      "name": "unist-util-visit-parents",
+      "version": "6.0.2",
+      "source": "registry",
+      "integrity": "sha512-goh1s1TBrqSqukSc8wrjwWhL0hiJxgA8m4kFxGlQ+8FYQ3C/m11FcTs4YYem7V664AhHVvgoQLk890Ssdsr2IQ=="
+    },
+    {
+      "path": "node_modules/unpipe",
+      "name": "unpipe",
+      "version": "1.0.0",
+      "source": "registry",
+      "integrity": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ=="
+    },
+    {
+      "path": "node_modules/use-sync-external-store",
+      "name": "use-sync-external-store",
+      "version": "1.2.0",
+      "source": "registry",
+      "integrity": "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
+    },
+    {
+      "path": "node_modules/vary",
+      "name": "vary",
+      "version": "1.1.2",
+      "source": "registry",
+      "integrity": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="
+    },
+    {
+      "path": "node_modules/vfile",
+      "name": "vfile",
+      "version": "6.0.3",
+      "source": "registry",
+      "integrity": "sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q=="
+    },
+    {
+      "path": "node_modules/vfile-message",
+      "name": "vfile-message",
+      "version": "4.0.3",
+      "source": "registry",
+      "integrity": "sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw=="
+    },
+    {
+      "path": "node_modules/web-streams-polyfill",
+      "name": "web-streams-polyfill",
+      "version": "3.3.3",
+      "source": "registry",
+      "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw=="
+    },
+    {
+      "path": "node_modules/which",
+      "name": "which",
+      "version": "2.0.2",
+      "source": "registry",
+      "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="
+    },
+    {
+      "path": "node_modules/wrappy",
+      "name": "wrappy",
+      "version": "1.0.2",
+      "source": "registry",
+      "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
+    },
+    {
+      "path": "node_modules/ws",
+      "name": "ws",
+      "version": "8.21.3",
+      "source": "registry",
+      "integrity": "sha512-201TZ/kPWxoPr/OKWjquZR1SWKXcvxdH+e1xrx89b3YbmzLMFCLfnaG1HFIgWzJOEWZ7MvpK++odZufgYR50Rw=="
+    },
+    {
+      "path": "node_modules/yaml",
+      "name": "yaml",
+      "version": "2.9.0",
+      "source": "registry",
+      "integrity": "sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA=="
+    },
+    {
+      "path": "node_modules/zod",
+      "name": "zod",
+      "version": "4.4.3",
+      "source": "registry",
+      "integrity": "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="
+    },
+    {
+      "path": "node_modules/zod-to-json-schema",
+      "name": "zod-to-json-schema",
+      "version": "3.25.2",
+      "source": "registry",
+      "integrity": "sha512-O/PgfnpT1xKSDeQYSCfRI5Gy3hPf91mKVDuYLUHZJMiDFptvP41MSnWofm8dnCm0256ZNfZIM7DSzuSMAFnjHA=="
+    },
+    {
+      "path": "node_modules/zustand",
+      "name": "zustand",
+      "version": "4.4.7",
+      "source": "registry",
+      "integrity": "sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw=="
+    },
+    {
+      "path": "node_modules/zwitch",
+      "name": "zwitch",
+      "version": "2.0.4",
+      "source": "registry",
+      "integrity": "sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A=="
+    }
+  ]
+}

@@ -24,9 +24,17 @@ packages:
 # builds must resolve those matching names to this workspace's pinned sources.
 linkWorkspacePackages: true
 
+# Forge requires an explicit pnpm hoist policy before packaging. The Electron
+# main bundle has no runtime npm dependencies, so only Forge's own tooling is public.
+publicHoistPattern:
+  - '@electron-forge/*'
+
 overrides:
   '@deepseek-ai/cosmokit': 'link:vendor/cosmokit'
   '@deepseek-ai/schemastery': 'link:vendor/schemastery'
+  # Forge 7's rebuild package names an Electron node-gyp commit as a Git
+  # subdependency; use the maintained registry release so exotic subdeps stay blocked.
+  '@electron/rebuild@3>@electron/node-gyp': 10.2.0-electron.2
 
 peerDependencyRules:
   allowedVersions:
@@ -39,6 +47,8 @@ peerDependencyRules:
 # (git hooks) genuinely need theirs.
 allowBuilds:
   esbuild: true
+  # Electron supplies the desktop shell binary used by its real integration lane.
+  electron: true
   lefthook: true
   # Cross-platform boundary for the persistent PTY backend, including ConPTY on Windows.
   node-pty: true
@@ -46,6 +56,9 @@ allowBuilds:
   # them only because they ship lifecycle scripts, but those are no-ops we don't
   # need, so we deny them — install still succeeds.
   '@google/genai': false
+  # electron-builder includes its unused Squirrel target beside NSIS; its setup
+  # aliases are unnecessary when only the NSIS maker runs.
+  electron-winstaller: false
   protobufjs: false
   node-addon-require-builtin: false
   # JSONL durability calls MoveFileExW with write-through publication on Windows.

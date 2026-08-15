@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "windows": 1,
+  "renderer": {
+    "originKind": "managed-loopback",
+    "requireType": "undefined",
+    "processType": "undefined",
+    "bootEntriesPositive": true,
+    "childWindowDenied": true
+  },
+  "secondInstance": {
+    "exited": true,
+    "exitCode": 0,
+    "windowCountAfterExit": 1
+  }
+}
