@@ -1,57 +1,60 @@
-# DeepSeek Harness
+# DeepSeek Harness Desktop Client
 
 English | [中文](README.zh.md)
 
-DeepSeek Harness (`dsh`) is an open-source agent harness developed by [DeepSeek AI](https://deepseek.com).
+The **Windows desktop client** for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`). It wraps the DeepSeek Harness Web runtime in an Electron shell: on launch it runs the bundled `dsh web` backend and opens the Web UI in a sandboxed window — no Node.js, pnpm, or repository files required.
 
-It uses an architecture where **everything is a plugin**, and is powered by [Cordis](https://github.com/cordiverse/cordis), whose design is described in [_A Programming Paradigm for Spatiotemporal Composability_](https://github.com/cordiverse/paper).
+This repository is derived from upstream [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), an open-source agent harness where **everything is a plugin**, powered by [Cordis](https://github.com/cordiverse/cordis). The desktop client itself lives in [`apps/desktop`](apps/desktop); the rest of the tree is the upstream harness it packages. See [architecture](docs/architecture.md) for the plugin model.
 
-## Developer preview
+## Features
 
-DeepSeek Harness is currently in _developer preview_ and is iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**
+- **Zero setup**: bundles the Node runtime and the `dsh web` backend, so users need no Node.js, pnpm, or checkout
+- **Sandboxed**: the Electron renderer runs with `sandbox` and `contextIsolation`, with Node integration, preload, and WebView disabled
+- **Single instance**: only one application instance runs at a time
+- **Resilient lifecycle**: backend readiness probing, graceful and forced shutdown, crash recovery, and manual restart
+- **Persistent data**: application data lives under Electron `userData` and survives uninstall
+- **Redacted logs**: backend logs are redacted and capped, keeping the last two generations
 
-## Run
+## Download & install
 
-### Run from `npm`
+Requires **Windows 10 / 11 (x64)**.
 
-Install `Node.js`, then run:
+Download the latest `Setup.exe` from [Releases](https://github.com/lizhenshuai/deepseek-harness-desktop/releases) and run it:
+
+- installs per user by default (no administrator rights required), with a selectable installation directory
+- creates desktop and Start Menu shortcuts, then launches the application
+
+> The current installer is unsigned, so Windows SmartScreen may warn. Choose "More info → Run anyway" to continue.
+
+## Build from source
+
+Prerequisites: Node.js `^22.19 || >=24` and pnpm.
 
 ```sh
-npx @deepseek-ai/dsh web
-```
-
-The command starts the Web UI, served at `http://127.0.0.1:3080` by default. See [Web UI guide](docs/user/guide/index.md).
-
-### Run from source
-
-To run from a repository checkout:
-
-```sh
-git clone https://github.com/deepseek-ai/deepseek-harness.git
-cd deepseek-harness
 pnpm install
-pnpm run build
-pnpm dsh web
+pnpm run desktop:build     # compile the Electron main process
+pnpm run desktop:package   # build the hardened package (ASAR + external runtime resources)
+pnpm run desktop:make      # produce the Windows x64 NSIS installer (out/make/DeepSeek-Harness-Setup-x64.exe)
 ```
-
-## Community and support
-
-- Feel free to submit feedback or bug reports through [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions).
-- Add the [`dsh-plugin`](https://github.com/topics/dsh-plugin) topic to your plugin repository for discoverability.
-- Join <a href="https://discord.gg/Ycq5dCaS4">DeepSeek Harness Discord community</a>.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development
 
-Start with the [development guide](docs/development.md) and [architecture documentation](docs/architecture.md).
+```sh
+pnpm run desktop:test            # unit tests
+pnpm run desktop:test:electron   # replay semantic/screenshot snapshots in real Electron
+pnpm run desktop:test:packaged   # verify the packaged build (requires desktop:package first)
+```
 
-For agents, follow [AGENTS.md](AGENTS.md).
+See [`apps/desktop/README.md`](apps/desktop/README.md) for the full desktop development and release notes.
+
+## Security & limitations
+
+- The backend endpoint is restricted to the loopback `http://127.0.0.1:<port>` origin
+- The renderer has no Node integration, preload, or IPC surface; it reaches the backend only through the managed page
+- Uninstall preserves `userData`; remove it manually afterwards for a full cleanup
 
 ## License
 
 [MIT](LICENSE)
 
-Third-party dependencies and their licenses are disclosed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Third-party dependencies and licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
