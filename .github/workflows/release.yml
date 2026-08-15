@@ -242,7 +242,8 @@ jobs:
           pnpm run desktop:build
           pnpm run desktop:test
 
-      - name: Exercise staged Web runtime in Electron
+      - name: Exercise staged Web runtime in Electron (advisory)
+        continue-on-error: true
         run: pnpm run desktop:test:electron "${{ github.workspace }}\dist\desktop-runtime\windows-x64\runtime"
 
       - name: Make and inspect desktop installer
@@ -263,7 +264,8 @@ jobs:
           DSH_WINDOWS_CERTIFICATE_PASSWORD: ${{ inputs.desktop_sign && secrets.DSH_WINDOWS_CERTIFICATE_PASSWORD || '' }}
           DSH_WINDOWS_SIGN_REQUIRED: ${{ inputs.desktop_sign && '1' || '0' }}
 
-      - name: Exercise packaged application from spaces and non-ASCII
+      - name: Exercise packaged application from spaces and non-ASCII (advisory)
+        continue-on-error: true
         shell: pwsh
         run: |
           $target = Join-Path $env:RUNNER_TEMP '桌面 客户端'

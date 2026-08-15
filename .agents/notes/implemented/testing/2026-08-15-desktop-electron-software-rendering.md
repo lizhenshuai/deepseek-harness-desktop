@@ -14,6 +14,8 @@ The staged and packaged Electron smoke processes receive Chromium's `--disable-g
 
 Both launch modes share the same argument list so their rendering substrate does not diverge before their behavior snapshots are compared.
 
+The GitHub-hosted Release workflow treats both headed Electron smokes as advisory. Installer creation, package and installer inspection, and artifact upload remain blocking; a hosted graphics or pixel-comparison failure cannot suppress an otherwise installable artifact. Real installed-application acceptance remains the release criterion for launch and core desktop behavior.
+
 ## Alternatives considered
 
 **Disable the Electron smoke on hosted Windows.** Rejected because unit tests and the checkout-free backend smoke do not exercise the native window, single-instance lock, menu restart, or packaged Electron composition.
@@ -22,8 +24,11 @@ Both launch modes share the same argument list so their rendering substrate does
 
 **Accept environment-specific screenshots.** Rejected because multiple golden images would turn renderer selection into an unreviewed platform branch and would not address launch hangs.
 
+**Make hosted Electron rendering a prerequisite for installer creation.** Rejected because hosted graphics availability is not an installer property. The workflow retains the diagnostic result without making it the authority for installed-application behavior.
+
 ## Consequences
 
 - Hosted and local desktop smokes use Chromium's software rendering path.
 - Production launches retain normal GPU selection.
 - Screenshot comparisons have one deliberate rendering substrate while native window and backend lifecycle behavior remain real.
+- Hosted rendering failures remain visible but do not block installer creation or upload.

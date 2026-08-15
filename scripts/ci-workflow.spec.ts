@@ -230,6 +230,10 @@ describe('CI workflow', () => {
     expect(commands).toContain('pnpm run desktop:test:electron')
     expect(commands).not.toContain('desktop:test:electron --')
     expect(commands).not.toContain('desktop:test:packaged --')
+    for (const command of ['desktop:test:electron', 'desktop:test:packaged']) {
+      const smoke = shell.steps.find(step => isRecord(step) && typeof step.run === 'string' && step.run.includes(command))
+      expect(smoke).toMatchObject({ 'continue-on-error': true })
+    }
     expect(commands).toContain('pnpm run desktop:make')
     expect(commands).toContain('pnpm run desktop:verify-package')
     expect(commands).toContain('DSH_WINDOWS_CERTIFICATE_PFX_BASE64')
