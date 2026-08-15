@@ -267,7 +267,7 @@
       "name": "@deepseek-ai/dsh",
       "version": "0.1.0-rc.5",
       "source": "packed",
-      "sha256": "c4e7f6674d8c74c73283ede8a6ac48ca72832575cf9dd733ad4c8c7e9dad6714"
+      "sha256": "590981a1c7909a3d60e8d52fa0b470d5a22050e4a890c9a82d53f4b927e4fc93"
     },
     {
       "path": "node_modules/@deepseek-ai/dsh-agent",
