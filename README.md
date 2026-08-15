@@ -47,14 +47,19 @@ pnpm run desktop:test:packaged   # verify the packaged build (requires desktop:p
 
 See [`apps/desktop/README.md`](apps/desktop/README.md) for the full desktop development and release notes.
 
+## Community
+
+Interested in joining the group chat? Scan the QR code:
+
+<img width="280" alt="DeepSeek Harness community group chat QR code" src="https://github.com/user-attachments/assets/56148239-5d99-414c-8893-8c091e7941da" />
+
+> The QR code is valid for 7 days and is refreshed by the group owner.
+
 ## Security & limitations
 
 - The backend endpoint is restricted to the loopback `http://127.0.0.1:<port>` origin
 - The renderer has no Node integration, preload, or IPC surface; it reaches the backend only through the managed page
 - Uninstall preserves `userData`; remove it manually afterwards for a full cleanup
-感兴趣的可以进群
-
-<img width="473" height="1024" alt="1786797294522" src="https://github.com/user-attachments/assets/56148239-5d99-414c-8893-8c091e7941da" />
 
 ## License
 

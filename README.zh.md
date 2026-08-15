@@ -47,6 +47,14 @@ pnpm run desktop:test:packaged   # 验证打包产物（需先 desktop:package�
 
 完整的桌面端开发与发布说明见 [`apps/desktop/README.md`](apps/desktop/README.md)。
 
+## 社区
+
+感兴趣的可以进群，扫码加入 DeepSeek Harness 社区群聊：
+
+<img width="280" alt="DeepSeek Harness 社区群聊二维码" src="https://github.com/user-attachments/assets/56148239-5d99-414c-8893-8c091e7941da" />
+
+> 二维码 7 天内有效，过期后群主会更新。
+
 ## 安全与限制
 
 - 后端端点严格限定为环回地址 `http://127.0.0.1:<port>`
