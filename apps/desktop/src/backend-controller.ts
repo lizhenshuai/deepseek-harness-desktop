@@ -1,6 +1,8 @@
 /** Generation-fenced lifecycle for the packaged loopback Web backend. */
 
-import type { SubprocessHandle, SubprocessOutcome, SubprocessSpawnSpec } from '@deepseek-ai/dsh-subprocess'
+import {
+  scrubbedParentEnv, type SubprocessHandle, type SubprocessOutcome, type SubprocessSpawnSpec,
+} from '@deepseek-ai/dsh-subprocess'
 import {
   spawnManagedProcess, type ManagedProcessHandle,
 } from '@deepseek-ai/dsh-subprocess-local/src/managed-process.ts'
@@ -107,7 +109,12 @@ export class DesktopBackendController {
     const spec: SubprocessSpawnSpec = {
       argv: [node, entry, 'web', '--supervised-stdin', '--host', '127.0.0.1', '--port', '0'],
       cwd: home,
-      env: { ...this.options.environment, DSH_HOME: home, DSH_TELEMETRY_DISABLED: '1' },
+      env: {
+        ...scrubbedParentEnv(),
+        ...this.options.environment,
+        DSH_HOME: home,
+        DSH_TELEMETRY_DISABLED: '1',
+      },
       stdio: { stdin: 'pipe', stdout: 'pipe', stderr: 'pipe' },
       graceMs: this.options.stopTimeoutMs ?? STOP_TIMEOUT_MS,
     }

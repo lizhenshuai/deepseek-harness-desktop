@@ -10,6 +10,7 @@ import { DesktopBackendController } from '../src/backend-controller.ts'
 const scratch: string[] = []
 afterEach(() => {
   for (const path of scratch.splice(0)) rmSync(path, { recursive: true, force: true })
+  vi.unstubAllEnvs()
 })
 
 function temporaryRuntime(): { root: string; userData: string } {
@@ -64,6 +65,9 @@ function fakeHandle(): ManagedProcessHandle & {
 
 describe('desktop backend controller', () => {
   it('spawns the staged CLI, probes readiness, and stops through stdin', async () => {
+    vi.stubEnv('DESKTOP_SAFE_MARKER', 'available')
+    vi.stubEnv('DESKTOP_SECRET_TOKEN', 'hidden')
+    vi.stubEnv('DSH_INHERITED_MARKER', 'hidden')
     const paths = temporaryRuntime()
     const child = fakeHandle()
     const specs: SubprocessSpawnSpec[] = []
@@ -86,6 +90,9 @@ describe('desktop backend controller', () => {
       'web', '--supervised-stdin', '--host', '127.0.0.1', '--port', '0',
     ])
     expect(specs[0]?.env?.DSH_HOME).toBe(join(paths.userData, 'harness'))
+    expect(specs[0]?.env?.DESKTOP_SAFE_MARKER).toBe('available')
+    expect(specs[0]?.env?.DESKTOP_SECRET_TOKEN).toBeUndefined()
+    expect(specs[0]?.env?.DSH_INHERITED_MARKER).toBeUndefined()
     await controller.stop()
     expect(controller.state()).toEqual({ kind: 'stopped' })
     expect(child.terminateSpy).not.toHaveBeenCalled()
