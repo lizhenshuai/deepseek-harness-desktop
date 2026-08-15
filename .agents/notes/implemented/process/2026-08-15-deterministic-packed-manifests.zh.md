@@ -12,7 +12,7 @@ Status: implemented
 
 发布打包边界会先规范化每个导出 manifest，再重新打包并校验 payload。对象键递归排序，数组顺序保持不变，生命周期脚本被禁用，最终归档由 npm 完成。隔离的缓存使并发操作或宿主 npm 缓存状态不会影响结果。
 
-dsh 与 vendored 两个发布族都使用 `scripts/release/pack.ts`，因此该规则同时适用于两者。Landlock 序列继续直接打包；它的 manifest 不包含暴露此次非确定性的 workspace 依赖映射。
+dsh 与 vendored 两个发布族都使用 `scripts/release/pack.ts`，因此该规则同时适用于两者。Landlock 入口仍使用直接打包路径，但生成的归档也会经过同一个规范化器。其导出的 `optionalDependencies` 映射同样会执行 workspace 范围转换，因此也需要相同的规范化边界。
 
 ## Alternatives considered
 
@@ -25,6 +25,7 @@ dsh 与 vendored 两个发布族都使用 `scripts/release/pack.ts`，因此该�
 ## Consequences
 
 - 即使 pnpm 以不同顺序输出依赖映射，内容相同的 payload 也具有可复现的 tarball 标识。
+- 直接打包并输入 dsh 发布证明的归档必须先调用 `release:normalize-tarball`，证明步骤才能消费其字节。
 - 发布打包会增加一次本地归档过程，因此耗时更长。
 - 规范化期间不会运行包生命周期脚本；第一次 `pnpm pack` 仍是构建和选择 payload 的负责步骤。
 - 如果某个包的导出 payload 无法经过解包和禁用脚本的 npm 重打包，发布边界会在发布前失败。

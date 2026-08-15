@@ -131,6 +131,7 @@
     "release:vendor": "tsx scripts/release/bump.ts --family vendor",
     "release:verify": "tsx scripts/release/verify.ts",
     "release:pack": "tsx scripts/release/pack.ts",
+    "release:normalize-tarball": "tsx scripts/release/normalize-tarball.ts",
     "release:verify-packed-install": "tsx scripts/release/verify-packed-install.ts",
     "desktop:prove-runtime": "tsx scripts/release/verify-packed-install.ts --family dsh --web",
     "desktop:stage-runtime": "tsx scripts/desktop/stage-runtime.ts",

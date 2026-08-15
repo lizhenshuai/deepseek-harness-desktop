@@ -12,7 +12,7 @@ English | [中文](2026-08-15-deterministic-packed-manifests.zh.md)
 
 The release pack boundary canonicalizes every exported manifest and repacks the payload before validation. Object keys are sorted recursively, array order is retained, lifecycle scripts are disabled, and npm performs the final archive construction. An isolated cache prevents concurrent or host npm cache state from affecting the operation.
 
-This applies to both the dsh and vendored release families because both use `scripts/release/pack.ts`. The Landlock sequence retains its direct pack path; its manifests do not contain the workspace dependency maps that exposed this nondeterminism.
+This applies to both the dsh and vendored release families because both use `scripts/release/pack.ts`. The Landlock entry retains its direct pack path but passes the resulting archive through the same normalizer. Its exported `optionalDependencies` map also undergoes workspace range conversion and therefore requires the same canonical boundary.
 
 ## Alternatives considered
 
@@ -25,6 +25,7 @@ This applies to both the dsh and vendored release families because both use `scr
 ## Consequences
 
 - Tarball identity is reproducible for equal payloads even when pnpm emits dependency maps in a different order.
+- Directly packed inputs to the dsh release proof must call `release:normalize-tarball` before the proof consumes their bytes.
 - Release packing performs a second local archive pass and therefore takes longer.
 - Package lifecycle scripts do not run during normalization; the first `pnpm pack` remains the owning build and payload-selection step.
 - A package whose exported payload cannot survive extraction and scriptless npm repacking fails at the release boundary before publication.

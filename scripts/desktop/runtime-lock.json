@@ -1583,7 +1583,7 @@
       "name": "@deepseek-ai/node-addon-landlock-run",
       "version": "0.1.1",
       "source": "packed",
-      "sha256": "72a0891420272980900b4580e41e254212752eb1b96aeda1c5332e234f3daa1e"
+      "sha256": "177a40d34de83d35b4eb253f2da23a3ae921c1f742a7af4902c0121beafabc0c"
     },
     {
       "path": "node_modules/@deepseek-ai/schemastery",

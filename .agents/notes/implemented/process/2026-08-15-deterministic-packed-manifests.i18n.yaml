@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/process/2026-08-15-deterministic-packed-manifests.md
-2026-08-15-deterministic-packed-manifests.md: 6e7674df07c878494ef7a15ec865fb57aa9e2b1a
-2026-08-15-deterministic-packed-manifests.zh.md: 98978cddb3a7b85c0e669b9ca1646b14b6721832
+2026-08-15-deterministic-packed-manifests.md: bb405371417fea26613c6dfca8c33dcc81c25a93
+2026-08-15-deterministic-packed-manifests.zh.md: e97b836dca404dc681aed4f8eb53024b43ceeccf

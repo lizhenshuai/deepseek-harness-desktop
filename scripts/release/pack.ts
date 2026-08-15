@@ -33,8 +33,11 @@ export function canonicalizeJson(value: unknown): unknown {
     .map(([key, entry]) => [key, canonicalizeJson(entry)]))
 }
 
-/** Replace pnpm's order-unstable exported manifest with a canonical npm archive. */
-function normalizeTarball(tarball: string): void {
+/**
+ * Replace a package manager's order-unstable exported manifest with a canonical npm archive.
+ * @param tarball - npm archive to normalize in place.
+ */
+export function normalizeTarball(tarball: string): void {
   const workRoot = mkdtempSync(join(tmpdir(), 'dsh-release-pack-'))
   try {
     run('tar', ['-xzf', tarball, '-C', workRoot])
