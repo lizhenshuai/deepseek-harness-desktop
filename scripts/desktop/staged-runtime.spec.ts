@@ -1,11 +1,11 @@
 /** Desktop runtime closure, projection, policy, and manifest primitives. */
 
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
 import {
-  buildRuntimeLock, inventoryRuntime, projectRuntimePackages, removeTreeSafe,
+  buildRuntimeLock, inventoryRuntime, projectRuntimePackages, publishStagedDirectory, removeTreeSafe,
   resolveProductionClosure, verifyRuntimePolicy, type RuntimePackage,
 } from './staged-runtime.ts'
 
@@ -79,6 +79,49 @@ describe('desktop runtime closure', () => {
 })
 
 describe('desktop runtime projection', () => {
+  it('retries a transient Windows directory publish failure without copying the runtime', async () => {
+    const root = temporaryRoot()
+    const source = join(root, 'staged')
+    const destination = join(root, 'published')
+    mkdirSync(source)
+    writeFileSync(join(source, 'runtime-manifest.json'), '{}\n')
+    let attempts = 0
+
+    await publishStagedDirectory(source, destination, {
+      rename: (from, to) => {
+        attempts += 1
+        if (attempts < 3) return Promise.reject(Object.assign(new Error('busy'), { code: 'EPERM' }))
+        renameSync(from, to)
+        return Promise.resolve()
+      },
+      delay: () => Promise.resolve(),
+    })
+
+    expect(attempts).toBe(3)
+    expect(existsSync(source)).toBe(false)
+    expect(readFileSync(join(destination, 'runtime-manifest.json'), 'utf8')).toBe('{}\n')
+  })
+
+  it('does not retry a non-transient directory publish failure', async () => {
+    const root = temporaryRoot()
+    const source = join(root, 'staged')
+    const destination = join(root, 'published')
+    mkdirSync(source)
+    let attempts = 0
+
+    await expect(publishStagedDirectory(source, destination, {
+      rename: () => {
+        attempts += 1
+        return Promise.reject(Object.assign(new Error('denied'), { code: 'EACCES' }))
+      },
+      delay: () => Promise.resolve(),
+    })).rejects.toMatchObject({ code: 'EACCES' })
+
+    expect(attempts).toBe(1)
+    expect(existsSync(source)).toBe(true)
+    expect(existsSync(destination)).toBe(false)
+  })
+
   it('copies runtime files while excluding nested installs, TypeScript, maps, tests, and ordinary Markdown', () => {
     const root = temporaryRoot()
     const source = writePackage(root, 'consumer/node_modules/package', { name: 'package', version: '1.0.0' })

@@ -150,7 +150,7 @@ async function main(): Promise<void> {
     ], { cwd: stagedRoot, env: packedConsumerEnvironment(stagedRoot) })
     if (verificationOutput !== '') console.log(verificationOutput)
 
-    publishStagedDirectory(stagedRoot, output)
+    await publishStagedDirectory(stagedRoot, output)
     published = true
     console.log(`desktop stage-runtime: staged ${String(packages.length)} production package location(s) at ${output}`)
   } finally {

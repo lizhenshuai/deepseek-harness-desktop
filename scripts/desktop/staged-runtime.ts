@@ -3,8 +3,9 @@
 import { createHash } from 'node:crypto'
 import {
   copyFileSync, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync,
-  renameSync, rmdirSync, statSync, unlinkSync, writeFileSync,
+  rmdirSync, statSync, unlinkSync, writeFileSync,
 } from 'node:fs'
+import { rename } from 'node:fs/promises'
 import { dirname, extname, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import type { PackedTarball } from '../release/packed-consumer.ts'
 
@@ -239,11 +240,47 @@ export function writeStableJson(path: string, value: unknown): void {
   writeFileSync(path, `${JSON.stringify(value, undefined, 2)}\n`)
 }
 
-/** Move a fully validated sibling directory into its final absent destination. */
-export function publishStagedDirectory(source: string, destination: string): void {
+const PUBLISH_RETRY_DELAYS_MS = [100, 250, 500, 1_000, 2_000, 4_000, 8_000, 16_000] as const
+const TRANSIENT_RENAME_CODES = new Set(['EBUSY', 'ENOTEMPTY', 'EPERM'])
+
+/** Test substitutions for the Windows staged-directory publish boundary. */
+export interface StagedPublishInternals {
+  readonly rename?: (source: string, destination: string) => Promise<void>
+  readonly delay?: (milliseconds: number) => Promise<void>
+}
+
+/**
+ * Move a fully validated sibling directory into its final absent destination.
+ * @param source - Validated temporary directory beside the destination.
+ * @param destination - Final path that must remain absent until publication.
+ * @param internals - Test substitutions for rename and delay.
+ * @returns When the atomic directory rename has completed.
+ */
+export async function publishStagedDirectory(
+  source: string,
+  destination: string,
+  internals: StagedPublishInternals = {},
+): Promise<void> {
   if (existsSync(destination)) throw new Error(`staging output already exists: ${destination}`)
   mkdirSync(dirname(destination), { recursive: true })
-  renameSync(source, destination)
+  const renameDirectory = internals.rename ?? rename
+  const delay = internals.delay ?? wait
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      await renameDirectory(source, destination)
+      return
+    } catch (error) {
+      const code = error !== null && typeof error === 'object' ? (error as { code?: unknown }).code : undefined
+      const retryDelay = PUBLISH_RETRY_DELAYS_MS[attempt]
+      if (typeof code !== 'string' || !TRANSIENT_RENAME_CODES.has(code) || retryDelay === undefined) throw error
+      if (existsSync(destination)) throw new Error(`staging output already exists: ${destination}`, { cause: error })
+      await delay(retryDelay)
+    }
+  }
+}
+
+function wait(milliseconds: number): Promise<void> {
+  return new Promise(resolveWait => setTimeout(resolveWait, milliseconds))
 }
 
 /** Remove a known temporary tree without following links or junctions. */
