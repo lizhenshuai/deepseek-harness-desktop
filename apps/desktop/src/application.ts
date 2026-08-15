@@ -37,7 +37,7 @@ export function startDesktopApplication(): void {
         return await controller.start()
       } catch (error) {
         const result = await dialog.showMessageBox({
-          type: 'error', title: 'DeepSeek Harness 启动失败',
+          type: 'error', title: 'DeepSeek Harness 客户端 启动失败',
           message: error instanceof Error ? error.message : String(error),
           detail: controller.diagnostics.tail(), buttons: ['重试', '打开日志', '退出'],
           defaultId: 0, cancelId: 2, noLink: true,

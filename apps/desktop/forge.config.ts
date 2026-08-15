@@ -35,10 +35,10 @@ const config: ForgeConfig = {
     extraResource: [runtimeRoot, resolve(import.meta.dirname, '../../LICENSE'), resolve(import.meta.dirname, '../../THIRD_PARTY_NOTICES.md')],
     win32metadata: {
       CompanyName: 'DeepSeek Harness contributors',
-      FileDescription: 'DeepSeek Harness desktop client',
+      FileDescription: 'DeepSeek Harness 客户端',
       InternalName: 'DeepSeekHarness',
       OriginalFilename: 'DeepSeek Harness.exe',
-      ProductName: 'DeepSeek Harness',
+      ProductName: 'DeepSeek Harness 客户端',
     },
     ...(windowsSign === undefined ? {} : { windowsSign }),
     ignore: [

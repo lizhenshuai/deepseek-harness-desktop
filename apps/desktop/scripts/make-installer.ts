@@ -11,7 +11,7 @@ const output = join(root, 'out', 'make')
 const signing = resolveWindowsSigning(process.env)
 const config: Configuration = {
   appId: 'com.deepseek.DeepSeekHarness',
-  productName: 'DeepSeek Harness',
+  productName: 'DeepSeek Harness 客户端',
   artifactName: 'DeepSeek-Harness-Setup-x64.${ext}',
   directories: { output },
   win: {
@@ -31,8 +31,8 @@ const config: Configuration = {
     allowElevation: true,
     createDesktopShortcut: true,
     createStartMenuShortcut: true,
-    shortcutName: 'DeepSeek Harness',
-    uninstallDisplayName: 'DeepSeek Harness',
+    shortcutName: 'DeepSeek Harness 客户端',
+    uninstallDisplayName: 'DeepSeek Harness 客户端',
     runAfterFinish: true,
   },
 }

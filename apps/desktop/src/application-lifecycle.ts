@@ -57,7 +57,7 @@ export function installApplicationLifecycle(options: ApplicationLifecycleOptions
       while (!quitPending) {
         const dialogOptions: MessageBoxOptions = {
           type: 'error',
-          title: 'DeepSeek Harness 后端已停止',
+          title: 'DeepSeek Harness 客户端 后端已停止',
           message: error instanceof Error ? error.message : String(error),
           detail: options.controller.diagnostics.tail(),
           buttons: ['重试', '打开日志', '退出'],

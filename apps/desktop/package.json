@@ -1,7 +1,7 @@
 {
   "name": "@deepseek-ai/dsh-desktop",
   "description": "Sandboxed Electron shell for the staged DeepSeek Harness Web runtime",
-  "productName": "DeepSeek Harness",
+  "productName": "DeepSeek Harness 客户端",
   "author": "DeepSeek Harness contributors",
   "version": "0.1.0-rc.5",
   "private": true,
