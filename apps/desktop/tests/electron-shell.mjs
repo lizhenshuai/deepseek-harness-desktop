@@ -19,7 +19,7 @@ if (runtimeArgument === undefined || !isAbsolute(runtimeArgument)) {
 const repositoryRoot = resolve(import.meta.dirname, '../../..')
 const electronEntry = join(repositoryRoot, 'apps/desktop/lib/main.js')
 const executablePath = packaged ? resolve(runtimeArgument) : electronPath
-const launchArguments = packaged ? [] : [electronEntry]
+const launchArguments = packaged ? ['--disable-gpu'] : ['--disable-gpu', electronEntry]
 const expectedSnapshot = join(import.meta.dirname, `snapshots/electron-shell${packaged ? '-packaged' : ''}.json`)
 const visualSnapshot = join(import.meta.dirname, `snapshots/electron-shell${packaged ? '-packaged' : ''}.png`)
 const scratch = mkdtempSync(join(tmpdir(), 'dsh-desktop-electron-'))
@@ -43,7 +43,7 @@ try {
   let context
   if (packaged) {
     const port = await reserveLoopbackPort()
-    packagedProcess = spawn(executablePath, [`--remote-debugging-address=127.0.0.1`, `--remote-debugging-port=${String(port)}`], {
+    packagedProcess = spawn(executablePath, [...launchArguments, `--remote-debugging-address=127.0.0.1`, `--remote-debugging-port=${String(port)}`], {
       env: environment, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
     })
     const endpoint = `http://127.0.0.1:${String(port)}`
