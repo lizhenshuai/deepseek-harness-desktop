@@ -194,6 +194,7 @@ jobs:
         with:
           name: dsh-desktop-runtime-windows-x64
           path: dist/desktop-runtime/windows-x64/**
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 7
 
@@ -241,7 +242,7 @@ jobs:
           pnpm run desktop:test
 
       - name: Exercise staged Web runtime in Electron
-        run: pnpm run desktop:test:electron -- "${{ github.workspace }}\dist\desktop-runtime\windows-x64\runtime"
+        run: pnpm run desktop:test:electron "${{ github.workspace }}\dist\desktop-runtime\windows-x64\runtime"
 
       - name: Make and inspect desktop installer
         run: |
@@ -266,7 +267,7 @@ jobs:
         run: |
           $target = Join-Path $env:RUNNER_TEMP '桌面 客户端'
           Copy-Item -Recurse -LiteralPath 'apps/desktop/out/DeepSeek Harness-win32-x64' -Destination $target
-          pnpm run desktop:test:packaged -- (Join-Path $target 'DeepSeek Harness.exe')
+          pnpm run desktop:test:packaged (Join-Path $target 'DeepSeek Harness.exe')
 
       - uses: actions/upload-artifact@v4
         with:

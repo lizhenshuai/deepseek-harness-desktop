@@ -202,9 +202,10 @@ describe('CI workflow', () => {
 
   it('packages the Windows Electron shell over the staged desktop runtime', () => {
     const workflow = loadWorkflow('.github/workflows/release.yml')
+    const stage = workflowJob(workflow, 'stage-runtime-windows')
     const shell = workflowJob(workflow, 'verify-desktop-shell-windows')
     const publish = workflowJob(workflow, 'publish')
-    if (!Array.isArray(shell.steps) || !Array.isArray(publish.needs)) {
+    if (!Array.isArray(stage.steps) || !Array.isArray(shell.steps) || !Array.isArray(publish.needs)) {
       throw new TypeError('desktop shell verification and publish dependencies must be defined')
     }
 
@@ -217,7 +218,18 @@ describe('CI workflow', () => {
       .filter((step): step is Record<string, unknown> & { run: string } => isRecord(step) && typeof step.run === 'string')
       .map(step => step.run)
       .join('\n')
+    const runtimeArtifact = stage.steps.find(step => (
+      isRecord(step) && step.uses === 'actions/upload-artifact@v4'
+      && isRecord(step.with) && step.with.name === 'dsh-desktop-runtime-windows-x64'
+    ))
+    expect(runtimeArtifact).toMatchObject({
+      with: {
+        'include-hidden-files': true,
+      },
+    })
     expect(commands).toContain('pnpm run desktop:test:electron')
+    expect(commands).not.toContain('desktop:test:electron --')
+    expect(commands).not.toContain('desktop:test:packaged --')
     expect(commands).toContain('pnpm run desktop:make')
     expect(commands).toContain('pnpm run desktop:verify-package')
     expect(commands).toContain('DSH_WINDOWS_CERTIFICATE_PFX_BASE64')
