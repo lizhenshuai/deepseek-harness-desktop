@@ -1,4 +1,4 @@
-/** Product startup after Squirrel maintenance invocations have been handled. */
+/** Product startup for the Electron main process. */
 
 import {
   app, BrowserWindow, dialog, Menu, screen, session, shell,
@@ -13,7 +13,7 @@ import { createDesktopWindow } from './window.ts'
 import { loadWindowBounds, saveWindowBounds } from './window-state.ts'
 
 export function startDesktopApplication(): void {
-  app.setAppUserModelId('com.squirrel.DeepSeekHarness.DeepSeekHarness')
+  app.setAppUserModelId('com.deepseek.DeepSeekHarness')
   const testUserData = process.env.DSH_DESKTOP_TEST_USER_DATA
   if (!app.isPackaged && testUserData !== undefined) {
     if (!isAbsolute(testUserData)) throw new Error('desktop: DSH_DESKTOP_TEST_USER_DATA must be absolute')

@@ -14,7 +14,7 @@ if (electronZipDir !== undefined && !isAbsolute(electronZipDir)) {
   throw new Error('DSH_DESKTOP_ELECTRON_ZIP_DIR must be an absolute path')
 }
 
-/** Electron package configuration; installer makers and signing belong to Task 5. */
+/** Electron package and assisted NSIS installer configuration. */
 export const DESKTOP_FUSE_CONFIG = {
   version: FuseVersion.V1,
   [FuseV1Options.RunAsNode]: false,
@@ -48,20 +48,7 @@ const config: ForgeConfig = {
       /^\/lib\/tsconfig\.tsbuildinfo$/,
     ],
   },
-  makers: [{
-    name: '@electron-forge/maker-squirrel',
-    platforms: ['win32'],
-    config: {
-      name: 'DeepSeekHarness',
-      authors: 'DeepSeek Harness contributors',
-      description: 'Self-contained DeepSeek Harness desktop client for Windows',
-      exe: 'DeepSeek Harness.exe',
-      setupExe: 'DeepSeek-Harness-Setup-x64.exe',
-      noMsi: true,
-      noDelta: true,
-      ...(windowsSign === undefined ? {} : { windowsSign }),
-    },
-  }],
+  makers: [],
   plugins: [
     new FusesPlugin(DESKTOP_FUSE_CONFIG),
   ],

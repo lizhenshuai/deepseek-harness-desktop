@@ -3,7 +3,7 @@
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { lstatSync, readFileSync, readdirSync } from 'node:fs'
-import { delimiter, isAbsolute, join, relative, resolve } from 'node:path'
+import { basename, delimiter, isAbsolute, join, relative, resolve } from 'node:path'
 
 if (process.platform !== 'win32') throw new Error('desktop installer inspection requires Windows')
 const outputArgument = process.argv[2]
@@ -11,17 +11,13 @@ if (outputArgument === undefined) throw new Error('usage: verify-installer.mjs <
 const outputRoot = resolve(outputArgument)
 const makeRoot = join(outputRoot, 'make')
 const files = collect(makeRoot)
-const setup = exactly(files, path => path.endsWith('DeepSeek-Harness-Setup-x64.exe'), 'Setup.exe')
-const nupkg = exactly(files, path => path.endsWith('-full.nupkg'), 'full.nupkg')
-const releases = exactly(files, path => path.endsWith('RELEASES'), 'RELEASES')
+const setup = exactly(files, path => basename(path) === 'DeepSeek-Harness-Setup-x64.exe', 'Setup.exe')
 const sums = exactly(files, path => path.endsWith('SHA256SUMS.txt'), 'SHA256SUMS.txt')
 if (files.some(path => path.toLowerCase().endsWith('.msi'))) throw new Error('Task 5 must not produce an MSI')
-
-const releaseText = readFileSync(releases, 'utf8')
-if (!releaseText.includes(relative(join(makeRoot, 'squirrel.windows', 'x64'), nupkg).replaceAll('\\', '/').split('/').at(-1))) {
-  throw new Error('RELEASES does not reference the full package')
+if (files.some(path => path.endsWith('-full.nupkg') || path.endsWith('RELEASES'))) {
+  throw new Error('NSIS output cannot contain Squirrel artifacts')
 }
-const expectedRows = [setup, nupkg, releases].sort().map((path) => {
+const expectedRows = [setup].map((path) => {
   const hash = createHash('sha256').update(readFileSync(path)).digest('hex')
   return `${hash}  ${relative(makeRoot, path).replaceAll('\\', '/')}`
 })

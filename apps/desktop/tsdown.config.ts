@@ -14,7 +14,6 @@ export default defineConfig({
       '@deepseek-ai/dsh-subprocess',
       '@deepseek-ai/dsh-subprocess-local/**',
       '@deepseek-ai/dsh-timeout',
-      'electron-squirrel-startup',
     ],
     neverBundle: ['electron'],
   },

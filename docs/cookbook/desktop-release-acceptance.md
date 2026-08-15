@@ -53,7 +53,7 @@ The release workflow reads `DSH_WINDOWS_CERTIFICATE_PFX_BASE64` and `DSH_WINDOWS
 ## Run a release candidate
 
 1. Dispatch `Release (dsh)` from the intended release ref with `desktop_sign` enabled. Record the run id, the `dsh-desktop-installer-windows-x64-signed` artifact name, and the lowercase Setup digest from its `SHA256SUMS.txt`.
-2. Select an accepted lower-version signed artifact as the predecessor. Before the first tagged release, use a deliberately lower package version of the same runtime only to prove Squirrel replacement and opaque data preservation; it does not establish pre-release data-format compatibility.
+2. Select an accepted lower-version signed artifact as the predecessor. Before the first tagged release, use a deliberately lower package version of the same runtime only to prove NSIS in-place replacement and opaque data preservation; it does not establish pre-release data-format compatibility.
 3. Dispatch `Desktop release acceptance` with both run ids and artifact names, the candidate Setup digest, and the expected publisher-subject substring. Leave `provider` enabled for a release verdict.
 4. Require both operating-system jobs, the Windows 11 protected provider job, and `Verify release acceptance evidence` to pass. The verifier rejects missing assertions, failed observations, a different candidate digest, unsigned release evidence, credential matches, an absent operating system, or an absent provider result.
 5. Publish only the signed artifact from the recorded candidate run. Never rebuild after acceptance.

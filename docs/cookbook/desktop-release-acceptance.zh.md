@@ -53,7 +53,7 @@ Provider driver 必须通过已安装 Web UI 配置 credential，使用唯一 tr
 ## 运行发行候选版本
 
 1. 从预定 release ref 触发 `Release (dsh)`，并启用 `desktop_sign`。记录 run id、`dsh-desktop-installer-windows-x64-signed` artifact 名称，以及其 `SHA256SUMS.txt` 中的小写 Setup digest。
-2. 选择一个已验收的低版本签名 artifact 作为 predecessor。在首个 tagged release 前，只可使用相同 runtime 的刻意低版本 package 证明 Squirrel replacement 与 opaque 数据保留；这不建立 pre-release 数据格式兼容性。
+2. 选择一个已验收的低版本签名 artifact 作为 predecessor。在首个 tagged release 前，只可使用相同 runtime 的刻意低版本 package 证明 NSIS 原位替换与 opaque 数据保留；这不建立 pre-release 数据格式兼容性。
 3. 触发 `Desktop release acceptance`，传入两个 run id 与 artifact 名称、候选 Setup digest 和预期 publisher-subject 子串。发行判定必须保持 `provider` 启用。
 4. 要求两个操作系统 job、Windows 11 受保护 Provider job 和 `Verify release acceptance evidence` 全部通过。校验器会拒绝缺失断言、失败观察、不同的候选 digest、未签名发行证据、credential 命中、缺少任一操作系统或缺少 Provider 结果。
 5. 只发布已记录候选 run 中的已签名 artifact。验收后绝不重新构建。

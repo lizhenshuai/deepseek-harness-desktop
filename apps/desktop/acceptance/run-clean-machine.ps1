@@ -38,18 +38,22 @@ function Find-One([string]$Root, [string]$Filter) {
   return $matches[0].FullName
 }
 
-function Install-Setup([string]$Setup) {
-  $process = Start-Process -FilePath $Setup -ArgumentList '--silent' -PassThru -Wait
+function Install-Setup([string]$Setup, [string]$InstallRoot) {
+  $process = Start-Process -FilePath $Setup -ArgumentList '/S', "/D=$InstallRoot" -PassThru -Wait
   if ($process.ExitCode -ne 0) { throw "Setup.exe exited $($process.ExitCode)" }
   $script:installedByRun = $true
 }
 
-function Find-InstalledExecutable {
-  $root = Join-Path $env:LOCALAPPDATA 'DeepSeekHarness'
-  $matches = @(Get-ChildItem -LiteralPath $root -Directory -Filter 'app-*' | Sort-Object Name -Descending |
-    ForEach-Object { Join-Path $_.FullName 'DeepSeek Harness.exe' } | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf })
-  if ($matches.Count -ne 1) { throw "expected one active installed executable, found $($matches.Count)" }
-  return $matches[0]
+function Find-InstalledExecutable([string]$InstallRoot) {
+  $executable = Join-Path $InstallRoot 'DeepSeek Harness.exe'
+  if (-not (Test-Path -LiteralPath $executable -PathType Leaf)) { throw "installed executable is absent: $executable" }
+  return $executable
+}
+
+function Uninstall-Application([string]$InstallRoot) {
+  $uninstaller = Join-Path $InstallRoot 'Uninstall DeepSeek Harness.exe'
+  $process = Start-Process -FilePath $uninstaller -ArgumentList '/S' -PassThru -Wait
+  if ($process.ExitCode -ne 0) { throw "NSIS uninstaller exited $($process.ExitCode)" }
 }
 
 function Wait-ForNoInstalledProcesses([string]$InstallRoot) {
@@ -79,18 +83,17 @@ function Read-Evidence([string]$Path, [string[]]$Ids) {
 
 $artifactRoot = [IO.Path]::GetFullPath($ArtifactDirectory)
 $outputRoot = [IO.Path]::GetFullPath($OutputDirectory)
+$installRoot = Join-Path $env:LOCALAPPDATA 'Programs\DeepSeek Harness Acceptance'
 New-Item -ItemType Directory -Force -Path $outputRoot | Out-Null
 $setup = Find-One $artifactRoot 'DeepSeek-Harness-Setup-x64.exe'
-$nupkg = Find-One $artifactRoot '*-full.nupkg'
 $actualSetupSha = (Get-FileHash -Algorithm SHA256 -LiteralPath $setup).Hash.ToLowerInvariant()
-$nupkgSha = (Get-FileHash -Algorithm SHA256 -LiteralPath $nupkg).Hash.ToLowerInvariant()
 Add-Result 'artifact.sha256' ($actualSetupSha -eq $ExpectedSetupSha256.ToLowerInvariant()) "Setup.exe $actualSetupSha"
 
 $os = Get-CimInstance Win32_OperatingSystem
 $architecturePassed = $env:PROCESSOR_ARCHITECTURE -eq 'AMD64' -and [Environment]::Is64BitOperatingSystem
 Add-Result 'environment.windows-x64' $architecturePassed "$($os.Caption) build $($os.BuildNumber), $env:PROCESSOR_ARCHITECTURE"
 $toolHits = @('node', 'pnpm', 'git') | Where-Object { Get-Command $_ -ErrorAction SilentlyContinue }
-$cleanRoots = -not (Test-Path -LiteralPath (Join-Path $env:LOCALAPPDATA 'DeepSeekHarness')) -and
+$cleanRoots = -not (Test-Path -LiteralPath $installRoot) -and
   -not (Test-Path -LiteralPath (Join-Path $env:APPDATA 'DeepSeek Harness'))
 Add-Result 'environment.clean' ($toolHits.Count -eq 0 -and $cleanRoots) "developer tools: $($toolHits -join ', '); prior roots absent: $cleanRoots"
 $principal = [Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
@@ -108,7 +111,6 @@ if ($signedLane) {
   Add-Result 'signature.timestamp' ($signatureValid -and $null -ne $signature.TimeStamperCertificate) 'Setup.exe has a trusted timestamp'
 }
 
-$installRoot = Join-Path $env:LOCALAPPDATA 'DeepSeekHarness'
 $userData = Join-Path $env:APPDATA 'DeepSeek Harness'
 $dshHome = Join-Path $userData 'harness'
 $canaryPath = Join-Path $dshHome 'acceptance-data-canary.txt'
@@ -118,13 +120,13 @@ $candidateExe = $null
 try {
   if ($PredecessorArtifactDirectory) {
     $predecessor = Find-One ([IO.Path]::GetFullPath($PredecessorArtifactDirectory)) 'DeepSeek-Harness-Setup-x64.exe'
-    Invoke-Observed 'upgrade.predecessor-installed' { Install-Setup $predecessor; Find-InstalledExecutable }
+    Invoke-Observed 'upgrade.predecessor-installed' { Install-Setup $predecessor $installRoot; Find-InstalledExecutable $installRoot }
     New-Item -ItemType Directory -Force -Path $dshHome | Out-Null
     Set-Content -LiteralPath $canaryPath -Value $canary -NoNewline
   }
 
-  Invoke-Observed 'install.setup' { Install-Setup $setup; 'candidate installer exited successfully' }
-  $candidateExe = Find-InstalledExecutable
+  Invoke-Observed 'install.setup' { Install-Setup $setup $installRoot; 'candidate installer exited successfully' }
+  $candidateExe = Find-InstalledExecutable $installRoot
   $candidateDirectory = Split-Path -Parent $candidateExe
   $shortcut = @(Get-ChildItem -LiteralPath (Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\Programs') -Recurse -File -Filter 'DeepSeek Harness.lnk')
   Add-Result 'install.shortcut' ($shortcut.Count -eq 1) "shortcut count $($shortcut.Count)"
@@ -171,9 +173,7 @@ try {
     )
   }
 
-  $update = Join-Path $installRoot 'Update.exe'
-  $uninstall = Start-Process -FilePath $update -ArgumentList '--uninstall', '-s' -PassThru -Wait
-  if ($uninstall.ExitCode -ne 0) { throw "Update.exe uninstall exited $($uninstall.ExitCode)" }
+  Uninstall-Application $installRoot
   $installedByRun = $false
   Start-Sleep -Seconds 2
   $applicationGone = -not (Test-Path -LiteralPath $candidateExe) -and
@@ -181,19 +181,17 @@ try {
   Add-Result 'uninstall.application-removed' $applicationGone 'application executable and shortcut are absent'
   Add-Result 'uninstall.data-preserved' ((Get-Content -Raw -LiteralPath $canaryPath) -eq $canary) 'DSH_HOME canary survived uninstall'
 
-  Install-Setup $setup
+  Install-Setup $setup $installRoot
   Add-Result 'reinstall.data-restored' ((Get-Content -Raw -LiteralPath $canaryPath) -eq $canary) 'DSH_HOME canary remained after reinstall'
-  $reinstalledExe = Find-InstalledExecutable
-  $update = Join-Path $installRoot 'Update.exe'
-  $finalUninstall = Start-Process -FilePath $update -ArgumentList '--uninstall', '-s' -PassThru -Wait
-  if ($finalUninstall.ExitCode -ne 0) { throw "final uninstall exited $($finalUninstall.ExitCode)" }
+  $reinstalledExe = Find-InstalledExecutable $installRoot
+  Uninstall-Application $installRoot
   $installedByRun = $false
   Invoke-Observed 'processes.quiescent.final' { Wait-ForNoInstalledProcesses $installRoot }
 } catch {
   Add-Result 'runner.unhandled' $false $_.Exception.Message
 } finally {
-  if ($installedByRun -and (Test-Path -LiteralPath (Join-Path $installRoot 'Update.exe'))) {
-    Start-Process -FilePath (Join-Path $installRoot 'Update.exe') -ArgumentList '--uninstall', '-s' -Wait | Out-Null
+  if ($installedByRun -and (Test-Path -LiteralPath (Join-Path $installRoot 'Uninstall DeepSeek Harness.exe'))) {
+    Uninstall-Application $installRoot
   }
 }
 
@@ -228,7 +226,7 @@ $report = [ordered]@{
   }
   candidate = [ordered]@{
     setupSha256 = $actualSetupSha
-    nupkgSha256 = $nupkgSha
+    installerType = 'nsis-assisted'
     signature = $(if ($signatureValid) { 'valid' } else { 'unsigned' })
   }
   paths = [ordered]@{ installRoot = $installRoot; userData = $userData; dshHome = $dshHome }

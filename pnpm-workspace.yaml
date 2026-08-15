@@ -56,6 +56,9 @@ allowBuilds:
   # them only because they ship lifecycle scripts, but those are no-ops we don't
   # need, so we deny them — install still succeeds.
   '@google/genai': false
+  # electron-builder includes its unused Squirrel target beside NSIS; its setup
+  # aliases are unnecessary when only the NSIS maker runs.
+  electron-winstaller: false
   protobufjs: false
   node-addon-require-builtin: false
   # JSONL durability calls MoveFileExW with write-through publication on Windows.
@@ -63,9 +66,6 @@ allowBuilds:
   # The Python runtime deploy includes the reviewed workspace postinstall that
   # restores the executable bit on node-pty's macOS spawn helper.
   '@deepseek-ai/dsh-subprocess-local@file:packages/subprocess/subprocess-local': true
-  # Squirrel invokes the generic 7-Zip aliases created by its reviewed,
-  # architecture-selecting install script; the local patch fixes its arch call.
-  electron-winstaller: true
 
 minimumReleaseAgeExclude:
   # Fresh pi-ai releases carry the model catalog updates that are the whole
@@ -82,5 +82,4 @@ minimumReleaseAgeExclude:
   - node-addon-require-builtin@0.1.4
 
 patchedDependencies:
-  electron-winstaller@5.4.4: patches/electron-winstaller@5.4.4.patch
   node-pty@1.1.0: patches/node-pty@1.1.0.patch

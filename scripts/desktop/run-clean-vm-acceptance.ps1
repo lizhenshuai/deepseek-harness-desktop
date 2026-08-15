@@ -103,7 +103,7 @@ try {
   $sessionEvidence = Invoke-Command -Session $session -ScriptBlock {
     $value = Get-Content -Raw -LiteralPath 'C:\dsh-acceptance\session-evidence.json' | ConvertFrom-Json
     $owned = @(Get-CimInstance Win32_Process | Where-Object {
-      $_.ExecutablePath -and $_.ExecutablePath -like '*\AppData\Local\DeepSeekHarness\*'
+      $_.ExecutablePath -and $_.ExecutablePath -like '*\AppData\Local\Programs\DeepSeek Harness Acceptance\*'
     })
     $assertions = @($value.assertions) + @(@{
       id = 'lifecycle.sign-out'

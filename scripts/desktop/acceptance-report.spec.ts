@@ -7,7 +7,6 @@ import {
 } from './acceptance-report.ts'
 
 const DIGEST = 'a'.repeat(64)
-const NUPKG_DIGEST = 'b'.repeat(64)
 
 describe('desktop acceptance report', () => {
   it('accepts a complete signed Windows matrix plus the protected provider lane', () => {
@@ -92,9 +91,9 @@ function report(os: 'windows-10' | 'windows-11', lane: 'unsigned' | 'signed' | '
     lane,
     os: { family: os, edition: 'Professional', build: 'test-build', architecture: 'x64', imageId: `${os}-sealed` },
     account: { nameClass: 'space-and-non-ascii', administrator: false },
-    candidate: { setupSha256: DIGEST, nupkgSha256: NUPKG_DIGEST, signature: lane === 'unsigned' ? 'unsigned' : 'valid' },
+    candidate: { setupSha256: DIGEST, installerType: 'nsis-assisted', signature: lane === 'unsigned' ? 'unsigned' : 'valid' },
     paths: {
-      installRoot: 'C:\\Users\\测试 User\\AppData\\Local\\DeepSeekHarness',
+      installRoot: 'C:\\Users\\测试 User\\AppData\\Local\\Programs\\DeepSeek Harness Acceptance',
       userData: 'C:\\Users\\测试 User\\AppData\\Roaming\\DeepSeek Harness',
       dshHome: 'C:\\Users\\测试 User\\AppData\\Roaming\\DeepSeek Harness\\harness',
     },

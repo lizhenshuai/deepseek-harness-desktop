@@ -19,7 +19,7 @@ on:
         type: boolean
         default: false
       desktop_sign:
-        description: Sign the desktop application and Squirrel installer for release acceptance.
+        description: Sign the desktop application and NSIS installer for release acceptance.
         required: true
         type: boolean
         default: false
@@ -276,9 +276,8 @@ jobs:
         with:
           name: dsh-desktop-installer-windows-x64-${{ inputs.desktop_sign && 'signed' || 'unsigned' }}
           path: |
-            apps/desktop/out/make/**/DeepSeek-Harness-Setup-x64.exe
-            apps/desktop/out/make/**/*-full.nupkg
-            apps/desktop/out/make/**/RELEASES
+            apps/desktop/out/make/DeepSeek-Harness-Setup-x64.exe
+            apps/desktop/out/make/DeepSeek-Harness-Setup-x64.exe.blockmap
             apps/desktop/out/make/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 7

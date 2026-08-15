@@ -73,7 +73,7 @@ export interface DesktopAcceptanceReport {
   }
   readonly candidate: {
     readonly setupSha256: string
-    readonly nupkgSha256: string
+    readonly installerType: 'nsis-assisted'
     readonly signature: 'unsigned' | 'valid'
   }
   readonly paths: {
@@ -186,12 +186,12 @@ function parseAccount(value: unknown): DesktopAcceptanceReport['account'] {
 
 function parseCandidate(value: unknown): DesktopAcceptanceReport['candidate'] {
   const candidate = object(value, 'report.candidate')
-  exactKeys(candidate, ['setupSha256', 'nupkgSha256', 'signature'], 'report.candidate')
+  exactKeys(candidate, ['setupSha256', 'installerType', 'signature'], 'report.candidate')
   const setupSha256 = nonEmptyString(candidate.setupSha256, 'report.candidate.setupSha256')
-  const nupkgSha256 = nonEmptyString(candidate.nupkgSha256, 'report.candidate.nupkgSha256')
-  if (!SHA256.test(setupSha256) || !SHA256.test(nupkgSha256)) throw new Error('report candidate digests must be lowercase SHA-256')
+  if (!SHA256.test(setupSha256)) throw new Error('report candidate digest must be lowercase SHA-256')
   return {
-    setupSha256, nupkgSha256,
+    setupSha256,
+    installerType: member(candidate.installerType, ['nsis-assisted'] as const, 'report.candidate.installerType'),
     signature: member(candidate.signature, ['unsigned', 'valid'] as const, 'report.candidate.signature'),
   }
 }

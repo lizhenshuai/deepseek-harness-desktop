@@ -7,12 +7,10 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
-function Find-InstalledExecutable {
-  $root = Join-Path $env:LOCALAPPDATA 'DeepSeekHarness'
-  $matches = @(Get-ChildItem -LiteralPath $root -Directory -Filter 'app-*' | Sort-Object Name -Descending |
-    ForEach-Object { Join-Path $_.FullName 'DeepSeek Harness.exe' } | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf })
-  if ($matches.Count -ne 1) { throw "expected one installed executable, found $($matches.Count)" }
-  return $matches[0]
+function Find-InstalledExecutable([string]$InstallRoot) {
+  $executable = Join-Path $InstallRoot 'DeepSeek Harness.exe'
+  if (-not (Test-Path -LiteralPath $executable -PathType Leaf)) { throw "installed executable is absent: $executable" }
+  return $executable
 }
 
 function Wait-ForBackend([string]$InstallRoot) {
@@ -28,10 +26,10 @@ function Wait-ForBackend([string]$InstallRoot) {
   throw 'desktop backend did not start'
 }
 
-$install = Start-Process -FilePath $Setup -ArgumentList '--silent' -PassThru -Wait
+$installRoot = Join-Path $env:LOCALAPPDATA 'Programs\DeepSeek Harness Acceptance'
+$install = Start-Process -FilePath $Setup -ArgumentList '/S', "/D=$installRoot" -PassThru -Wait
 if ($install.ExitCode -ne 0) { throw "Setup.exe exited $($install.ExitCode)" }
-$exe = Find-InstalledExecutable
-$installRoot = Join-Path $env:LOCALAPPDATA 'DeepSeekHarness'
+$exe = Find-InstalledExecutable $installRoot
 $first = Start-Process -FilePath $exe -PassThru
 $backend = Wait-ForBackend $installRoot
 Stop-Process -Id $backend.ProcessId -Force

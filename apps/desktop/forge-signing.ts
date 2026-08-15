@@ -1,4 +1,4 @@
-/** Validated optional Authenticode configuration shared by Packager and Squirrel. */
+/** Validated optional Authenticode configuration for the packaged application. */
 
 import { lstatSync } from 'node:fs'
 import { isAbsolute, resolve } from 'node:path'
